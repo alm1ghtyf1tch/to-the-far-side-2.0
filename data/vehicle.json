@@ -1,0 +1,3139 @@
+{
+ "rules": {
+  "g0": 9.80665,
+  "adapter_mass": 3.8,
+  "ascent_dv": 9.2,
+  "tli_dv": 3.15,
+  "loi_dv": 0.95,
+  "tei_dv": 1.05,
+  "nrho_loi_dv": 0.45,
+  "nrho_tei_dv": 0.45,
+  "transit_days": 8.0,
+  "nrho_extra_days": 6.0,
+  "water_from_cells_kg": 3.0,
+  "integration_days": 90,
+  "workforce_pct_per_100_days": 0.3,
+  "test_found": [
+   0.0,
+   0.55,
+   0.85,
+   0.92
+  ],
+  "risk_scale": 2.0,
+  "move_to": "port_ksc",
+  "move_days": 240,
+  "move_cost_pct": 2.4,
+  "propellant_usd_per_kg": {
+   "kerosene": 0.8,
+   "hydrogen": 1.2,
+   "storable": 60.0,
+   "solid": 12.0
+  },
+  "image_note": "Illustration made for this game, not a photograph."
+ },
+ "slots": [
+  {
+   "id": "stage1",
+   "title": "First stage",
+   "group": "Rocket",
+   "why": "Lifts the whole rocket off the pad and through the thick lower air. It burns for about two minutes and then falls away. It needs raw thrust more than efficiency.",
+   "parts": [
+    {
+     "id": "s1_five",
+     "name": "Kerosene booster, five engines",
+     "what": "Five very large engines. The most thrust and the most propellant of the liquid boosters.",
+     "cost_pct": 12.0,
+     "days": 1500,
+     "risk": 0.02,
+     "specs": [
+      [
+       "Propellant",
+       "2,145 t"
+      ],
+      [
+       "Empty mass",
+       "131 t"
+      ],
+      [
+       "Efficiency (Isp)",
+       "285 s"
+      ],
+      [
+       "Lift-off thrust",
+       "34.0 MN"
+      ],
+      [
+       "Cost",
+       "12% of budget"
+      ],
+      [
+       "Build time",
+       "1,500 days"
+      ]
+     ],
+     "prop": 2145.0,
+     "dry": 131.0,
+     "isp": 285.0,
+     "thrust": 34.0,
+     "fuel": "kerosene",
+     "sprite": "s1_five",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: Saturn V first stage (S-IC)",
+      "facts": [
+       [
+        "Engines",
+        "five F-1"
+       ],
+       [
+        "Burn time",
+        "about 2.5 minutes"
+       ],
+       [
+        "Propellant",
+        "kerosene and liquid oxygen"
+       ],
+       [
+        "Flights",
+        "13, with no stage failure"
+       ]
+      ],
+      "text": [
+       "The first stage of the Saturn V, the rocket that carried every Apollo crew to the Moon. It stood 42 metres tall and burned about 13 tonnes of propellant every second.",
+       "Kerosene is not the most efficient fuel, but it is dense. The tanks stay compact, and big engines can pour it through fast. For a first stage that matters more than efficiency."
+      ],
+      "source": "Source: NASA SP-4206, Stages to Saturn."
+     }
+    },
+    {
+     "id": "s1_four",
+     "name": "Kerosene booster, four engines",
+     "what": "The same large engines, one fewer. Lighter and cheaper, with less to give.",
+     "cost_pct": 9.5,
+     "days": 1350,
+     "risk": 0.03,
+     "specs": [
+      [
+       "Propellant",
+       "1,700 t"
+      ],
+      [
+       "Empty mass",
+       "115 t"
+      ],
+      [
+       "Efficiency (Isp)",
+       "285 s"
+      ],
+      [
+       "Lift-off thrust",
+       "27.1 MN"
+      ],
+      [
+       "Cost",
+       "9.5% of budget"
+      ],
+      [
+       "Build time",
+       "1,350 days"
+      ]
+     ],
+     "prop": 1700.0,
+     "dry": 115.0,
+     "isp": 285.0,
+     "thrust": 27.1,
+     "fuel": "kerosene",
+     "sprite": "s1_four",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real design study: Saturn C-4",
+      "facts": [
+       [
+        "Engines",
+        "four F-1"
+       ],
+       [
+        "Status",
+        "studied in 1961, never built"
+       ]
+      ],
+      "text": [
+       "Before NASA settled on the Saturn V, it studied a smaller Moon rocket called the C-4, with four F-1 engines in the first stage.",
+       "The fifth engine was added because the spacecraft kept getting heavier as its design matured. Engineers wanted room to grow. They turned out to be right: Apollo used almost all of it."
+      ],
+      "source": "Source: NASA SP-4206, Stages to Saturn."
+     }
+    },
+    {
+     "id": "s1_thirty",
+     "name": "Kerosene booster, thirty engines",
+     "what": "Thirty small engines in place of a few large ones. A lot of thrust for the money.",
+     "cost_pct": 7.5,
+     "days": 1250,
+     "risk": 0.3,
+     "specs": [
+      [
+       "Propellant",
+       "1,880 t"
+      ],
+      [
+       "Empty mass",
+       "180 t"
+      ],
+      [
+       "Efficiency (Isp)",
+       "300 s"
+      ],
+      [
+       "Lift-off thrust",
+       "45.0 MN"
+      ],
+      [
+       "Cost",
+       "7.5% of budget"
+      ],
+      [
+       "Build time",
+       "1,250 days"
+      ]
+     ],
+     "prop": 1880.0,
+     "dry": 180.0,
+     "isp": 300.0,
+     "thrust": 45.0,
+     "fuel": "kerosene",
+     "sprite": "s1_thirty",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: Soviet N1 first stage (Block A)",
+      "facts": [
+       [
+        "Engines",
+        "30 NK-15"
+       ],
+       [
+        "Launches",
+        "4, from 1969 to 1972"
+       ],
+       [
+        "Successful launches",
+        "none"
+       ]
+      ],
+      "text": [
+       "The N1 was the Soviet Moon rocket. Small engines were quicker to develop than giant ones, so its first stage used thirty of them, with a computer to balance their thrust.",
+       "The complete stage was never test-fired on the ground: there was no stand large enough. Every problem had to be found in flight. All four launches failed while the first stage was still burning."
+      ],
+      "source": "Source: NASA SP-2000-4408, Challenge to Apollo."
+     }
+    },
+    {
+     "id": "s1_solid",
+     "name": "Two solid rocket boosters",
+     "what": "A pair of solid motors strapped to the sides of the second stage. Simple and very powerful.",
+     "cost_pct": 6.0,
+     "days": 1100,
+     "risk": 0.03,
+     "specs": [
+      [
+       "Propellant",
+       "1,262 t"
+      ],
+      [
+       "Empty mass",
+       "196 t"
+      ],
+      [
+       "Efficiency (Isp)",
+       "255 s"
+      ],
+      [
+       "Lift-off thrust",
+       "32.0 MN"
+      ],
+      [
+       "Cost",
+       "6% of budget"
+      ],
+      [
+       "Build time",
+       "1,100 days"
+      ]
+     ],
+     "prop": 1262.0,
+     "dry": 196.0,
+     "isp": 255.0,
+     "thrust": 32.0,
+     "fuel": "solid",
+     "mount": "side",
+     "sprite": "s1_solid",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: Space Launch System solid rocket boosters",
+      "facts": [
+       [
+        "Boosters",
+        "two, five segments each"
+       ],
+       [
+        "Thrust of one booster",
+        "about 16 MN"
+       ],
+       [
+        "Burn time",
+        "126 seconds"
+       ],
+       [
+        "Heritage",
+        "upgraded space shuttle boosters"
+       ]
+      ],
+      "text": [
+       "The Artemis rocket leaves the pad on two solid boosters taller than a seventeen-storey building. Together they give more than three quarters of the thrust at lift-off.",
+       "A solid motor is a steel tube packed with propellant: nothing to pump and nothing to chill. Once it is lit it cannot be throttled or shut down, so everything else on the rocket must be ready for the two minutes that follow."
+      ],
+      "source": "Source: NASA, Space Launch System Reference Guide."
+     }
+    }
+   ]
+  },
+  {
+   "id": "stage2",
+   "title": "Second stage",
+   "group": "Rocket",
+   "why": "Takes over above the atmosphere and does most of the work of reaching orbital speed. Up here efficiency matters more than thrust.",
+   "parts": [
+    {
+     "id": "s2_hydrogen",
+     "name": "Hydrogen stage, shared tank wall",
+     "what": "Liquid hydrogen, the most efficient fuel. One wall is shared by both tanks to save mass.",
+     "cost_pct": 7.5,
+     "days": 1650,
+     "risk": 0.05,
+     "specs": [
+      [
+       "Propellant",
+       "443 t"
+      ],
+      [
+       "Empty mass",
+       "36 t"
+      ],
+      [
+       "Efficiency (Isp)",
+       "421 s"
+      ],
+      [
+       "Cost",
+       "7.5% of budget"
+      ],
+      [
+       "Build time",
+       "1,650 days"
+      ]
+     ],
+     "prop": 443.0,
+     "dry": 36.0,
+     "isp": 421.0,
+     "fuel": "hydrogen",
+     "sprite": "s2_hydrogen",
+     "tuck": 26,
+     "read_more": {
+      "kicker": "Real hardware: Saturn V second stage (S-II)",
+      "facts": [
+       [
+        "Engines",
+        "five J-2"
+       ],
+       [
+        "Burn time",
+        "about 6 minutes"
+       ],
+       [
+        "Hydrogen temperature",
+        "−253 °C"
+       ],
+       [
+        "Mass saved by the shared wall",
+        "about 3.6 t"
+       ]
+      ],
+      "text": [
+       "Hydrogen gives far more push per kilogram than kerosene, but it must be kept colder than almost anything else on Earth, and it takes up a great deal of room.",
+       "The S-II was the hardest part of the Saturn V to build. Its shared tank wall kept hydrogen at −253 °C a few centimetres from oxygen at −183 °C. For a time this stage set the pace of the whole Apollo programme."
+      ],
+      "source": "Source: NASA SP-4206, Stages to Saturn."
+     }
+    },
+    {
+     "id": "s2_kerosene",
+     "name": "Kerosene stage",
+     "what": "The same fuel as the first stage. Simple, dense and quick to build.",
+     "cost_pct": 4.0,
+     "days": 1200,
+     "risk": 0.04,
+     "specs": [
+      [
+       "Propellant",
+       "540 t"
+      ],
+      [
+       "Empty mass",
+       "32 t"
+      ],
+      [
+       "Efficiency (Isp)",
+       "340 s"
+      ],
+      [
+       "Cost",
+       "4% of budget"
+      ],
+      [
+       "Build time",
+       "1,200 days"
+      ]
+     ],
+     "prop": 540.0,
+     "dry": 32.0,
+     "isp": 340.0,
+     "fuel": "kerosene",
+     "sprite": "s2_kerosene",
+     "tuck": 26,
+     "read_more": {
+      "kicker": "Real hardware: Soviet N1 second stage (Block B)",
+      "facts": [
+       [
+        "Propellant",
+        "kerosene and liquid oxygen"
+       ],
+       [
+        "Efficiency",
+        "about a fifth lower than hydrogen"
+       ]
+      ],
+      "text": [
+       "Kerosene can be stored at room temperature and needs small tanks. The plumbing is simpler and the ground crews already know the fuel from the first stage.",
+       "The price is efficiency. Every kilogram of kerosene gives roughly a fifth less push than a kilogram of hydrogen, and in an upper stage every kilogram counts."
+      ],
+      "source": "Source: NASA SP-2000-4408, Challenge to Apollo."
+     }
+    },
+    {
+     "id": "s2_separate",
+     "name": "Hydrogen stage, separate tanks",
+     "what": "Hydrogen again, with two ordinary tanks. Heavier, and easier to manufacture.",
+     "cost_pct": 6.5,
+     "days": 1400,
+     "risk": 0.03,
+     "specs": [
+      [
+       "Propellant",
+       "443 t"
+      ],
+      [
+       "Empty mass",
+       "44 t"
+      ],
+      [
+       "Efficiency (Isp)",
+       "421 s"
+      ],
+      [
+       "Cost",
+       "6.5% of budget"
+      ],
+      [
+       "Build time",
+       "1,400 days"
+      ]
+     ],
+     "prop": 443.0,
+     "dry": 44.0,
+     "isp": 421.0,
+     "fuel": "hydrogen",
+     "sprite": "s2_separate",
+     "tuck": 26,
+     "read_more": {
+      "kicker": "Real engineering trade-off inside the S-II",
+      "facts": [
+       [
+        "Extra mass against the shared wall",
+        "about 3.6 t"
+       ],
+       [
+        "Extra length",
+        "about 3 m"
+       ]
+      ],
+      "text": [
+       "The builders of the real S-II had a choice: two separate tanks, or one shared wall between hydrogen and oxygen. The shared wall saved about 3.6 tonnes and three metres of length.",
+       "It was also very hard to make, and it cost the programme months. This option takes the other road: a heavier stage that a factory can build without inventing new methods."
+      ],
+      "source": "Source: NASA SP-4206, Stages to Saturn."
+     }
+    },
+    {
+     "id": "s2_core",
+     "name": "Hydrogen core stage, four engines",
+     "what": "One huge stage that burns for eight minutes, from the pad almost to orbit.",
+     "cost_pct": 10.0,
+     "days": 1700,
+     "risk": 0.03,
+     "specs": [
+      [
+       "Propellant",
+       "987 t"
+      ],
+      [
+       "Empty mass",
+       "85.3 t"
+      ],
+      [
+       "Efficiency (Isp)",
+       "430 s"
+      ],
+      [
+       "Cost",
+       "10% of budget"
+      ],
+      [
+       "Build time",
+       "1,700 days"
+      ]
+     ],
+     "prop": 987.0,
+     "dry": 85.3,
+     "isp": 430.0,
+     "fuel": "hydrogen",
+     "sprite": "s2_core",
+     "tuck": 26,
+     "read_more": {
+      "kicker": "Real hardware: Space Launch System core stage",
+      "facts": [
+       [
+        "Engines",
+        "four RS-25"
+       ],
+       [
+        "Height",
+        "65 m"
+       ],
+       [
+        "Burn time",
+        "just over 8 minutes"
+       ],
+       [
+        "Engine heritage",
+        "space shuttle main engines"
+       ]
+      ],
+      "text": [
+       "The core of the Artemis rocket is the largest stage NASA has ever built. Its two tanks hold almost a thousand tonnes of liquid hydrogen and oxygen.",
+       "On the real rocket the core lights on the pad and burns side by side with the boosters. Its engines flew before, on the space shuttle. On the shuttle they came home to fly again. Here they are used once."
+      ],
+      "source": "Source: NASA, Space Launch System Reference Guide."
+     }
+    }
+   ]
+  },
+  {
+   "id": "stage3",
+   "title": "Third stage",
+   "group": "Rocket",
+   "why": "Finishes the climb to Earth orbit, waits there, then restarts to throw the spacecraft toward the Moon. That second burn is called translunar injection.",
+   "parts": [
+    {
+     "id": "s3_hydrogen",
+     "name": "Hydrogen stage, one large engine",
+     "what": "One powerful engine that can be started twice.",
+     "cost_pct": 4.0,
+     "days": 1300,
+     "risk": 0.04,
+     "specs": [
+      [
+       "Propellant",
+       "107 t"
+      ],
+      [
+       "Empty mass",
+       "13.3 t"
+      ],
+      [
+       "Efficiency (Isp)",
+       "421 s"
+      ],
+      [
+       "Cost",
+       "4% of budget"
+      ],
+      [
+       "Build time",
+       "1,300 days"
+      ]
+     ],
+     "prop": 107.0,
+     "dry": 13.3,
+     "isp": 421.0,
+     "fuel": "hydrogen",
+     "sprite": "s3_hydrogen",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: Saturn V third stage (S-IVB)",
+      "facts": [
+       [
+        "Engine",
+        "one J-2, restartable"
+       ],
+       [
+        "First burn",
+        "about 2.5 minutes, into Earth orbit"
+       ],
+       [
+        "Second burn on Apollo 11",
+        "5 min 47 s, toward the Moon"
+       ]
+      ],
+      "text": [
+       "The S-IVB shut down in Earth orbit, coasted for about two and a half hours while the crew checked the spacecraft, and then lit its engine again.",
+       "Restarting a hydrogen engine in weightlessness was new. The propellant floats away from the tank outlet, so small thrusters first had to push the stage gently forward to settle it."
+      ],
+      "source": "Source: NASA SP-4206, Stages to Saturn."
+     }
+    },
+    {
+     "id": "s3_storable",
+     "name": "Storable-propellant stage",
+     "what": "Propellants that stay liquid at room temperature and ignite on contact.",
+     "cost_pct": 2.5,
+     "days": 1000,
+     "risk": 0.02,
+     "specs": [
+      [
+       "Propellant",
+       "150 t"
+      ],
+      [
+       "Empty mass",
+       "11 t"
+      ],
+      [
+       "Efficiency (Isp)",
+       "315 s"
+      ],
+      [
+       "Cost",
+       "2.5% of budget"
+      ],
+      [
+       "Build time",
+       "1,000 days"
+      ]
+     ],
+     "prop": 150.0,
+     "dry": 11.0,
+     "isp": 315.0,
+     "fuel": "storable",
+     "sprite": "s3_storable",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real practice: hypergolic propellants",
+      "facts": [
+       [
+        "Ignition",
+        "on contact, no igniter needed"
+       ],
+       [
+        "Used on Apollo for",
+        "every engine that had no backup"
+       ]
+      ],
+      "text": [
+       "Some propellants burst into flame the moment they touch each other. An engine that uses them needs no ignition system and restarts almost without fail.",
+       "Apollo trusted them where failure was not an option: the engine that brought the crew home and both engines of the lunar module. They are much less efficient than hydrogen, so the stage must carry more of them."
+      ],
+      "source": "Source: NASA SP-4205, Chariots for Apollo."
+     }
+    },
+    {
+     "id": "s3_twin",
+     "name": "Hydrogen stage, two small engines",
+     "what": "Two small, extremely efficient engines. Gentle thrust, long burns.",
+     "cost_pct": 5.5,
+     "days": 1450,
+     "risk": 0.05,
+     "specs": [
+      [
+       "Propellant",
+       "95 t"
+      ],
+      [
+       "Empty mass",
+       "12 t"
+      ],
+      [
+       "Efficiency (Isp)",
+       "450 s"
+      ],
+      [
+       "Cost",
+       "5.5% of budget"
+      ],
+      [
+       "Build time",
+       "1,450 days"
+      ]
+     ],
+     "prop": 95.0,
+     "dry": 12.0,
+     "isp": 450.0,
+     "fuel": "hydrogen",
+     "sprite": "s3_twin",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: Centaur upper stage and the RL10 engine",
+      "facts": [
+       [
+        "Engine",
+        "RL10, first flown in 1963"
+       ],
+       [
+        "Thrust of one engine",
+        "about 67 kN, a fifteenth of a J-2"
+       ]
+      ],
+      "text": [
+       "The RL10 was the first rocket engine to fly on liquid hydrogen, and its family is still the most efficient chemical engine in regular use.",
+       "The catch is thrust. A small engine pushes gently, so the burn toward the Moon takes much longer and must be timed with care."
+      ],
+      "source": "Source: NASA, Centaur: America's Workhorse in Space."
+     }
+    },
+    {
+     "id": "s3_icps",
+     "name": "Small hydrogen stage, one engine",
+     "what": "A compact stage borrowed from an existing rocket. Enough for a light spacecraft only.",
+     "cost_pct": 2.0,
+     "days": 900,
+     "risk": 0.03,
+     "specs": [
+      [
+       "Propellant",
+       "27 t"
+      ],
+      [
+       "Empty mass",
+       "3.5 t"
+      ],
+      [
+       "Efficiency (Isp)",
+       "462 s"
+      ],
+      [
+       "Cost",
+       "2% of budget"
+      ],
+      [
+       "Build time",
+       "900 days"
+      ]
+     ],
+     "prop": 27.0,
+     "dry": 3.5,
+     "isp": 462.0,
+     "fuel": "hydrogen",
+     "sprite": "s3_icps",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: Interim Cryogenic Propulsion Stage of the Space Launch System",
+      "facts": [
+       [
+        "Engine",
+        "one RL10, about 110 kN"
+       ],
+       [
+        "Origin",
+        "the upper stage of the Delta IV rocket"
+       ],
+       [
+        "Flown on",
+        "Artemis I and Artemis II"
+       ]
+      ],
+      "text": [
+       "NASA did not design a new upper stage for the first Artemis flights. It adapted one that already flew on another rocket, which is why its name begins with the word interim.",
+       "The stage is small. It can send the Orion spacecraft toward the Moon, but not Orion and a lander together. On Artemis II the crew also used the spent stage as a target to practise flying Orion by hand."
+      ],
+      "source": "Source: NASA, Space Launch System Reference Guide."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lander",
+   "title": "Lunar lander",
+   "group": "Spacecraft",
+   "why": "Takes the crew and the science cargo from lunar orbit down to the surface and brings the crew back up. It can ride on this rocket, under the spacecraft, or fly to the Moon by itself.",
+   "parts": [
+    {
+     "id": "lander_standard",
+     "name": "Two-stage lander",
+     "what": "Lands two people for a short stay. The lower half stays on the Moon as a launch pad.",
+     "cost_pct": 10.0,
+     "days": 1700,
+     "risk": 0.05,
+     "specs": [
+      [
+       "Mass on this rocket",
+       "15.1 t"
+      ],
+      [
+       "Crew on the surface",
+       "2"
+      ],
+      [
+       "Surface stay",
+       "up to 1.5 days"
+      ],
+      [
+       "Cargo to the surface",
+       "180 kg"
+      ],
+      [
+       "Cost",
+       "10% of budget"
+      ],
+      [
+       "Build time",
+       "1,700 days"
+      ]
+     ],
+     "mass": 15.1,
+     "crew": 2,
+     "cargo_kg": 180.0,
+     "stay_days": 1.5,
+     "sprite": "lander_standard",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: Apollo Lunar Module",
+      "facts": [
+       [
+        "Mass with propellant",
+        "about 15 t"
+       ],
+       [
+        "Crew",
+        "2, flying it standing up"
+       ],
+       [
+        "Used on",
+        "Apollo 11, 12 and 14"
+       ]
+      ],
+      "text": [
+       "The first crewed vehicle built to fly only in space. It needed no streamlining and no heat shield, so its designers cut mass everywhere: the walls of the cabin were in places as thin as a few sheets of foil.",
+       "Seats were removed to save mass. The two astronauts flew it standing, held by straps, looking down through small triangular windows."
+      ],
+      "source": "Source: NASA SP-4205, Chariots for Apollo."
+     }
+    },
+    {
+     "id": "lander_extended",
+     "name": "Extended-stay lander",
+     "what": "Bigger tanks and more supplies: three days on the surface and room for heavy cargo.",
+     "cost_pct": 12.5,
+     "days": 1800,
+     "risk": 0.06,
+     "specs": [
+      [
+       "Mass on this rocket",
+       "16.4 t"
+      ],
+      [
+       "Crew on the surface",
+       "2"
+      ],
+      [
+       "Surface stay",
+       "up to 3 days"
+      ],
+      [
+       "Cargo to the surface",
+       "520 kg"
+      ],
+      [
+       "Cost",
+       "12.5% of budget"
+      ],
+      [
+       "Build time",
+       "1,800 days"
+      ]
+     ],
+     "mass": 16.4,
+     "crew": 2,
+     "cargo_kg": 520.0,
+     "stay_days": 3.0,
+     "sprite": "lander_extended",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: Extended Lunar Module of Apollo 15, 16 and 17",
+      "facts": [
+       [
+        "Mass with propellant",
+        "about 16.4 t"
+       ],
+       [
+        "Longest stay",
+        "75 hours, Apollo 17"
+       ],
+       [
+        "Carried",
+        "the lunar rover, folded against its side"
+       ]
+      ],
+      "text": [
+       "For the last three landings the lunar module was stretched: larger propellant tanks, more water and oxygen, and a bay on the outside for a folded car.",
+       "The crews of these missions spent three days on the Moon and drove up to several kilometres from the lander. They brought back more samples than the first three landings together."
+      ],
+      "source": "Source: NASA SP-4214, Where No Man Has Gone Before."
+     }
+    },
+    {
+     "id": "lander_light",
+     "name": "One-person light lander",
+     "what": "A third of the mass. One explorer, a few hours, very little cargo.",
+     "cost_pct": 6.0,
+     "days": 1300,
+     "risk": 0.08,
+     "specs": [
+      [
+       "Mass on this rocket",
+       "5.6 t"
+      ],
+      [
+       "Crew on the surface",
+       "1"
+      ],
+      [
+       "Surface stay",
+       "a few hours"
+      ],
+      [
+       "Cargo to the surface",
+       "60 kg"
+      ],
+      [
+       "Cost",
+       "6% of budget"
+      ],
+      [
+       "Build time",
+       "1,300 days"
+      ]
+     ],
+     "mass": 5.6,
+     "crew": 1,
+     "cargo_kg": 60.0,
+     "stay_days": 0.25,
+     "sprite": "lander_light",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: Soviet LK lunar lander",
+      "facts": [
+       [
+        "Mass",
+        "about 5.6 t"
+       ],
+       [
+        "Crew",
+        "1"
+       ],
+       [
+        "Flights",
+        "3 uncrewed tests in Earth orbit, 1970–1971"
+       ]
+      ],
+      "text": [
+       "The Soviet rocket could lift less than the Saturn V, so the lander had to be small: one cosmonaut, one engine for both the landing and the take-off, and no tunnel to the mother ship. The cosmonaut would have crossed between the two craft by spacewalk.",
+       "All three test flights in Earth orbit worked. The lander never flew to the Moon, because the rocket meant to carry it never reached orbit."
+      ],
+      "source": "Source: NASA SP-2000-4408, Challenge to Apollo."
+     }
+    },
+    {
+     "id": "lander_hls",
+     "name": "Lander sent ahead separately",
+     "what": "A large lander flies to the Moon on other rockets and waits in a high orbit for the crew.",
+     "cost_pct": 14.0,
+     "days": 1800,
+     "risk": 0.1,
+     "specs": [
+      [
+       "Mass on this rocket",
+       "0 t"
+      ],
+      [
+       "Crew on the surface",
+       "2"
+      ],
+      [
+       "Surface stay",
+       "about 6.5 days"
+      ],
+      [
+       "Cargo to the surface",
+       "900 kg"
+      ],
+      [
+       "Cost",
+       "14% of budget"
+      ],
+      [
+       "Build time",
+       "1,800 days"
+      ]
+     ],
+     "mass": 0.0,
+     "crew": 2,
+     "cargo_kg": 900.0,
+     "stay_days": 6.5,
+     "orbit": "nrho",
+     "sprite": "lander_hls",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real programme: NASA Human Landing System",
+      "facts": [
+       [
+        "Builders",
+        "two American companies, under NASA contracts"
+       ],
+       [
+        "Meets the crew",
+        "in orbit around the Moon"
+       ],
+       [
+        "First landing planned for",
+        "Artemis IV"
+       ]
+      ],
+      "text": [
+       "Orion is not built to land on the Moon. In the Artemis plan the lander is a separate spacecraft: it is launched ahead of the crew, refuelled in space and parked near the Moon. The crew arrives in Orion and moves across.",
+       "Nothing heavy has to ride on the crew's rocket, and the lander can be large. The price is a mission made of many launches that must all work, and a meeting in a high lunar orbit that takes days to reach and to leave."
+      ],
+      "source": "Source: NASA, Human Landing System program overview."
+     }
+    }
+   ]
+  },
+  {
+   "id": "service",
+   "title": "Service module",
+   "group": "Spacecraft",
+   "why": "The engine room of the spacecraft. Its engine brakes the ship into lunar orbit and later pushes it back toward Earth. If it does not fire, the crew does not come home.",
+   "parts": [
+    {
+     "id": "service_large",
+     "name": "Storable engine, full tanks",
+     "what": "A simple, dependable engine with plenty of propellant.",
+     "cost_pct": 5.0,
+     "days": 1400,
+     "risk": 0.02,
+     "specs": [
+      [
+       "Propellant",
+       "18.4 t"
+      ],
+      [
+       "Empty mass",
+       "5.0 t"
+      ],
+      [
+       "Efficiency (Isp)",
+       "314 s"
+      ],
+      [
+       "Cost",
+       "5% of budget"
+      ],
+      [
+       "Build time",
+       "1,400 days"
+      ]
+     ],
+     "prop": 18.4,
+     "dry": 5.0,
+     "isp": 314.0,
+     "power_kw": 0.0,
+     "fuel": "storable",
+     "sprite": "service_large",
+     "tuck": 18,
+     "read_more": {
+      "kicker": "Real hardware: Apollo Service Module",
+      "facts": [
+       [
+        "Main engine thrust",
+        "91 kN"
+       ],
+       [
+        "Propellant",
+        "about 18 t"
+       ],
+       [
+        "Pumps",
+        "none: the propellant is pushed by gas pressure"
+       ]
+      ],
+      "text": [
+       "The main engine of the Apollo service module had no backup, so it was made as simple as an engine can be. Its propellants ignite on contact, and they are pushed into the engine by gas pressure, with no pumps to break.",
+       "It fired to enter lunar orbit while the spacecraft was behind the Moon, out of contact with Earth. Mission control learned whether the burn had worked only when the ship came around the other side."
+      ],
+      "source": "Source: NASA SP-4205, Chariots for Apollo."
+     }
+    },
+    {
+     "id": "service_small",
+     "name": "Storable engine, short tanks",
+     "what": "The same engine with less propellant. Lighter and cheaper.",
+     "cost_pct": 4.0,
+     "days": 1300,
+     "risk": 0.02,
+     "specs": [
+      [
+       "Propellant",
+       "14.0 t"
+      ],
+      [
+       "Empty mass",
+       "4.3 t"
+      ],
+      [
+       "Efficiency (Isp)",
+       "314 s"
+      ],
+      [
+       "Cost",
+       "4% of budget"
+      ],
+      [
+       "Build time",
+       "1,300 days"
+      ]
+     ],
+     "prop": 14.0,
+     "dry": 4.3,
+     "isp": 314.0,
+     "power_kw": 0.0,
+     "fuel": "storable",
+     "sprite": "service_small",
+     "tuck": 18,
+     "read_more": {
+      "kicker": "Design variant of the Apollo Service Module",
+      "facts": [
+       [
+        "Status",
+        "a game variant, not flown"
+       ],
+       [
+        "Real background",
+        "Apollo's engine was larger than its final mission needed"
+       ]
+      ],
+      "text": [
+       "The real Apollo service module carried more engine than it ended up needing. It was sized early, when the plan was still to land the whole spacecraft on the Moon and lift it off again.",
+       "This variant trims the tanks for a lighter mission. Less propellant means less mass for the rocket to lift, and less room for surprises."
+      ],
+      "source": "Source: NASA SP-4205, Chariots for Apollo."
+     }
+    },
+    {
+     "id": "service_cryo",
+     "name": "Hydrogen engine, insulated tanks",
+     "what": "Much more speed from every tonne of propellant. The hydrogen must be kept cold all the way.",
+     "cost_pct": 7.0,
+     "days": 1700,
+     "risk": 0.07,
+     "specs": [
+      [
+       "Propellant",
+       "17.0 t"
+      ],
+      [
+       "Empty mass",
+       "6.5 t"
+      ],
+      [
+       "Efficiency (Isp)",
+       "440 s"
+      ],
+      [
+       "Cost",
+       "7% of budget"
+      ],
+      [
+       "Build time",
+       "1,700 days"
+      ]
+     ],
+     "prop": 17.0,
+     "dry": 6.5,
+     "isp": 440.0,
+     "power_kw": 0.5,
+     "fuel": "hydrogen",
+     "sprite": "service_cryo",
+     "tuck": 18,
+     "read_more": {
+      "kicker": "Design concept: hydrogen engines in deep space",
+      "facts": [
+       [
+        "Hydrogen boils at",
+        "−253 °C"
+       ],
+       [
+        "Extra power for cooling",
+        "0.5 kW"
+       ],
+       [
+        "Status",
+        "studied, not yet flown on a crewed ship"
+       ]
+      ],
+      "text": [
+       "A hydrogen engine could do the same job with far less propellant. The trouble is time. In sunlight, liquid hydrogen slowly boils away, and a trip to the Moon and back takes more than a week.",
+       "The Saturn V's hydrogen stage had to finish its work within hours of launch. Keeping hydrogen cold for days in space is still a research topic at NASA today."
+      ],
+      "source": "Source: NASA, Cryogenic Fluid Management technology overview."
+     }
+    },
+    {
+     "id": "service_esm",
+     "name": "Compact service module",
+     "what": "A modern, lighter module. Enough propellant for a high lunar orbit, not for a low one.",
+     "cost_pct": 4.5,
+     "days": 1500,
+     "risk": 0.03,
+     "specs": [
+      [
+       "Propellant",
+       "8.6 t"
+      ],
+      [
+       "Empty mass",
+       "6.2 t"
+      ],
+      [
+       "Efficiency (Isp)",
+       "316 s"
+      ],
+      [
+       "Cost",
+       "4.5% of budget"
+      ],
+      [
+       "Build time",
+       "1,500 days"
+      ]
+     ],
+     "prop": 8.6,
+     "dry": 6.2,
+     "isp": 316.0,
+     "power_kw": 0.0,
+     "fuel": "storable",
+     "sprite": "service_esm",
+     "tuck": 18,
+     "read_more": {
+      "kicker": "Real hardware: Orion's European Service Module",
+      "facts": [
+       [
+        "Propellant",
+        "about 8.6 t"
+       ],
+       [
+        "Main engine",
+        "a reused space shuttle manoeuvring engine"
+       ],
+       [
+        "Built in",
+        "Europe, for NASA's Orion"
+       ]
+      ],
+      "text": [
+       "Orion's service module carries less than half the propellant of Apollo's. It cannot brake a spacecraft into a low orbit around the Moon and bring it home again.",
+       "That is one reason Artemis flies differently from Apollo: Orion stays in a high, slow orbit, and a separate lander does the work of going down to the surface and back."
+      ],
+      "source": "Source: NASA, Orion Reference Guide."
+     }
+    }
+   ]
+  },
+  {
+   "id": "capsule",
+   "title": "Crew capsule",
+   "group": "Spacecraft",
+   "why": "The only part of the rocket that comes home. The crew lives in it for the trip, and its heat shield must survive hitting the air at 11 kilometres per second.",
+   "parts": [
+    {
+     "id": "capsule_three",
+     "name": "Three-seat capsule",
+     "what": "Room for three: two go down to the Moon, one keeps the ship in orbit.",
+     "cost_pct": 8.5,
+     "days": 1500,
+     "risk": 0.03,
+     "specs": [
+      [
+       "Mass",
+       "5.6 t"
+      ],
+      [
+       "Crew",
+       "3"
+      ],
+      [
+       "Power use",
+       "2.2 kW"
+      ],
+      [
+       "Cost",
+       "8.5% of budget"
+      ],
+      [
+       "Build time",
+       "1,500 days"
+      ]
+     ],
+     "mass": 5.6,
+     "crew": 3,
+     "power_kw": 2.2,
+     "sprite": "capsule_three",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: Apollo Command Module",
+      "facts": [
+       [
+        "Mass",
+        "about 5.6 t"
+       ],
+       [
+        "Diameter",
+        "3.9 m"
+       ],
+       [
+        "Speed at re-entry",
+        "about 11 km/s"
+       ]
+      ],
+      "text": [
+       "Three astronauts shared a cabin about the size of the inside of a large car for more than a week.",
+       "Its heat shield was designed to burn away slowly, carrying the heat off with it. Returning from the Moon is much faster, and so much hotter, than returning from Earth orbit."
+      ],
+      "source": "Source: NASA SP-4205, Chariots for Apollo."
+     }
+    },
+    {
+     "id": "capsule_four",
+     "name": "Four-seat capsule",
+     "what": "A wider, modern capsule for four, built for weeks in deep space.",
+     "cost_pct": 12.0,
+     "days": 1750,
+     "risk": 0.04,
+     "specs": [
+      [
+       "Mass",
+       "10.4 t"
+      ],
+      [
+       "Crew",
+       "4"
+      ],
+      [
+       "Power use",
+       "3.4 kW"
+      ],
+      [
+       "Cost",
+       "12% of budget"
+      ],
+      [
+       "Build time",
+       "1,750 days"
+      ]
+     ],
+     "mass": 10.4,
+     "crew": 4,
+     "power_kw": 3.4,
+     "sprite": "capsule_four",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: Orion crew module",
+      "facts": [
+       [
+        "Mass",
+        "about 10.4 t"
+       ],
+       [
+        "Diameter",
+        "5 m"
+       ],
+       [
+        "First flight with a crew",
+        "Artemis II, 1–10 April 2026"
+       ],
+       [
+        "Farthest from Earth on that flight",
+        "about 406,800 km"
+       ]
+      ],
+      "text": [
+       "Orion is the capsule of NASA's Artemis programme. It is about a third wider than the Apollo capsule, with modern computers and life support for four. In April 2026 it carried four astronauts around the far side of the Moon and back in nine days.",
+       "All of that has a mass. A capsule nearly twice as heavy needs more propellant in the service module and more rocket underneath."
+      ],
+      "source": "Sources: NASA, Orion Reference Guide; NASA, Artemis II mission summary."
+     }
+    },
+    {
+     "id": "capsule_two",
+     "name": "Two-seat capsule",
+     "what": "Small, light and already proven in Earth orbit. One lands, one stays in orbit.",
+     "cost_pct": 5.0,
+     "days": 1200,
+     "risk": 0.04,
+     "specs": [
+      [
+       "Mass",
+       "3.8 t"
+      ],
+      [
+       "Crew",
+       "2"
+      ],
+      [
+       "Power use",
+       "1.4 kW"
+      ],
+      [
+       "Cost",
+       "5% of budget"
+      ],
+      [
+       "Build time",
+       "1,200 days"
+      ]
+     ],
+     "mass": 3.8,
+     "crew": 2,
+     "power_kw": 1.4,
+     "sprite": "capsule_two",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: Gemini spacecraft",
+      "facts": [
+       [
+        "Mass",
+        "about 3.8 t"
+       ],
+       [
+        "Crewed flights",
+        "10, in 1965 and 1966"
+       ],
+       [
+        "Lunar version",
+        "studied, never approved"
+       ]
+      ],
+      "text": [
+       "Gemini taught NASA how to meet and dock in orbit, how to walk in space and how to live there for two weeks. Its two astronauts sat shoulder to shoulder in a cabin with no room to stand up.",
+       "Engineers proposed sending a Gemini around the Moon. The idea was turned down: Apollo was already on its way."
+      ],
+      "source": "Source: NASA SP-4203, On the Shoulders of Titans."
+     }
+    }
+   ]
+  },
+  {
+   "id": "escape",
+   "title": "Launch escape",
+   "group": "Spacecraft",
+   "why": "What happens to the crew if the rocket fails on the pad or on the way up. Every option has a mass and a price, including the option to carry nothing.",
+   "parts": [
+    {
+     "id": "escape_tower",
+     "name": "Escape tower",
+     "what": "A solid rocket on top of the capsule. It pulls the crew away and is dropped once the danger has passed.",
+     "cost_pct": 1.2,
+     "days": 700,
+     "risk": 0.0,
+     "specs": [
+      [
+       "Mass",
+       "4.2 t"
+      ],
+      [
+       "Carried for",
+       "the first 3 minutes"
+      ],
+      [
+       "Cost",
+       "1.2% of budget"
+      ],
+      [
+       "Build time",
+       "700 days"
+      ]
+     ],
+     "tower_mass": 4.2,
+     "carried_mass": 0.0,
+     "abort": "tower",
+     "sprite": "escape_tower",
+     "tuck": 4,
+     "read_more": {
+      "kicker": "Real hardware: Apollo Launch Escape System",
+      "facts": [
+       [
+        "Mass",
+        "about 4.2 t"
+       ],
+       [
+        "Thrust",
+        "about 650 kN"
+       ],
+       [
+        "Used with a crew on Apollo",
+        "never"
+       ]
+      ],
+      "text": [
+       "A tower with a solid rocket motor stood on top of every Apollo capsule. In an emergency it would fire for a few seconds with more thrust than the rocket that launched the first American astronaut, and pull the capsule clear.",
+       "About three minutes after lift-off it was thrown away unused. No Apollo crew ever needed it."
+      ],
+      "source": "Source: NASA SP-4205, Chariots for Apollo."
+     }
+    },
+    {
+     "id": "escape_none",
+     "name": "No escape system",
+     "what": "Nothing to build and nothing to lift.",
+     "cost_pct": 0.0,
+     "days": 0,
+     "risk": 0.0,
+     "specs": [
+      [
+       "Mass",
+       "0 t"
+      ],
+      [
+       "Carried for",
+       "—"
+      ],
+      [
+       "Cost",
+       "0% of budget"
+      ],
+      [
+       "Build time",
+       "0 days"
+      ]
+     ],
+     "tower_mass": 0.0,
+     "carried_mass": 0.0,
+     "abort": "none",
+     "sprite": "",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real practice: flying without an escape system",
+      "facts": [
+       [
+        "Example",
+        "Space Shuttle, after its first four flights"
+       ]
+      ],
+      "text": [
+       "Not every crewed vehicle has carried a way out. After its first four test flights, the Space Shuttle flew its crews with no launch escape system at all.",
+       "The mass saved goes straight into payload. The crew then depends entirely on the rocket working."
+      ],
+      "source": "Source: NASA, Report of the Columbia Accident Investigation Board, vol. 1."
+     }
+    },
+    {
+     "id": "escape_integrated",
+     "name": "Abort engines in the capsule",
+     "what": "Small engines built into the spacecraft. They stay with it for the whole flight.",
+     "cost_pct": 1.8,
+     "days": 900,
+     "risk": 0.01,
+     "specs": [
+      [
+       "Mass",
+       "1.5 t"
+      ],
+      [
+       "Carried for",
+       "the whole flight"
+      ],
+      [
+       "Cost",
+       "1.8% of budget"
+      ],
+      [
+       "Build time",
+       "900 days"
+      ]
+     ],
+     "tower_mass": 0.0,
+     "carried_mass": 1.5,
+     "abort": "integrated",
+     "sprite": "escape_integrated",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real practice: integrated abort systems",
+      "facts": [
+       [
+        "Used on",
+        "modern commercial crew capsules"
+       ],
+       [
+        "Difference from a tower",
+        "it is never thrown away"
+       ]
+      ],
+      "text": [
+       "Newer capsules carry their abort engines inside the spacecraft and keep them. There is no tower to drop, and the crew has a way out for longer.",
+       "The cost is mass: a tower rides for three minutes, built-in engines ride all the way to the Moon and back."
+      ],
+      "source": "Source: NASA Commercial Crew Program overview."
+     }
+    },
+    {
+     "id": "escape_las",
+     "name": "Escape tower that can steer",
+     "what": "A heavier tower with its own steering motor. It can turn the capsule the right way round.",
+     "cost_pct": 2.2,
+     "days": 1100,
+     "risk": 0.0,
+     "specs": [
+      [
+       "Mass",
+       "7.4 t"
+      ],
+      [
+       "Carried for",
+       "the first 3 minutes"
+      ],
+      [
+       "Cost",
+       "2.2% of budget"
+      ],
+      [
+       "Build time",
+       "1,100 days"
+      ]
+     ],
+     "tower_mass": 7.4,
+     "carried_mass": 0.0,
+     "abort": "tower_steered",
+     "sprite": "escape_las",
+     "tuck": 4,
+     "read_more": {
+      "kicker": "Real hardware: Orion Launch Abort System",
+      "facts": [
+       [
+        "Motors",
+        "three: abort, steering and jettison"
+       ],
+       [
+        "Abort motor thrust",
+        "about 1,780 kN"
+       ],
+       [
+        "Flight tests",
+        "2010 and 2019, both without a crew"
+       ]
+      ],
+      "text": [
+       "Orion's escape tower has three solid motors. The first pulls the capsule away from a failing rocket, the second steers it and turns it heat shield first, and the third throws the tower off when it is no longer needed.",
+       "It is almost twice as heavy as Apollo's tower. On Artemis II it was dropped a few minutes after lift-off, unused, as planned."
+      ],
+      "source": "Source: NASA, Orion Reference Guide."
+     }
+    }
+   ]
+  },
+  {
+   "id": "life",
+   "title": "Life support",
+   "group": "Crew",
+   "why": "Air, water and food for every person on every day of the trip. The longer the mission and the larger the crew, the more it weighs. Some systems carry everything, others clean and reuse it.",
+   "parts": [
+    {
+     "id": "life_canisters",
+     "name": "Stored oxygen and canisters",
+     "what": "Everything is carried from Earth and used once. Light equipment, heavy supplies.",
+     "cost_pct": 0.8,
+     "days": 600,
+     "risk": 0.02,
+     "specs": [
+      [
+       "Equipment",
+       "0.15 t"
+      ],
+      [
+       "Supplies",
+       "9 kg per person a day"
+      ],
+      [
+       "Power use",
+       "0.1 kW"
+      ],
+      [
+       "Cost",
+       "0.8% of budget"
+      ],
+      [
+       "Build time",
+       "600 days"
+      ]
+     ],
+     "fixed": 0.15,
+     "per_day": 9.0,
+     "power_kw": 0.1,
+     "stored_water": true,
+     "sprite": "life_canisters",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: Apollo life support",
+      "facts": [
+       [
+        "Carbon dioxide removed by",
+        "lithium hydroxide canisters"
+       ],
+       [
+        "A canister lasted",
+        "about 12 hours"
+       ],
+       [
+        "Drinking water",
+        "made by the fuel cells"
+       ]
+      ],
+      "text": [
+       "On Apollo the air was cleaned by canisters of lithium hydroxide, a chemical that soaks up the carbon dioxide people breathe out. A used canister was thrown away and replaced.",
+       "It is the simplest way to keep a crew alive, and the lightest for a short trip. Every extra day and every extra person adds more canisters, more oxygen and more food."
+      ],
+      "source": "Source: NASA SP-4205, Chariots for Apollo."
+     }
+    },
+    {
+     "id": "life_regen",
+     "name": "Air system that cleans itself",
+     "what": "Beds of chemicals absorb carbon dioxide and are refreshed by venting it into space.",
+     "cost_pct": 1.6,
+     "days": 900,
+     "risk": 0.04,
+     "specs": [
+      [
+       "Equipment",
+       "0.45 t"
+      ],
+      [
+       "Supplies",
+       "6.5 kg per person a day"
+      ],
+      [
+       "Power use",
+       "0.35 kW"
+      ],
+      [
+       "Cost",
+       "1.6% of budget"
+      ],
+      [
+       "Build time",
+       "900 days"
+      ]
+     ],
+     "fixed": 0.45,
+     "per_day": 6.5,
+     "power_kw": 0.35,
+     "stored_water": true,
+     "sprite": "life_regen",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: Orion life support",
+      "facts": [
+       [
+        "Carbon dioxide removed by",
+        "beds that are reused"
+       ],
+       [
+        "First flown with a crew",
+        "Artemis II, April 2026"
+       ],
+       [
+        "Orion supports",
+        "4 people for up to 21 days"
+       ]
+      ],
+      "text": [
+       "Orion does not throw its air filters away. Two beds of a chemical called amine take turns: one absorbs carbon dioxide and moisture from the cabin while the other is opened to space and releases them.",
+       "The equipment is heavier and needs power, but it never runs out. Testing it with people aboard was one of the main goals of Artemis II."
+      ],
+      "source": "Source: NASA, Orion Reference Guide."
+     }
+    },
+    {
+     "id": "life_closed",
+     "name": "Recycling life support",
+     "what": "Recovers water and oxygen and uses them again. Heavy and power-hungry, with few supplies.",
+     "cost_pct": 3.5,
+     "days": 1300,
+     "risk": 0.06,
+     "specs": [
+      [
+       "Equipment",
+       "1.7 t"
+      ],
+      [
+       "Supplies",
+       "2.5 kg per person a day"
+      ],
+      [
+       "Power use",
+       "1.0 kW"
+      ],
+      [
+       "Cost",
+       "3.5% of budget"
+      ],
+      [
+       "Build time",
+       "1,300 days"
+      ]
+     ],
+     "fixed": 1.7,
+     "per_day": 2.5,
+     "power_kw": 1.0,
+     "stored_water": false,
+     "sprite": "life_closed",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: life support of the International Space Station",
+      "facts": [
+       [
+        "Water recovered",
+        "about 98%"
+       ],
+       [
+        "Built for",
+        "crews that stay for months"
+       ]
+      ],
+      "text": [
+       "The space station turns sweat, breath and urine back into drinking water, and splits water to make oxygen. It recovers about 98 percent of the water its crew uses.",
+       "For a stay of months that saves tonnes of supplies. For a trip of days the machinery weighs more than the water it saves."
+      ],
+      "source": "Source: NASA, Environmental Control and Life Support System fact sheet."
+     }
+    }
+   ]
+  },
+  {
+   "id": "suits",
+   "title": "Spacesuits",
+   "group": "Crew",
+   "why": "A cabin suit keeps a person alive if the capsule loses its air. A moonwalk suit is a small spacecraft of its own: it has to bend, keep out dust and carry hours of air and cooling.",
+   "parts": [
+    {
+     "id": "suits_first",
+     "name": "Moonwalk suits, first generation",
+     "what": "Stiff but proven. Good for about seven hours outside.",
+     "cost_pct": 1.2,
+     "days": 900,
+     "risk": 0.03,
+     "specs": [
+      [
+       "Time outside",
+       "up to 7 hours"
+      ],
+      [
+       "Movement",
+       "stiff: hop and shuffle"
+      ],
+      [
+       "Cost",
+       "1.2% of budget"
+      ],
+      [
+       "Build time",
+       "900 days"
+      ]
+     ],
+     "suit_mass": 0.082,
+     "eva_hours": 7.0,
+     "sprite": "suits_first",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: Apollo A7L spacesuit",
+      "facts": [
+       [
+        "Layers",
+        "21"
+       ],
+       [
+        "Mass with backpack",
+        "about 82 kg on Earth"
+       ],
+       [
+        "Made",
+        "to measure for each astronaut"
+       ]
+      ],
+      "text": [
+       "Each Apollo suit was sewn by hand to fit one astronaut. Twenty-one layers kept in the air and kept out heat, cold and tiny meteoroids.",
+       "The suit was stiff when pressurised. Astronauts found that hopping was easier than walking, and gripping tools tired their hands within hours."
+      ],
+      "source": "Source: NASA SP-4214, Where No Man Has Gone Before."
+     }
+    },
+    {
+     "id": "suits_flex",
+     "name": "Moonwalk suits, flexible joints",
+     "what": "Bearings at the waist, hips and shoulders. Easier to walk and kneel in, and slow to develop.",
+     "cost_pct": 2.5,
+     "days": 1500,
+     "risk": 0.04,
+     "specs": [
+      [
+       "Time outside",
+       "up to 8 hours"
+      ],
+      [
+       "Movement",
+       "walk, kneel, reach down"
+      ],
+      [
+       "Cost",
+       "2.5% of budget"
+      ],
+      [
+       "Build time",
+       "1,500 days"
+      ]
+     ],
+     "suit_mass": 0.11,
+     "eva_hours": 8.0,
+     "sprite": "suits_flex",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: the Artemis lunar suit (AxEMU)",
+      "facts": [
+       [
+        "Built for",
+        "NASA, by an American company"
+       ],
+       [
+        "Designed for",
+        "the cold, shadowed south pole of the Moon"
+       ],
+       [
+        "Sizes",
+        "one design adjusts to fit most crew members"
+       ]
+      ],
+      "text": [
+       "The suit for the Artemis landings has joints that let an astronaut walk, kneel and reach the ground, things the Apollo crews could barely do.",
+       "A new suit is a long project. Reviewers of the Artemis programme have named the suits, along with the lander, as items that could delay the first landing."
+      ],
+      "source": "Source: NASA, Artemis spacesuit overview."
+     }
+    },
+    {
+     "id": "suits_cabin",
+     "name": "Cabin suits only",
+     "what": "Pressure suits for launch and re-entry. They are not built for walking on the Moon.",
+     "cost_pct": 0.3,
+     "days": 500,
+     "risk": 0.0,
+     "specs": [
+      [
+       "Time outside",
+       "none"
+      ],
+      [
+       "Movement",
+       "for sitting in the cabin"
+      ],
+      [
+       "Cost",
+       "0.3% of budget"
+      ],
+      [
+       "Build time",
+       "500 days"
+      ]
+     ],
+     "suit_mass": 0.01,
+     "eva_hours": 0.0,
+     "sprite": "suits_cabin",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: Orion Crew Survival System suit",
+      "facts": [
+       [
+        "Worn by",
+        "the Artemis II crew"
+       ],
+       [
+        "Can keep a person alive for",
+        "up to 6 days"
+       ],
+       [
+        "Colour",
+        "bright orange, easy to spot in the sea"
+       ]
+      ],
+      "text": [
+       "The orange suits of the Artemis II crew are survival suits. If the cabin lost its air on the way home, the crew could live inside them for days.",
+       "They have no backpack, no cooling for hard work and no protection against the lunar surface. Artemis II flew around the Moon and did not land, so it needed nothing more."
+      ],
+      "source": "Source: NASA, Orion Crew Survival System fact sheet."
+     }
+    }
+   ]
+  },
+  {
+   "id": "power",
+   "title": "Electric power",
+   "group": "Systems",
+   "why": "Computers, radios, lights and air all run on electricity. The source must cover the needs of the capsule, the life support, the radio and the science instruments for the whole trip.",
+   "parts": [
+    {
+     "id": "power_cells",
+     "name": "Fuel cells",
+     "what": "Make electricity from hydrogen and oxygen. The by-product is drinking water.",
+     "cost_pct": 1.6,
+     "days": 800,
+     "risk": 0.04,
+     "specs": [
+      [
+       "Power",
+       "4.2 kW"
+      ],
+      [
+       "Mass",
+       "1.1 t"
+      ],
+      [
+       "Cost",
+       "1.6% of budget"
+      ],
+      [
+       "Build time",
+       "800 days"
+      ]
+     ],
+     "power_kw": 4.2,
+     "mass": 1.1,
+     "makes_water": true,
+     "sprite": "power_cells",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: Apollo fuel cells",
+      "facts": [
+       [
+        "Units",
+        "three, each up to 1.4 kW"
+       ],
+       [
+        "By-product",
+        "water for the crew"
+       ]
+      ],
+      "text": [
+       "A fuel cell joins hydrogen and oxygen to make electricity. What comes out the other end is pure water, which the Apollo crews drank.",
+       "For a trip of about two weeks this was lighter than batteries and did not depend on pointing at the Sun."
+      ],
+      "source": "Source: NASA SP-4205, Chariots for Apollo."
+     }
+    },
+    {
+     "id": "power_solar",
+     "name": "Solar arrays",
+     "what": "Free power for as long as the wings face the Sun.",
+     "cost_pct": 1.2,
+     "days": 700,
+     "risk": 0.03,
+     "specs": [
+      [
+       "Power",
+       "6 kW"
+      ],
+      [
+       "Mass",
+       "0.6 t"
+      ],
+      [
+       "Cost",
+       "1.2% of budget"
+      ],
+      [
+       "Build time",
+       "700 days"
+      ]
+     ],
+     "power_kw": 6.0,
+     "mass": 0.6,
+     "makes_water": false,
+     "sprite": "power_solar",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: solar wings of the Orion service module",
+      "facts": [
+       [
+        "Orion's four wings",
+        "about 11 kW together"
+       ],
+       [
+        "Fuel needed",
+        "none"
+       ]
+      ],
+      "text": [
+       "Solar arrays never run out, which is why almost every modern spacecraft uses them. Orion's service module unfolds four wings, each seven metres long.",
+       "They must keep facing the Sun, they give nothing in the Moon's shadow, and they have to survive every firing of the main engine."
+      ],
+      "source": "Source: NASA, Orion Reference Guide."
+     }
+    },
+    {
+     "id": "power_batteries",
+     "name": "Batteries only",
+     "what": "Charged on the ground. Simple, with nothing that can stop working halfway.",
+     "cost_pct": 0.6,
+     "days": 400,
+     "risk": 0.01,
+     "specs": [
+      [
+       "Power",
+       "2.6 kW"
+      ],
+      [
+       "Mass",
+       "2.4 t"
+      ],
+      [
+       "Cost",
+       "0.6% of budget"
+      ],
+      [
+       "Build time",
+       "400 days"
+      ]
+     ],
+     "power_kw": 2.6,
+     "mass": 2.4,
+     "makes_water": false,
+     "sprite": "power_batteries",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: batteries of the Apollo Lunar Module",
+      "facts": [
+       [
+        "Used on",
+        "the lunar module, for up to three days"
+       ],
+       [
+        "Weak point",
+        "mass grows with every extra day"
+       ]
+      ],
+      "text": [
+       "The Apollo lunar module ran on silver-zinc batteries alone. For a few days nothing is simpler.",
+       "For a whole trip to the Moon and back the batteries get heavy: every extra day of power is extra mass that must be launched."
+      ],
+      "source": "Source: NASA SP-4205, Chariots for Apollo."
+     }
+    }
+   ]
+  },
+  {
+   "id": "comms",
+   "title": "Communications",
+   "group": "Systems",
+   "why": "The link with Earth, 384,000 kilometres away. It carries voices, the health of the spacecraft and the science data. A weak link means flying half blind.",
+   "parts": [
+    {
+     "id": "comms_omni",
+     "name": "Small fixed antennas",
+     "what": "Work in any direction. At the Moon's distance the signal is faint.",
+     "cost_pct": 0.3,
+     "days": 400,
+     "risk": 0.02,
+     "specs": [
+      [
+       "Link",
+       "voice and basic data"
+      ],
+      [
+       "Mass",
+       "0.02 t"
+      ],
+      [
+       "Power use",
+       "0.05 kW"
+      ],
+      [
+       "Cost",
+       "0.3% of budget"
+      ],
+      [
+       "Build time",
+       "400 days"
+      ]
+     ],
+     "mass": 0.02,
+     "power_kw": 0.05,
+     "link": "basic",
+     "sprite": "comms_omni",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: Apollo omnidirectional antennas",
+      "facts": [
+       [
+        "On the Apollo capsule",
+        "four, around the hull"
+       ],
+       [
+        "Good for",
+        "voice and slow data"
+       ]
+      ],
+      "text": [
+       "An antenna that radiates in every direction never needs to be aimed, which makes it the safe choice. Apollo carried four of them as its always-on link.",
+       "Spreading the signal in all directions also wastes most of it. At lunar distance there is not enough left for television or fast data."
+      ],
+      "source": "Source: NASA, Apollo Unified S-band System description."
+     }
+    },
+    {
+     "id": "comms_dish",
+     "name": "Steerable dish antenna",
+     "what": "A dish that tracks Earth and focuses the signal. Enough for live television.",
+     "cost_pct": 0.8,
+     "days": 600,
+     "risk": 0.03,
+     "specs": [
+      [
+       "Link",
+       "television and fast data"
+      ],
+      [
+       "Mass",
+       "0.1 t"
+      ],
+      [
+       "Power use",
+       "0.15 kW"
+      ],
+      [
+       "Cost",
+       "0.8% of budget"
+      ],
+      [
+       "Build time",
+       "600 days"
+      ]
+     ],
+     "mass": 0.1,
+     "power_kw": 0.15,
+     "link": "tv",
+     "sprite": "comms_dish",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: Apollo high-gain antenna",
+      "facts": [
+       [
+        "Design",
+        "four dishes, each 79 cm wide"
+       ],
+       [
+        "Carried",
+        "on a boom of the service module"
+       ]
+      ],
+      "text": [
+       "Apollo's high-gain antenna folded out from the service module after launch and tracked the Earth by itself. Its narrow beam made live colour television from lunar distance possible.",
+       "A narrow beam has to be pointed. If the antenna loses the Earth, the fast link is gone until it finds it again."
+      ],
+      "source": "Source: NASA, Apollo Unified S-band System description."
+     }
+    },
+    {
+     "id": "comms_relay",
+     "name": "Dish antenna and relay satellite",
+     "what": "A small satellite near the Moon passes the signal on when the ship is behind it.",
+     "cost_pct": 2.5,
+     "days": 1100,
+     "risk": 0.04,
+     "specs": [
+      [
+       "Link",
+       "television, also behind the Moon"
+      ],
+      [
+       "Mass",
+       "0.5 t"
+      ],
+      [
+       "Power use",
+       "0.2 kW"
+      ],
+      [
+       "Cost",
+       "2.5% of budget"
+      ],
+      [
+       "Build time",
+       "1,100 days"
+      ]
+     ],
+     "mass": 0.5,
+     "power_kw": 0.2,
+     "link": "relay",
+     "sprite": "comms_relay",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real practice: lunar relay satellites",
+      "facts": [
+       [
+        "Apollo",
+        "had none: about 45 minutes of silence on every orbit"
+       ],
+       [
+        "First relay for the far side",
+        "Queqiao, 2018"
+       ]
+      ],
+      "text": [
+       "Every time an Apollo spacecraft passed behind the Moon it lost contact with Earth. The engine burn that put it into lunar orbit happened there, in silence.",
+       "A relay satellite parked beyond the Moon can see both the far side and the Earth. The first one flew in 2018 and made the first landing on the far side possible."
+      ],
+      "source": "Source: NASA Space Science Data Coordinated Archive, Queqiao."
+     }
+    },
+    {
+     "id": "comms_laser",
+     "name": "Dish antenna and laser link",
+     "what": "A laser carries far more data than radio: sharp video and whole science archives.",
+     "cost_pct": 1.5,
+     "days": 900,
+     "risk": 0.03,
+     "specs": [
+      [
+       "Link",
+       "4K video and bulk data"
+      ],
+      [
+       "Mass",
+       "0.15 t"
+      ],
+      [
+       "Power use",
+       "0.3 kW"
+      ],
+      [
+       "Cost",
+       "1.5% of budget"
+      ],
+      [
+       "Build time",
+       "900 days"
+      ]
+     ],
+     "mass": 0.15,
+     "power_kw": 0.3,
+     "link": "laser",
+     "sprite": "comms_laser",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: Orion Artemis II Optical Communications System",
+      "facts": [
+       [
+        "Flown on",
+        "Artemis II, April 2026"
+       ],
+       [
+        "Speed from the Moon",
+        "up to 260 megabits per second"
+       ],
+       [
+        "Data sent home on that flight",
+        "up to 484 gigabytes"
+       ]
+      ],
+      "text": [
+       "On Artemis II the Orion capsule carried a laser terminal next to its radios. It turned data into pulses of infrared light and aimed them at telescopes on the ground, fast enough for 4K video from the Moon.",
+       "Light cannot pass through cloud, so the ground stations stand in dry places with clear skies, and the beam must be aimed with great precision. The radio stays as the link that always works."
+      ],
+      "source": "Source: NASA, Orion Artemis II Optical Communications System (O2O)."
+     }
+    }
+   ]
+  },
+  {
+   "id": "spaceport",
+   "title": "Launch site",
+   "group": "Ground",
+   "why": "Where on Earth the rocket leaves from. The Earth turns eastward at up to 465 m/s, and a rocket launched the same way keeps part of that speed. The flight path, the weather and what is already built differ from place to place.",
+   "parts": [
+    {
+     "id": "port_ksc",
+     "name": "Kennedy Space Center",
+     "short": "Kennedy",
+     "state": "Florida",
+     "what": "NASA's own spaceport on the Atlantic coast of Florida. Every crew the United States has sent to orbit left from here or from the military pads next door.",
+     "cost_pct": 0,
+     "days": 0,
+     "risk": 0.0,
+     "specs": [
+      [
+       "Earth's spin adds",
+       "409 m/s"
+      ],
+      [
+       "Launch directions",
+       "east, over the Atlantic"
+      ],
+      [
+       "Lowest orbit tilt",
+       "28.5°"
+      ],
+      [
+       "Flown from here",
+       "Apollo, the space shuttle, Artemis"
+      ],
+      [
+       "Weather",
+       "summer thunderstorms, hurricanes"
+      ],
+      [
+       "Site work",
+       "none: the pads already stand"
+      ],
+      [
+       "Cost",
+       "nothing extra"
+      ],
+      [
+       "Site ready",
+       "already"
+      ]
+     ],
+     "lat": 28.63,
+     "lon": -80.62,
+     "map_x": 0.7715,
+     "map_y": 0.6955,
+     "map_north": -9.3,
+     "az_from": 35,
+     "az_to": 120,
+     "spin": 409,
+     "dv_penalty": 0.0,
+     "weather": 0.45,
+     "weather_cause": "lightning within reach of the pad",
+     "overland": false,
+     "picture": "launch_ksc",
+     "read_more": {
+      "kicker": "Real place: Kennedy Space Center, Florida",
+      "facts": [
+       [
+        "Pad 39B first used",
+        "1969, Apollo 10"
+       ],
+       [
+        "Artemis II",
+        "left pad 39B on 1 April 2026"
+       ],
+       [
+        "Run by",
+        "NASA"
+       ]
+      ],
+      "text": [
+       "NASA describes its Florida spaceport as ideal for spacecraft that need to fly from west to east. The rocket leaves over open ocean, so its spent stages fall into water, and the launch keeps almost the full push of the Earth's rotation.",
+       "The pads of Launch Complex 39 were built in the 1960s for the Apollo Moon rockets. The same complex launched the space shuttle and now launches Artemis. Next door stands Cape Canaveral Space Force Station, where the first American crews left Earth.",
+       "The Earth's surface moves east at 465 m/s at the equator. A rocket keeps that speed multiplied by the cosine of the tilt of its orbit against the equator. The lowest tilt that can be reached from here is 28.5°, so the Earth gives a rocket 409 m/s."
+      ],
+      "source": "Source: NASA, Launch Services Program launch sites; NASA Kennedy Space Center."
+     }
+    },
+    {
+     "id": "port_wallops",
+     "name": "Wallops Flight Facility",
+     "short": "Wallops",
+     "state": "Virginia",
+     "what": "NASA's own launch range on an island off the coast of Virginia, flying rockets since 1945. Its pads are built for small and medium rockets.",
+     "cost_pct": 2.2,
+     "days": 1500,
+     "risk": 0.0,
+     "specs": [
+      [
+       "Earth's spin adds",
+       "367 m/s"
+      ],
+      [
+       "Launch directions",
+       "south-east, over the Atlantic"
+      ],
+      [
+       "Lowest orbit tilt",
+       "37.8°"
+      ],
+      [
+       "Flown from here",
+       "station cargo ships, a Moon probe"
+      ],
+      [
+       "Weather",
+       "winter storms, some hurricanes"
+      ],
+      [
+       "Site work",
+       "a new complex for a Moon rocket"
+      ],
+      [
+       "Cost",
+       "2.2% of budget"
+      ],
+      [
+       "Site ready",
+       "in 1,500 days"
+      ]
+     ],
+     "lat": 37.83,
+     "lon": -75.49,
+     "map_x": 0.8198,
+     "map_y": 0.396,
+     "map_north": -12.4,
+     "az_from": 90,
+     "az_to": 160,
+     "spin": 367,
+     "dv_penalty": 0.042,
+     "weather": 0.3,
+     "weather_cause": "strong winds off the Atlantic",
+     "overland": false,
+     "picture": "launch_wallops",
+     "read_more": {
+      "kicker": "Real place: Wallops Flight Facility, Virginia",
+      "facts": [
+       [
+        "Launching rockets since",
+        "1945"
+       ],
+       [
+        "First Moon launch",
+        "LADEE, 7 September 2013"
+       ],
+       [
+        "Orbit tilts reached",
+        "38° to about 60°"
+       ]
+      ],
+      "text": [
+       "Wallops is the oldest rocket range in the United States still in use, and NASA's main base for small research rockets. Cargo ships for the International Space Station have left from its pads.",
+       "In 2013 a five-stage Minotaur rocket sent the LADEE probe from Wallops to the Moon, the first lunar mission to start here. The probe weighed 383 kg. A crewed Moon rocket weighs several thousand times more than that probe, and nothing on the island is built for it.",
+       "The Earth's surface moves east at 465 m/s at the equator. A rocket keeps that speed multiplied by the cosine of the tilt of its orbit against the equator. The lowest tilt that can be reached from here is 37.8°, so the Earth gives a rocket 367 m/s."
+      ],
+      "source": "Source: NASA Wallops Flight Facility; NASA Science, LADEE mission."
+     }
+    },
+    {
+     "id": "port_vandenberg",
+     "name": "Vandenberg Space Force Base",
+     "short": "Vandenberg",
+     "state": "California",
+     "what": "The military spaceport on the Pacific coast of California. Rockets from here fly south over the ocean, which suits satellites that circle the Earth from pole to pole.",
+     "cost_pct": 1.5,
+     "days": 1200,
+     "risk": 0.0,
+     "specs": [
+      [
+       "Earth's spin adds",
+       "267 m/s"
+      ],
+      [
+       "Launch directions",
+       "south and west, over the Pacific"
+      ],
+      [
+       "Lowest orbit tilt",
+       "55°"
+      ],
+      [
+       "Flown from here",
+       "polar satellites, never a crew"
+      ],
+      [
+       "Weather",
+       "ocean fog, little lightning"
+      ],
+      [
+       "Site work",
+       "convert the old shuttle pad"
+      ],
+      [
+       "Cost",
+       "1.5% of budget"
+      ],
+      [
+       "Site ready",
+       "in 1,200 days"
+      ]
+     ],
+     "lat": 34.58,
+     "lon": -120.63,
+     "map_x": 0.1139,
+     "map_y": 0.4691,
+     "map_north": 14.8,
+     "az_from": 138,
+     "az_to": 262,
+     "spin": 267,
+     "dv_penalty": 0.142,
+     "weather": 0.25,
+     "weather_cause": "fog and low cloud over the pad",
+     "overland": false,
+     "picture": "launch_vandenberg",
+     "read_more": {
+      "kicker": "Real place: Vandenberg Space Force Base, California",
+      "facts": [
+       [
+        "Opened as an army camp",
+        "1941"
+       ],
+       [
+        "Orbit tilts reached",
+        "about 55° to 145°"
+       ],
+       [
+        "Shuttle launches from its pad",
+        "none"
+       ]
+      ],
+      "text": [
+       "NASA calls Vandenberg its preferred site for spacecraft that need a north-south, or polar, orbit. East of the base lies the whole of the United States, so rockets cannot be launched in the direction the Earth turns.",
+       "In the 1980s a launch pad here, Space Launch Complex 6, was rebuilt for the space shuttle. No shuttle ever flew from it. The pad later launched the heavy Delta IV rocket, until 2022.",
+       "The Earth's surface moves east at 465 m/s at the equator. A rocket keeps that speed multiplied by the cosine of the tilt of its orbit against the equator. The lowest tilt that can be reached from here is 55°, so the Earth gives a rocket 267 m/s."
+      ],
+      "source": "Source: NASA, Launch Services Program launch sites; U.S. Space Force."
+     }
+    },
+    {
+     "id": "port_kodiak",
+     "name": "Pacific Spaceport Complex – Alaska",
+     "short": "Kodiak",
+     "state": "Alaska",
+     "what": "A spaceport on Kodiak Island owned by the state of Alaska. It looks south over an empty ocean and launches small rockets into polar orbits.",
+     "cost_pct": 3.0,
+     "days": 1700,
+     "risk": 0.0,
+     "specs": [
+      [
+       "Earth's spin adds",
+       "240 m/s"
+      ],
+      [
+       "Launch directions",
+       "south, over the Pacific"
+      ],
+      [
+       "Lowest orbit tilt",
+       "59°"
+      ],
+      [
+       "Flown from here",
+       "small satellites"
+      ],
+      [
+       "Weather",
+       "rain, wind and low cloud"
+      ],
+      [
+       "Site work",
+       "everything, on a remote island"
+      ],
+      [
+       "Cost",
+       "3% of budget"
+      ],
+      [
+       "Site ready",
+       "in 1,700 days"
+      ]
+     ],
+     "lat": 57.44,
+     "lon": -152.34,
+     "map_x": 0.1487,
+     "map_y": 0.8796,
+     "map_north": -0.6,
+     "az_from": 110,
+     "az_to": 220,
+     "spin": 240,
+     "dv_penalty": 0.169,
+     "weather": 0.55,
+     "weather_cause": "a storm coming in from the Gulf of Alaska",
+     "overland": false,
+     "picture": "launch_kodiak",
+     "read_more": {
+      "kicker": "Real place: Pacific Spaceport Complex – Alaska, Kodiak Island",
+      "facts": [
+       [
+        "First launch to orbit",
+        "30 September 2001, for NASA"
+       ],
+       [
+        "Orbit tilts reached",
+        "59° to 110°"
+       ],
+       [
+        "Owned by",
+        "the state of Alaska"
+       ]
+      ],
+      "text": [
+       "NASA lists Kodiak among the best places in the world for polar launches: the path south is open ocean in a wide arc. Its first orbital launch, the Kodiak Star mission in 2001, carried small satellites for NASA and the military.",
+       "The site is built for small and light rockets. Everything a larger one needs, from propellant to people, has to arrive by ship or aircraft.",
+       "The Earth's surface moves east at 465 m/s at the equator. A rocket keeps that speed multiplied by the cosine of the tilt of its orbit against the equator. The lowest tilt that can be reached from here is 59°, so the Earth gives a rocket 240 m/s."
+      ],
+      "source": "Source: NASA, Launch Services Program launch sites; Alaska Aerospace Corporation."
+     }
+    },
+    {
+     "id": "port_whitesands",
+     "name": "White Sands Missile Range",
+     "short": "White Sands",
+     "state": "New Mexico",
+     "what": "An army test range in the New Mexico desert, where rockets have been flown since the 1940s. NASA tests crew escape systems and flies research rockets here. Nothing has left from here for orbit.",
+     "cost_pct": 1.8,
+     "days": 1300,
+     "risk": 0.0,
+     "specs": [
+      [
+       "Earth's spin adds",
+       "393 m/s"
+      ],
+      [
+       "Launch directions",
+       "every path crosses land"
+      ],
+      [
+       "Lowest orbit tilt",
+       "32.4°"
+      ],
+      [
+       "Flown from here",
+       "research rockets, escape tests"
+      ],
+      [
+       "Weather",
+       "dry, mostly clear skies"
+      ],
+      [
+       "Site work",
+       "a new complex in the desert"
+      ],
+      [
+       "Cost",
+       "1.8% of budget"
+      ],
+      [
+       "Site ready",
+       "in 1,300 days"
+      ]
+     ],
+     "lat": 32.42,
+     "lon": -106.32,
+     "map_x": 0.3356,
+     "map_y": 0.5993,
+     "map_north": 6.2,
+     "az_from": -1,
+     "az_to": -1,
+     "spin": 393,
+     "dv_penalty": 0.016,
+     "weather": 0.1,
+     "weather_cause": "strong winds high above the desert",
+     "overland": true,
+     "picture": "launch_whitesands",
+     "read_more": {
+      "kicker": "Real place: White Sands Missile Range, New Mexico",
+      "facts": [
+       [
+        "Crew escape test",
+        "Pad Abort-1, 6 May 2010"
+       ],
+       [
+        "Shuttle landing",
+        "Columbia, 30 March 1982"
+       ],
+       [
+        "Launches to orbit",
+        "none"
+       ]
+      ],
+      "text": [
+       "White Sands is where NASA tests the systems that save a crew. In 2010 the escape rocket of the Orion capsule was fired here for the first time. It pulled an empty capsule off the ground and set it down about 1.6 km away, 135 seconds later.",
+       "The range has land on every side. A rocket climbing to orbit drops its first stages hundreds of kilometres downrange. In 1982 the shuttle Columbia landed on the range's dry lake bed, the only time a shuttle came down anywhere but California or Florida.",
+       "A rocket launched due east from this latitude would keep 393 m/s of the 465 m/s at which the Earth's surface moves at the equator. No rocket has been launched to orbit from here."
+      ],
+      "source": "Source: NASA, Pad Abort-1; U.S. Army, White Sands Missile Range."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ground",
+   "title": "Launch pad",
+   "group": "Ground",
+   "why": "A rocket needs a place to be stacked, a platform to stand on, a tower to fuel it and a pad to leave from. These are built once, years ahead, and cost as much as a spacecraft.",
+   "parts": [
+    {
+     "id": "ground_existing",
+     "name": "Refit the existing pad and tower",
+     "what": "Modify what earlier programmes left behind. The cheapest road to a first launch.",
+     "cost_pct": 2.5,
+     "days": 900,
+     "risk": 0.04,
+     "specs": [
+      [
+       "Pads",
+       "1, refitted"
+      ],
+      [
+       "Launch tower",
+       "rebuilt from an older one"
+      ],
+      [
+       "Cost",
+       "2.5% of budget"
+      ],
+      [
+       "Build time",
+       "900 days"
+      ]
+     ],
+     "pads": 1,
+     "sprite": "ground_existing",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real practice: Launch Complex 39B and Mobile Launcher 1",
+      "facts": [
+       [
+        "Pad 39B first used",
+        "1969, Apollo 10"
+       ],
+       [
+        "Later used by",
+        "the space shuttle, then Artemis"
+       ],
+       [
+        "The Artemis tower",
+        "was first built for another rocket"
+       ]
+      ],
+      "text": [
+       "Artemis flies from a pad built for Apollo and a launch tower first designed for a rocket that was cancelled. Reusing them saved years.",
+       "It also brought surprises. The first Artemis launch damaged the tower more than expected. Engineers reinforced it, and after Artemis II they found the changes had worked."
+      ],
+      "source": "Source: NASA, Exploration Ground Systems overview."
+     }
+    },
+    {
+     "id": "ground_new",
+     "name": "New mobile launcher",
+     "what": "A platform and tower built for this rocket, rolled to the pad on a giant crawler.",
+     "cost_pct": 5.0,
+     "days": 1500,
+     "risk": 0.01,
+     "specs": [
+      [
+       "Pads",
+       "1"
+      ],
+      [
+       "Launch tower",
+       "new, sized for this rocket"
+      ],
+      [
+       "Cost",
+       "5% of budget"
+      ],
+      [
+       "Build time",
+       "1,500 days"
+      ]
+     ],
+     "pads": 1,
+     "sprite": "ground_new",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real hardware: Mobile Launcher 2",
+      "facts": [
+       [
+        "Carries",
+        "the rocket from the assembly building to the pad"
+       ],
+       [
+        "Moved by",
+        "a crawler at about 1.6 km/h"
+       ],
+       [
+        "Cost",
+        "grew to several times the first estimate"
+       ]
+      ],
+      "text": [
+       "A mobile launcher is a steel platform with a tower as tall as the rocket. The rocket is assembled on it indoors and rides it to the pad on a crawler that moves at walking pace.",
+       "NASA ordered a second, larger launcher for bigger versions of the Artemis rocket. Its cost and schedule grew far beyond the first plan, a reminder that ground equipment is a project of its own."
+      ],
+      "source": "Source: NASA Office of Inspector General, NASA's Management of the Mobile Launcher 2 Contract."
+     }
+    },
+    {
+     "id": "ground_two",
+     "name": "Two launch pads",
+     "what": "A second pad stands ready. Damage or a delay at one pad does not stop the programme.",
+     "cost_pct": 6.5,
+     "days": 1400,
+     "risk": 0.0,
+     "specs": [
+      [
+       "Pads",
+       "2"
+      ],
+      [
+       "Launch tower",
+       "one for each pad"
+      ],
+      [
+       "Cost",
+       "6.5% of budget"
+      ],
+      [
+       "Build time",
+       "1,400 days"
+      ]
+     ],
+     "pads": 2,
+     "sprite": "ground_two",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real practice: pads 39A and 39B of the Apollo programme",
+      "facts": [
+       [
+        "Built",
+        "both in the 1960s"
+       ],
+       [
+        "Apollo launches from 39B",
+        "one: Apollo 10"
+       ]
+      ],
+      "text": [
+       "Apollo built two complete pads a few kilometres apart. Almost every Moon flight left from the first one. The second was the insurance.",
+       "With two pads a rocket can wait on one while another is prepared, and an accident on the pad does not end the programme. The insurance is expensive: every tower, tank and pipe is built twice."
+      ],
+      "source": "Source: NASA SP-4204, Moonport: A History of Apollo Launch Facilities and Operations."
+     }
+    }
+   ]
+  },
+  {
+   "id": "tests",
+   "title": "Test programme",
+   "group": "Ground",
+   "why": "How much of this vehicle flies without a crew before people ride it. Tests cost money and time. They are also the only way to find a flaw before it finds the crew.",
+   "parts": [
+    {
+     "id": "tests_allup",
+     "name": "All-up test flight",
+     "what": "One uncrewed flight of the complete rocket, every stage live.",
+     "cost_pct": 3.5,
+     "days": 200,
+     "risk": 0.0,
+     "specs": [
+      [
+       "Uncrewed flights",
+       "1, complete rocket"
+      ],
+      [
+       "Cost",
+       "3.5% of budget"
+      ],
+      [
+       "Extra time",
+       "200 days"
+      ]
+     ],
+     "extra_days": 200,
+     "test_level": 1,
+     "sprite": "tests_allup",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real decision: all-up testing of the Saturn V",
+      "facts": [
+       [
+        "Decided",
+        "1963"
+       ],
+       [
+        "First flight",
+        "Apollo 4, 9 November 1967"
+       ],
+       [
+        "Result",
+        "all three stages worked first time"
+       ]
+      ],
+      "text": [
+       "The cautious plan was to test the Saturn V one stage at a time. In 1963 NASA's head of crewed spaceflight overruled it: the very first launch would fly all three stages live.",
+       "Many engineers thought it reckless. It worked, and it saved the programme many months."
+      ],
+      "source": "Source: NASA SP-4206, Stages to Saturn."
+     }
+    },
+    {
+     "id": "tests_steps",
+     "name": "Step-by-step test flights",
+     "what": "Each stage is flown and proven by itself before the next one is added.",
+     "cost_pct": 8.0,
+     "days": 620,
+     "risk": 0.0,
+     "specs": [
+      [
+       "Uncrewed flights",
+       "several, stage by stage"
+      ],
+      [
+       "Cost",
+       "8% of budget"
+      ],
+      [
+       "Extra time",
+       "620 days"
+      ]
+     ],
+     "extra_days": 620,
+     "test_level": 2,
+     "sprite": "tests_steps",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real practice: step-by-step flight testing",
+      "facts": [
+       [
+        "Example",
+        "the first four Saturn I launches"
+       ],
+       [
+        "Upper stages on those flights",
+        "dummies filled with water"
+       ]
+      ],
+      "text": [
+       "The first Saturn rockets were tested the careful way. Their first four launches flew a live first stage under dummy upper stages filled with water.",
+       "Each flight tests one new thing, so when something fails the cause is easy to find. It takes years."
+      ],
+      "source": "Source: NASA SP-4206, Stages to Saturn."
+     }
+    },
+    {
+     "id": "tests_none",
+     "name": "Crew on the first launch",
+     "what": "No test flight. The first launch of the rocket carries the crew.",
+     "cost_pct": 0.0,
+     "days": 0,
+     "risk": 0.0,
+     "specs": [
+      [
+       "Uncrewed flights",
+       "none"
+      ],
+      [
+       "Cost",
+       "0% of budget"
+      ],
+      [
+       "Extra time",
+       "0 days"
+      ]
+     ],
+     "extra_days": 0,
+     "test_level": 0,
+     "sprite": "tests_none",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real decision: the first Space Shuttle flight",
+      "facts": [
+       [
+        "Flight",
+        "STS-1, 12 April 1981"
+       ],
+       [
+        "Crew",
+        "2"
+       ]
+      ],
+      "text": [
+       "The Space Shuttle could not fly without pilots, so its very first launch carried two astronauts. It is the only time NASA has put a crew on the first flight of a new rocket.",
+       "The flight succeeded. Engineers later found damage that nobody had predicted."
+      ],
+      "source": "Source: NASA, STS-1 mission summary."
+     }
+    },
+    {
+     "id": "tests_rehearsal",
+     "name": "Uncrewed flight around the Moon",
+     "what": "The whole mission is flown once with nobody aboard, all the way to the Moon and back.",
+     "cost_pct": 10.0,
+     "days": 480,
+     "risk": 0.0,
+     "specs": [
+      [
+       "Uncrewed flights",
+       "1, to the Moon and back"
+      ],
+      [
+       "Cost",
+       "10% of budget"
+      ],
+      [
+       "Extra time",
+       "480 days"
+      ]
+     ],
+     "extra_days": 480,
+     "test_level": 3,
+     "sprite": "tests_rehearsal",
+     "tuck": 0,
+     "read_more": {
+      "kicker": "Real practice: Artemis I before Artemis II",
+      "facts": [
+       [
+        "Artemis I",
+        "25 days without a crew, late 2022"
+       ],
+       [
+        "Artemis II",
+        "9 days with four astronauts, April 2026"
+       ],
+       [
+        "Found on Artemis I",
+        "the heat shield wore away in a way nobody had predicted"
+       ]
+      ],
+      "text": [
+       "Before NASA put people on the Artemis rocket, it flew the rocket and the capsule around the Moon empty. The capsule came home at full lunar speed, the hardest test a heat shield can get.",
+       "The shield lost pieces of its surface in a way no ground test had shown. Engineers spent two years understanding why before the first crew flew. That is what a full rehearsal buys, and it costs a whole rocket."
+      ],
+      "source": "Source: NASA, Artemis I and Artemis II mission summaries."
+     }
+    }
+   ]
+  }
+ ]
+}

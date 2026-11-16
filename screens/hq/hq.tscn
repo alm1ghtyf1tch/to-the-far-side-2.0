@@ -1,0 +1,383 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://screens/hq/hq.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/textures/hq_building.png" id="2_bg"]
+[ext_resource type="FontFile" path="res://assets/fonts/Saira-Display.ttf" id="3_font"]
+[ext_resource type="Script" path="res://screens/hq/floor_hotspot.gd" id="4_hotspot"]
+[ext_resource type="FontFile" path="res://assets/fonts/IBMPlexSans-Regular.woff2" id="5_body"]
+[ext_resource type="FontFile" path="res://assets/fonts/IBMPlexSans-SemiBold.woff2" id="6_bold"]
+
+[sub_resource type="StyleBoxFlat" id="plate"]
+content_margin_left = 14.0
+content_margin_top = 6.0
+content_margin_right = 16.0
+content_margin_bottom = 8.0
+bg_color = Color(1, 1, 1, 0.8)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="HQ" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Black" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.067, 0.09, 0.133, 1)
+
+[node name="Aspect" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.77577
+
+[node name="Frame" type="Control" parent="Aspect"]
+layout_mode = 2
+
+[node name="Building" type="TextureRect" parent="Aspect/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BoardFloor" type="Control" parent="Aspect/Frame"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_hotspot")
+corners = PackedVector2Array(190, 102, 1180, 152, 1180, 370, 190, 362)
+floor_number = 3
+department = "Board of Directors"
+
+[node name="Plate" type="PanelContainer" parent="Aspect/Frame/BoardFloor"]
+layout_mode = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("plate")
+
+[node name="Text" type="VBoxContainer" parent="Aspect/Frame/BoardFloor/Plate"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Floor" type="Label" parent="Aspect/Frame/BoardFloor/Plate/Text"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.043, 0.24, 0.57, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 16
+text = "Floor 3"
+
+[node name="Department" type="Label" parent="Aspect/Frame/BoardFloor/Plate/Text"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.043, 0.122, 0.231, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 28
+text = "Board of Directors"
+
+[node name="Role" type="Label" parent="Aspect/Frame/BoardFloor/Plate/Text"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.043, 0.122, 0.231, 1)
+theme_override_fonts/font = ExtResource("6_bold")
+theme_override_font_sizes/font_size = 15
+text = "Sets the goal, budget and deadline. Reviews every phase."
+
+[node name="EngineeringFloor" type="Control" parent="Aspect/Frame"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_hotspot")
+corners = PackedVector2Array(190, 388, 1180, 392, 1180, 607, 190, 610)
+floor_number = 2
+department = "Engineering"
+
+[node name="Plate" type="PanelContainer" parent="Aspect/Frame/EngineeringFloor"]
+layout_mode = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("plate")
+
+[node name="Text" type="VBoxContainer" parent="Aspect/Frame/EngineeringFloor/Plate"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Floor" type="Label" parent="Aspect/Frame/EngineeringFloor/Plate/Text"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.043, 0.24, 0.57, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 16
+text = "Floor 2"
+
+[node name="Department" type="Label" parent="Aspect/Frame/EngineeringFloor/Plate/Text"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.043, 0.122, 0.231, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 28
+text = "Engineering"
+
+[node name="Role" type="Label" parent="Aspect/Frame/EngineeringFloor/Plate/Text"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.043, 0.122, 0.231, 1)
+theme_override_fonts/font = ExtResource("6_bold")
+theme_override_font_sizes/font_size = 15
+text = "Calculates the flight. Builds the rocket and spacecraft."
+
+[node name="ScienceFloor" type="Control" parent="Aspect/Frame"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_hotspot")
+corners = PackedVector2Array(190, 637, 1180, 628, 1180, 848, 190, 860)
+floor_number = 1
+department = "Science"
+
+[node name="Plate" type="PanelContainer" parent="Aspect/Frame/ScienceFloor"]
+layout_mode = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("plate")
+
+[node name="Text" type="VBoxContainer" parent="Aspect/Frame/ScienceFloor/Plate"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Floor" type="Label" parent="Aspect/Frame/ScienceFloor/Plate/Text"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.043, 0.24, 0.57, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 16
+text = "Floor 1"
+
+[node name="Department" type="Label" parent="Aspect/Frame/ScienceFloor/Plate/Text"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.043, 0.122, 0.231, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 28
+text = "Science"
+
+[node name="Role" type="Label" parent="Aspect/Frame/ScienceFloor/Plate/Text"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.043, 0.122, 0.231, 1)
+theme_override_fonts/font = ExtResource("6_bold")
+theme_override_font_sizes/font_size = 15
+text = "Chooses where to land and what to measure."
+
+[node name="BudgetTopLabel" type="Label" parent="Aspect/Frame"]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_left = 0.69898
+anchor_top = 0.0
+anchor_right = 0.74806
+anchor_bottom = 0.05951
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.92, 0.95, 1, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 22
+text = "100%"
+vertical_alignment = 1
+
+[node name="DateBox" type="VBoxContainer" parent="Aspect/Frame"]
+layout_mode = 1
+anchor_left = 0.74806
+anchor_top = 0.0
+anchor_right = 0.99042
+anchor_bottom = 0.05951
+mouse_filter = 2
+theme_override_constants/separation = -4
+alignment = 1
+
+[node name="DateLabel" type="Label" parent="Aspect/Frame/DateBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.95, 1, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 24
+text = "14 NOV 2026"
+horizontal_alignment = 2
+
+[node name="DayLabel" type="Label" parent="Aspect/Frame/DateBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.435, 0.69, 1, 1)
+theme_override_fonts/font = ExtResource("5_body")
+theme_override_font_sizes/font_size = 16
+text = "DAY 1"
+horizontal_alignment = 2
+
+[node name="Roadmap" type="RichTextLabel" parent="Aspect/Frame"]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_left = 0.33513
+anchor_top = 0.94155
+anchor_right = 0.98743
+anchor_bottom = 1.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("5_body")
+theme_override_fonts/bold_font = ExtResource("6_bold")
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+text = "Mission plan"
+scroll_active = false
+vertical_alignment = 1
+
+[node name="Panel" type="MarginContainer" parent="Aspect/Frame"]
+layout_mode = 1
+anchor_left = 0.75524
+anchor_top = 0.09989
+anchor_right = 0.99342
+anchor_bottom = 0.82678
+theme_override_constants/margin_left = 34
+theme_override_constants/margin_top = 34
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="PanelContent" type="VBoxContainer" parent="Aspect/Frame/Panel"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="StageLabel" type="Label" parent="Aspect/Frame/Panel/PanelContent"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.76, 0.2, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 18
+text = "STAGE 1"
+autowrap_mode = 3
+
+[node name="TitleLabel" type="Label" parent="Aspect/Frame/Panel/PanelContent"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.95, 1, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 34
+text = "Meeting with the Board"
+autowrap_mode = 3
+
+[node name="Line" type="ColorRect" parent="Aspect/Frame/Panel/PanelContent"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0.435, 0.69, 1, 0.35)
+
+[node name="BodyLabel" type="Label" parent="Aspect/Frame/Panel/PanelContent"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.85, 0.92, 1)
+theme_override_fonts/font = ExtResource("5_body")
+theme_override_font_sizes/font_size = 22
+text = "Every mission to the Moon starts at a table, not on a launch pad. Before engineers draw a single part, the agency has to agree on why it is going, what it will cost and who will pay.\n\nThe Board of Directors is waiting for you on the top floor."
+autowrap_mode = 3
+
+[node name="InfoBox" type="GridContainer" parent="Aspect/Frame/Panel/PanelContent"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="DeadlineKey" type="Label" parent="Aspect/Frame/Panel/PanelContent/InfoBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.62, 0.72, 1)
+theme_override_fonts/font = ExtResource("5_body")
+theme_override_font_sizes/font_size = 20
+text = "Launch deadline"
+
+[node name="DeadlineValue" type="Label" parent="Aspect/Frame/Panel/PanelContent/InfoBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.92, 0.95, 1, 1)
+theme_override_fonts/font = ExtResource("6_bold")
+theme_override_font_sizes/font_size = 20
+text = "20 JUL 2033"
+autowrap_mode = 3
+
+[node name="BudgetKey" type="Label" parent="Aspect/Frame/Panel/PanelContent/InfoBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.62, 0.72, 1)
+theme_override_fonts/font = ExtResource("5_body")
+theme_override_font_sizes/font_size = 20
+text = "Mission budget"
+
+[node name="BudgetValue" type="Label" parent="Aspect/Frame/Panel/PanelContent/InfoBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.92, 0.95, 1, 1)
+theme_override_fonts/font = ExtResource("6_bold")
+theme_override_font_sizes/font_size = 20
+text = "100%"
+autowrap_mode = 3
+
+[node name="TimeKey" type="Label" parent="Aspect/Frame/Panel/PanelContent/InfoBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.62, 0.72, 1)
+theme_override_fonts/font = ExtResource("5_body")
+theme_override_font_sizes/font_size = 20
+text = "Time"
+
+[node name="TimeValue" type="Label" parent="Aspect/Frame/Panel/PanelContent/InfoBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.92, 0.95, 1, 1)
+theme_override_fonts/font = ExtResource("6_bold")
+theme_override_font_sizes/font_size = 20
+text = "1 second = 1 day"
+autowrap_mode = 3
+
+[node name="Spacer" type="Control" parent="Aspect/Frame/Panel/PanelContent"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TaskLabel" type="Label" parent="Aspect/Frame/Panel/PanelContent"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.435, 0.69, 1, 1)
+theme_override_fonts/font = ExtResource("6_bold")
+theme_override_font_sizes/font_size = 26
+text = "Click the 3rd floor to join the meeting."
+autowrap_mode = 3
+
+[node name="HintLabel" type="Label" parent="Aspect/Frame/Panel/PanelContent"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.76, 0.2, 1)
+theme_override_fonts/font = ExtResource("5_body")
+theme_override_font_sizes/font_size = 22
+text = ""
+autowrap_mode = 3
+

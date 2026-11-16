@@ -1,0 +1,646 @@
+{
+ "_comment": "Баланс кампании. Проценты — доли бюджета миссии (100% = весь бюджет). Площадки — реальные места посадки «Аполлонов» (координаты и факты: NASA NSSDCA). Массы и мощности приборов приблизительные. Очки науки, риск и добавка скорости — игровые условности. read_more — тексты для окна Read more.",
+ "science": {
+  "salaries_pct": 3,
+  "max_pct": 20,
+  "requested_pct": 9,
+  "days_min": 90,
+  "days_max": 270,
+  "margin_best": 1.0,
+  "margin_worst": 15.0,
+  "minigame_weight": 0.15,
+  "skip_hit_rate": 0.6,
+  "margin_tight": 3.0,
+  "margin_moderate": 8.0
+ },
+ "calc_rounds": [
+  {
+   "id": "analysis",
+   "title": "Mission analysis",
+   "when": "Now, before anything is designed",
+   "what": "Find the path, the speed budget and the fuel it costs."
+  },
+  {
+   "id": "design",
+   "title": "Design check",
+   "when": "After Engineering fixes the design",
+   "what": "Recalculate everything for the real mass of the rocket and the spacecraft."
+  },
+  {
+   "id": "launch",
+   "title": "Launch targeting",
+   "when": "In the last weeks before launch",
+   "what": "Fix the exact path for the real launch day and hour."
+  },
+  {
+   "id": "flight",
+   "title": "In-flight navigation",
+   "when": "During the flight",
+   "what": "Track the real path and calculate the correction burns."
+  }
+ ],
+ "science_plan": {
+  "days_base": 45,
+  "days_per_instrument": 10
+ },
+ "board": {
+  "review_days": 14,
+  "confidence_start": 80,
+  "science_weak": 30,
+  "science_strong": 80
+ },
+ "sites": [
+  {
+   "id": "a11",
+   "mission": "Apollo 11",
+   "name": "Mare Tranquillitatis",
+   "english": "Sea of Tranquility",
+   "lat": 0.674,
+   "lon": 23.473,
+   "what": "A flat plain of dark lava near the equator.",
+   "science": 10,
+   "risk": "Low",
+   "risk_value": 1,
+   "extra_dv": 0.0,
+   "note": "The safest ground on the list. Free-return path all the way.",
+   "read_more": {
+    "kicker": "Apollo 11 landing site",
+    "facts": [
+     [
+      "Coordinates",
+      "0.67° N, 23.47° E"
+     ],
+     [
+      "Landing",
+      "20 July 1969"
+     ],
+     [
+      "Time outside",
+      "2 h 32 min, one moonwalk"
+     ],
+     [
+      "Samples returned",
+      "about 21.5 kg"
+     ]
+    ],
+    "text": [
+     "Mare Tranquillitatis is a wide plain of basalt: lava that flooded an old impact basin and froze. From Earth it is one of the dark patches you can see without a telescope.",
+     "It was chosen for the first landing because it was safe, not because it was interesting. Photos from orbit showed it to be among the smoothest, flattest ground within reach. Even so, the crew had to fly past a field of boulders before they found a clear spot.",
+     "The rocks brought back are about 3.6 billion years old. They showed that the dark 'seas' are frozen lava, and that the Moon was once volcanically active."
+    ],
+    "source": "Sources: NASA NSSDCA, Apollo Lunar Landings; NASA, Legacy of the Apollo 11 Moon Landing."
+   }
+  },
+  {
+   "id": "a12",
+   "mission": "Apollo 12",
+   "name": "Oceanus Procellarum",
+   "english": "Ocean of Storms",
+   "lat": -3.013,
+   "lon": -23.422,
+   "what": "A lava plain on the western side, younger than Tranquillitatis.",
+   "science": 14,
+   "risk": "Low",
+   "risk_value": 1,
+   "extra_dv": 0.0,
+   "note": "Flat ground. The place to prove a precise landing.",
+   "read_more": {
+    "kicker": "Apollo 12 landing site",
+    "facts": [
+     [
+      "Coordinates",
+      "3.01° S, 23.42° W"
+     ],
+     [
+      "Landing",
+      "19 November 1969"
+     ],
+     [
+      "Time outside",
+      "7 h 45 min, two moonwalks"
+     ],
+     [
+      "Distance walked",
+      "1.35 km"
+     ],
+     [
+      "Samples returned",
+      "34.4 kg"
+     ]
+    ],
+    "text": [
+     "Oceanus Procellarum is the largest dark plain on the Moon, and the only one called an ocean.",
+     "The target was a robot: the Surveyor 3 probe, which had landed there in 1967. The crew set down less than 200 metres from it. That proved a lander could reach a chosen point, not just a wide plain, and every later, harder site depended on it.",
+     "The lava here is about 3.2 billion years old, several hundred million years younger than at the first site. The Moon's volcanoes stayed active for a long time."
+    ],
+    "source": "Sources: NASA NSSDCA, Apollo Lunar Landings and Apollo Landing Site Coordinates; NASA SP-4214, Where No Man Has Gone Before."
+   }
+  },
+  {
+   "id": "a14",
+   "mission": "Apollo 14",
+   "name": "Fra Mauro",
+   "english": "Fra Mauro highlands",
+   "lat": -3.646,
+   "lon": -17.472,
+   "what": "Low hills made of rubble thrown out by a giant impact.",
+   "science": 22,
+   "risk": "Medium",
+   "risk_value": 2,
+   "extra_dv": 0.05,
+   "note": "Rolling ground with craters and boulders.",
+   "read_more": {
+    "kicker": "Apollo 14 landing site",
+    "facts": [
+     [
+      "Coordinates",
+      "3.65° S, 17.47° W"
+     ],
+     [
+      "Landing",
+      "5 February 1971"
+     ],
+     [
+      "Time outside",
+      "9 h 23 min, two moonwalks"
+     ],
+     [
+      "Distance walked",
+      "3.45 km"
+     ],
+     [
+      "Samples returned",
+      "about 43 kg"
+     ]
+    ],
+    "text": [
+     "The hills of Fra Mauro are not volcanic. They are a blanket of broken rock, thrown hundreds of kilometres when an asteroid dug the Imbrium basin, the great dark 'eye' on the Moon's face.",
+     "That made the site a way to reach deep rock without drilling: the impact had already brought it to the surface. The samples dated the Imbrium impact to about 3.9 billion years ago, a date still used to work out the ages of other surfaces in the Solar System.",
+     "Apollo 13 was meant to land here. After its accident, the site passed to Apollo 14."
+    ],
+    "source": "Sources: NASA NSSDCA, Apollo Lunar Landings and Apollo Landing Site Coordinates; NASA SP-4214, Where No Man Has Gone Before."
+   }
+  },
+  {
+   "id": "a15",
+   "mission": "Apollo 15",
+   "name": "Hadley–Apennine",
+   "english": "Hadley Rille and the Apennine Mountains",
+   "lat": 26.132,
+   "lon": 3.634,
+   "what": "A lava plain between a mountain front and a deep, winding canyon.",
+   "science": 34,
+   "risk": "High",
+   "risk_value": 3,
+   "extra_dv": 0.15,
+   "note": "Far from the equator. A steep approach over mountains.",
+   "read_more": {
+    "kicker": "Apollo 15 landing site",
+    "facts": [
+     [
+      "Coordinates",
+      "26.13° N, 3.63° E"
+     ],
+     [
+      "Landing",
+      "30 July 1971"
+     ],
+     [
+      "Time outside",
+      "19 h 08 min, three moonwalks"
+     ],
+     [
+      "Distance driven",
+      "27.9 km"
+     ],
+     [
+      "Samples returned",
+      "about 77 kg"
+     ]
+    ],
+    "text": [
+     "The site lies at the edge of Mare Imbrium, at the foot of Montes Apenninus, the mountains that form the rim of the Imbrium basin. Beside it runs Rima Hadley, a canyon about a kilometre wide.",
+     "Three kinds of ground in one place: mare lava, ancient mountain rock, and the rille itself, which turned out to be a channel cut by flowing lava. This was the first mission to carry a rover, and the first planned around science more than around the landing.",
+     "The price was a harder flight: a landing far north of the equator, with a steep descent over the mountains."
+    ],
+    "source": "Sources: NASA NSSDCA, Apollo Lunar Landings and Apollo Landing Site Coordinates; NASA SP-4214, Where No Man Has Gone Before."
+   }
+  },
+  {
+   "id": "a16",
+   "mission": "Apollo 16",
+   "name": "Descartes",
+   "english": "Descartes highlands",
+   "lat": -8.973,
+   "lon": 15.5,
+   "what": "Bright, heavily cratered highlands: the Moon's oldest crust.",
+   "science": 30,
+   "risk": "Medium",
+   "risk_value": 2,
+   "extra_dv": 0.1,
+   "note": "Rough, high ground. The only site away from the dark plains.",
+   "read_more": {
+    "kicker": "Apollo 16 landing site",
+    "facts": [
+     [
+      "Coordinates",
+      "8.97° S, 15.50° E"
+     ],
+     [
+      "Landing",
+      "20 April 1972"
+     ],
+     [
+      "Time outside",
+      "20 h 14 min, three moonwalks"
+     ],
+     [
+      "Distance driven",
+      "26.7 km"
+     ],
+     [
+      "Samples returned",
+      "95.7 kg"
+     ]
+    ],
+    "text": [
+     "Most of the Moon is not dark plain but bright highland, and this was the only landing in the central highlands.",
+     "Geologists expected to find volcanic rock here. The crew found almost none. The rocks were breccias: fragments welded together by impacts, with pieces of the Moon's earliest crust inside.",
+     "A confident prediction, corrected by going there. It is one of the most useful results of the whole program."
+    ],
+    "source": "Sources: NASA NSSDCA, Apollo Lunar Landings and Apollo Landing Site Coordinates; NASA SP-4214, Where No Man Has Gone Before."
+   }
+  },
+  {
+   "id": "a17",
+   "mission": "Apollo 17",
+   "name": "Taurus–Littrow",
+   "english": "Taurus–Littrow valley",
+   "lat": 20.191,
+   "lon": 30.772,
+   "what": "A narrow valley between mountains on the edge of Mare Serenitatis.",
+   "science": 40,
+   "risk": "High",
+   "risk_value": 3,
+   "extra_dv": 0.15,
+   "note": "A tight landing between walls about two kilometres high.",
+   "read_more": {
+    "kicker": "Apollo 17 landing site",
+    "facts": [
+     [
+      "Coordinates",
+      "20.19° N, 30.77° E"
+     ],
+     [
+      "Landing",
+      "11 December 1972"
+     ],
+     [
+      "Time outside",
+      "22 h 04 min, three moonwalks"
+     ],
+     [
+      "Distance driven",
+      "35.9 km"
+     ],
+     [
+      "Samples returned",
+      "110.5 kg"
+     ]
+    ],
+    "text": [
+     "The valley cuts through the ring of mountains around Mare Serenitatis. Its floor is lava; its walls are much older highland rock. One landing could sample both.",
+     "Near a small crater the crew found orange soil: tiny beads of volcanic glass from a fountain of lava that erupted more than three billion years ago.",
+     "It is the last place where people have stood on the Moon."
+    ],
+    "source": "Sources: NASA NSSDCA, Apollo Lunar Landings and Apollo Landing Site Coordinates; NASA SP-4214, Where No Man Has Gone Before."
+   }
+  }
+ ],
+ "instruments": [
+  {
+   "id": "samples",
+   "name": "Sample tools and boxes",
+   "what": "Bring rocks and soil back to Earth.",
+   "mass_kg": 35,
+   "power_w": 0,
+   "cost_pct": 0.3,
+   "science": 25,
+   "read_more": {
+    "kicker": "Real equipment: sample tools",
+    "facts": [
+     [
+      "Used on",
+      "every Apollo landing"
+     ],
+     [
+      "Brought back in total",
+      "382 kg of rock and soil"
+     ]
+    ],
+    "text": [
+     "Hammers, scoops, tongs and core tubes, plus sealed boxes that keep the samples in vacuum on the way home.",
+     "Samples are the one experiment that keeps giving. Laboratories still study Apollo rocks today, with instruments that did not exist when the rocks were collected."
+    ],
+    "source": "Source: NASA, Legacy of the Apollo 11 Moon Landing."
+   },
+   "era": "Apollo"
+  },
+  {
+   "id": "seismometer",
+   "name": "Seismometer",
+   "what": "Listens for moonquakes to study the interior.",
+   "mass_kg": 48,
+   "power_w": 45,
+   "cost_pct": 0.8,
+   "science": 15,
+   "read_more": {
+    "kicker": "Real equipment: Passive Seismic Experiment",
+    "facts": [
+     [
+      "First used",
+      "Apollo 11, worked about three weeks"
+     ],
+     [
+      "Network",
+      "stations at the Apollo 12, 14, 15 and 16 sites"
+     ]
+    ],
+    "text": [
+     "A seismometer feels the ground move. On the Moon it recorded moonquakes, meteorite impacts, and used rocket stages that were crashed on purpose as hammer blows of known strength.",
+     "Several stations working together let scientists look inside the Moon, the same way seismology shows the inside of the Earth."
+    ],
+    "source": "Sources: NASA, Legacy of the Apollo 11 Moon Landing; NASA Catalog of Apollo Experiment Operations."
+   },
+   "era": "Apollo"
+  },
+  {
+   "id": "reflector",
+   "name": "Laser reflector",
+   "what": "Lets lasers on Earth measure the distance to the Moon.",
+   "mass_kg": 24,
+   "power_w": 0,
+   "cost_pct": 0.3,
+   "science": 10,
+   "read_more": {
+    "kicker": "Real equipment: Laser Ranging Retroreflector",
+    "facts": [
+     [
+      "Placed by",
+      "Apollo 11, 14 and 15"
+     ],
+     [
+      "Power needed",
+      "none"
+     ],
+     [
+      "Status",
+      "still in use today"
+     ]
+    ],
+    "text": [
+     "A panel of corner-shaped mirrors that sends a laser pulse straight back to where it came from. Timing the round trip gives the distance to the Moon with very high accuracy.",
+     "It needs no power, so it never switched off. It is how we know that the Moon is moving away from the Earth by about 3.8 centimetres a year."
+    ],
+    "source": "Source: NASA, Legacy of the Apollo 11 Moon Landing."
+   },
+   "era": "Apollo"
+  },
+  {
+   "id": "solar_wind",
+   "name": "Solar wind collector",
+   "what": "A foil sheet that traps particles from the Sun.",
+   "mass_kg": 1,
+   "power_w": 0,
+   "cost_pct": 0.1,
+   "science": 6,
+   "read_more": {
+    "kicker": "Real equipment: Solar Wind Composition Experiment",
+    "facts": [
+     [
+      "First used",
+      "Apollo 11"
+     ],
+     [
+      "Exposed on Apollo 11",
+      "77 minutes"
+     ]
+    ],
+    "text": [
+     "A sheet of aluminium foil on a pole, facing the Sun. Particles of the solar wind bury themselves in the metal. The crew rolls the foil up and brings it home, where the trapped gases are measured.",
+     "The Moon has no air and no magnetic shield, so the solar wind reaches its surface untouched. On Earth it never gets to the ground."
+    ],
+    "source": "Source: NASA, Legacy of the Apollo 11 Moon Landing."
+   },
+   "era": "Apollo"
+  },
+  {
+   "id": "heat_flow",
+   "name": "Heat-flow drill and probe",
+   "what": "Measures heat leaking from inside the Moon.",
+   "mass_kg": 28,
+   "power_w": 15,
+   "cost_pct": 0.7,
+   "science": 12,
+   "read_more": {
+    "kicker": "Real equipment: Heat Flow Experiment",
+    "facts": [
+     [
+      "Flown on",
+      "Apollo 15 and 17"
+     ],
+     [
+      "Holes drilled",
+      "more than two metres deep"
+     ]
+    ],
+    "text": [
+     "The crew drills holes into the ground and lowers in probes that measure how fast heat leaks out of the Moon.",
+     "That number tells how much radioactive material is inside, and so how the Moon formed and how it cooled."
+    ],
+    "source": "Source: NASA Catalog of Apollo Experiment Operations."
+   },
+   "era": "Apollo"
+  },
+  {
+   "id": "magnetometer",
+   "name": "Magnetometer",
+   "what": "Measures the Moon's weak magnetic field.",
+   "mass_kg": 9,
+   "power_w": 6,
+   "cost_pct": 0.4,
+   "science": 8,
+   "read_more": {
+    "kicker": "Real equipment: Lunar Surface Magnetometer",
+    "facts": [
+     [
+      "Flown on",
+      "Apollo 12, 15 and 16"
+     ]
+    ],
+    "text": [
+     "Measures the magnetic field at the landing site.",
+     "The Moon has no global field like the Earth's, but patches of its crust are magnetised: a trace of a time when the Moon's core was still active."
+    ],
+    "source": "Source: NASA Catalog of Apollo Experiment Operations."
+   },
+   "era": "Apollo"
+  },
+  {
+   "id": "tv",
+   "name": "TV camera and dish antenna",
+   "what": "Live pictures for mission control and the public.",
+   "mass_kg": 16,
+   "power_w": 35,
+   "cost_pct": 0.4,
+   "science": 4,
+   "read_more": {
+    "kicker": "Real equipment: surface TV camera",
+    "facts": [
+     [
+      "First live broadcast from the Moon",
+      "20 July 1969"
+     ]
+    ],
+    "text": [
+     "A camera and a dish antenna pointed at the Earth. It gives mission control eyes on the surface, and it lets the people who paid for the mission watch it happen.",
+     "It returns almost no science. It returns public support, and missions do not fly without that."
+    ],
+    "source": "Source: NASA, Apollo 11 Mission Overview."
+   },
+   "era": "Apollo"
+  },
+  {
+   "id": "rover",
+   "name": "Lunar rover",
+   "what": "Lets the crew work kilometres away from the lander.",
+   "mass_kg": 210,
+   "power_w": 0,
+   "cost_pct": 2.5,
+   "science": 22,
+   "read_more": {
+    "kicker": "Real equipment: Lunar Roving Vehicle",
+    "facts": [
+     [
+      "Mass",
+      "210 kg, carries up to 490 kg"
+     ],
+     [
+      "Used on",
+      "Apollo 15, 16 and 17"
+     ],
+     [
+      "Apollo 17 total distance",
+      "35.9 km"
+     ],
+     [
+      "Farthest from the lander",
+      "7.6 km"
+     ]
+    ],
+    "text": [
+     "A folding electric car carried on the side of the lander. On foot, crews stayed close to the lander. With the rover they worked kilometres away from it.",
+     "It was developed in only 17 months, and worked on the Moon without major problems on all three missions."
+    ],
+    "source": "Source: NASA NSSDCA, The Apollo Lunar Roving Vehicle."
+   },
+   "era": "Apollo"
+  },
+  {
+   "id": "lems",
+   "name": "Autonomous seismic station",
+   "what": "Keeps listening for moonquakes for months after the crew has gone home.",
+   "mass_kg": 30,
+   "power_w": 0,
+   "cost_pct": 0.7,
+   "science": 18,
+   "era": "Artemis",
+   "read_more": {
+    "kicker": "Real equipment: Lunar Environment Monitoring Station (LEMS)",
+    "facts": [
+     [
+      "Chosen by NASA",
+      "in 2024, for the first Artemis landing"
+     ],
+     [
+      "Works",
+      "on its own power, for months to years"
+     ],
+     [
+      "Studies",
+      "the crust and mantle under the south pole"
+     ]
+    ],
+    "text": [
+     "The Apollo seismometers were switched off in 1977, and nobody has listened to the inside of the Moon from its surface since. This small station is meant to start again, in a region no instrument has ever visited.",
+     "It needs no cable to the lander and no astronaut to tend it. The crew sets it down, and it keeps recording long after they have left."
+    ],
+    "source": "Source: NASA, Artemis III science instruments announcement (2024)."
+   }
+  },
+  {
+   "id": "leaf",
+   "name": "Plant growth experiment",
+   "what": "A sealed chamber of seedlings: can crops grow in lunar gravity and radiation?",
+   "mass_kg": 12,
+   "power_w": 10,
+   "cost_pct": 0.4,
+   "science": 9,
+   "era": "Artemis",
+   "read_more": {
+    "kicker": "Real equipment: Lunar Effects on Agricultural Flora (LEAF)",
+    "facts": [
+     [
+      "Chosen by NASA",
+      "in 2024, for the first Artemis landing"
+     ],
+     [
+      "Watches",
+      "how plants grow and cope with stress on the Moon"
+     ],
+     [
+      "Why it matters",
+      "crews that stay will need to grow food"
+     ]
+    ],
+    "text": [
+     "Plants have grown on the space station for years, in weightlessness. Nobody yet knows how they behave in one sixth of Earth's gravity, under the radiation of the open lunar surface.",
+     "The chamber protects its seedlings from the vacuum and the glare while cameras and sensors record how they grow. Some are brought home so their cells can be studied."
+    ],
+    "source": "Source: NASA, Artemis III science instruments announcement (2024)."
+   }
+  },
+  {
+   "id": "radiation",
+   "name": "Radiation sensors",
+   "what": "Measure the radiation the crew receives outside Earth's magnetic shield.",
+   "mass_kg": 3,
+   "power_w": 5,
+   "cost_pct": 0.2,
+   "science": 5,
+   "era": "Artemis",
+   "read_more": {
+    "kicker": "Real equipment: Orion radiation sensors (HERA)",
+    "facts": [
+     [
+      "Flown on",
+      "Artemis I and Artemis II"
+     ],
+     [
+      "On Artemis II",
+      "four people passed beyond Earth's magnetic shield for the first time since 1972"
+     ],
+     [
+      "Also worn",
+      "a small personal sensor by each astronaut"
+     ]
+    ],
+    "text": [
+     "Close to Earth, the planet's magnetic field turns most space radiation aside. On the way to the Moon that shield is left behind, and a burst from the Sun can raise the dose quickly.",
+     "Sensors around the cabin measure the radiation all the time and sound a warning if it climbs. The crew can then build a shelter from the stowage bags and wait inside."
+    ],
+    "source": "Source: NASA, Artemis II radiation science overview."
+   }
+  }
+ ]
+}

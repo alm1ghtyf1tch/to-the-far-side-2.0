@@ -1,0 +1,467 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://screens/science_plan/science_plan.gd" id="1_script"]
+[ext_resource type="FontFile" path="res://assets/fonts/IBMPlexSans-Regular.woff2" id="2_body"]
+[ext_resource type="FontFile" path="res://assets/fonts/IBMPlexSans-SemiBold.woff2" id="3_bold"]
+[ext_resource type="FontFile" path="res://assets/fonts/Saira-Display.ttf" id="4_title"]
+[ext_resource type="FontFile" path="res://assets/fonts/IBMPlexMono-Regular.woff2" id="5_mono"]
+
+[sub_resource type="Gradient" id="desk_gradient"]
+colors = PackedColorArray(0.024, 0.122, 0.29, 1, 0.129, 0.129, 0.129, 1)
+
+[sub_resource type="GradientTexture2D" id="desk"]
+gradient = SubResource("desk_gradient")
+fill = 1
+fill_from = Vector2(0.5, 0.45)
+fill_to = Vector2(1.1, 1.1)
+
+[sub_resource type="StyleBoxFlat" id="bezel"]
+content_margin_left = 22.0
+content_margin_top = 22.0
+content_margin_right = 22.0
+content_margin_bottom = 22.0
+bg_color = Color(0.129, 0.129, 0.129, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.196, 0.227, 0.271, 1)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+shadow_color = Color(0, 0, 0, 0.6)
+shadow_size = 30
+
+[sub_resource type="StyleBoxFlat" id="screen"]
+bg_color = Color(0.882, 0.953, 0.973, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="titlebar"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0.043, 0.239, 0.569, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+
+[sub_resource type="StyleBoxFlat" id="page"]
+content_margin_left = 64.0
+content_margin_top = 44.0
+content_margin_right = 64.0
+content_margin_bottom = 44.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.682, 0.69, 0.71, 1)
+
+[sub_resource type="StyleBoxFlat" id="footer"]
+content_margin_left = 20.0
+content_margin_top = 12.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="approve"]
+content_margin_left = 30.0
+content_margin_top = 10.0
+content_margin_right = 30.0
+content_margin_bottom = 10.0
+bg_color = Color(0.043, 0.239, 0.569, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="approve_hover"]
+content_margin_left = 30.0
+content_margin_top = 10.0
+content_margin_right = 30.0
+content_margin_bottom = 10.0
+bg_color = Color(0.063, 0.357, 0.847, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="approve_done"]
+content_margin_left = 30.0
+content_margin_top = 10.0
+content_margin_right = 30.0
+content_margin_bottom = 10.0
+bg_color = Color(0.016, 0.42, 0.6, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="approve_focus"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.008, 0.749, 0.906, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="page_tight"]
+content_margin_left = 32.0
+content_margin_top = 18.0
+content_margin_right = 32.0
+content_margin_bottom = 18.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.682, 0.69, 0.71, 1)
+
+[sub_resource type="StyleBoxFlat" id="total"]
+content_margin_left = 18.0
+content_margin_top = 8.0
+content_margin_right = 18.0
+content_margin_bottom = 8.0
+bg_color = Color(0.882, 0.953, 0.973, 1)
+border_width_top = 3
+border_color = Color(0.043, 0.239, 0.569, 1)
+
+[node name="SciencePlan" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Desk" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("desk")
+expand_mode = 1
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Monitor" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(1560, 940)
+layout_mode = 2
+theme_override_styles/panel = SubResource("bezel")
+
+[node name="Screen" type="PanelContainer" parent="Center/Monitor"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("screen")
+
+[node name="App" type="VBoxContainer" parent="Center/Monitor/Screen"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TitleBar" type="PanelContainer" parent="Center/Monitor/Screen/App"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("titlebar")
+
+[node name="Row" type="HBoxContainer" parent="Center/Monitor/Screen/App/TitleBar"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="AppName" type="Label" parent="Center/Monitor/Screen/App/TitleBar/Row"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_title")
+theme_override_font_sizes/font_size = 20
+text = "Science Planner"
+
+[node name="Document" type="Label" parent="Center/Monitor/Screen/App/TitleBar/Row"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.608, 0.855, 0.945, 1)
+theme_override_fonts/font = ExtResource("5_mono")
+theme_override_font_sizes/font_size = 17
+text = "Stage 4  Science Plan"
+
+[node name="DateLabel" type="Label" parent="Center/Monitor/Screen/App/TitleBar/Row"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_mono")
+theme_override_font_sizes/font_size = 17
+text = "14 NOV 2026"
+
+[node name="Body" type="MarginContainer" parent="Center/Monitor/Screen/App"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 16
+
+[node name="Page" type="PanelContainer" parent="Center/Monitor/Screen/App/Body"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("page_tight")
+
+[node name="Box" type="VBoxContainer" parent="Center/Monitor/Screen/App/Body/Page"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Head" type="HBoxContainer" parent="Center/Monitor/Screen/App/Body/Page/Box"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Center/Monitor/Screen/App/Body/Page/Box/Head"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.129, 0.129, 0.129, 1)
+theme_override_fonts/font = ExtResource("3_bold")
+theme_override_font_sizes/font_size = 32
+text = "Science catalog"
+size_flags_horizontal = 3
+
+[node name="SiteTab" type="Button" parent="Center/Monitor/Screen/App/Body/Page/Box/Head"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("3_bold")
+theme_override_font_sizes/font_size = 18
+text = "1  Landing site"
+
+[node name="GearTab" type="Button" parent="Center/Monitor/Screen/App/Body/Page/Box/Head"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("3_bold")
+theme_override_font_sizes/font_size = 18
+text = "2  Equipment"
+
+[node name="MapButton" type="Button" parent="Center/Monitor/Screen/App/Body/Page/Box/Head"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_bold")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("approve")
+theme_override_styles/hover = SubResource("approve_hover")
+theme_override_styles/pressed = SubResource("approve")
+theme_override_styles/focus = SubResource("approve_focus")
+text = "Open the Moon map"
+
+[node name="Intro" type="Label" parent="Center/Monitor/Screen/App/Body/Page/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.129, 0.129, 0.129, 1)
+theme_override_fonts/font = ExtResource("2_body")
+theme_override_font_sizes/font_size = 17
+text = "Step 1 of 2"
+autowrap_mode = 3
+
+[node name="SiteGrid" type="GridContainer" parent="Center/Monitor/Screen/App/Body/Page/Box"]
+unique_name_in_owner = true
+visible = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 3
+
+[node name="GearGrid" type="GridContainer" parent="Center/Monitor/Screen/App/Body/Page/Box"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 4
+
+[node name="Totals" type="HBoxContainer" parent="Center/Monitor/Screen/App/Body/Page/Box"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Science" type="PanelContainer" parent="Center/Monitor/Screen/App/Body/Page/Box/Totals"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("total")
+
+[node name="Box" type="VBoxContainer" parent="Center/Monitor/Screen/App/Body/Page/Box/Totals/Science"]
+layout_mode = 2
+theme_override_constants/separation = -2
+
+[node name="Caption" type="Label" parent="Center/Monitor/Screen/App/Body/Page/Box/Totals/Science/Box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.196, 0.227, 0.271, 1)
+theme_override_fonts/font = ExtResource("2_body")
+theme_override_font_sizes/font_size = 15
+text = "Science value"
+
+[node name="ScienceValue" type="Label" parent="Center/Monitor/Screen/App/Body/Page/Box/Totals/Science/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.024, 0.122, 0.29, 1)
+theme_override_fonts/font = ExtResource("4_title")
+theme_override_font_sizes/font_size = 26
+text = "0"
+
+[node name="Mass" type="PanelContainer" parent="Center/Monitor/Screen/App/Body/Page/Box/Totals"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("total")
+
+[node name="Box" type="VBoxContainer" parent="Center/Monitor/Screen/App/Body/Page/Box/Totals/Mass"]
+layout_mode = 2
+theme_override_constants/separation = -2
+
+[node name="Caption" type="Label" parent="Center/Monitor/Screen/App/Body/Page/Box/Totals/Mass/Box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.196, 0.227, 0.271, 1)
+theme_override_fonts/font = ExtResource("2_body")
+theme_override_font_sizes/font_size = 15
+text = "Payload mass"
+
+[node name="MassValue" type="Label" parent="Center/Monitor/Screen/App/Body/Page/Box/Totals/Mass/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.024, 0.122, 0.29, 1)
+theme_override_fonts/font = ExtResource("4_title")
+theme_override_font_sizes/font_size = 26
+text = "0"
+
+[node name="Power" type="PanelContainer" parent="Center/Monitor/Screen/App/Body/Page/Box/Totals"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("total")
+
+[node name="Box" type="VBoxContainer" parent="Center/Monitor/Screen/App/Body/Page/Box/Totals/Power"]
+layout_mode = 2
+theme_override_constants/separation = -2
+
+[node name="Caption" type="Label" parent="Center/Monitor/Screen/App/Body/Page/Box/Totals/Power/Box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.196, 0.227, 0.271, 1)
+theme_override_fonts/font = ExtResource("2_body")
+theme_override_font_sizes/font_size = 15
+text = "Power needed"
+
+[node name="PowerValue" type="Label" parent="Center/Monitor/Screen/App/Body/Page/Box/Totals/Power/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.024, 0.122, 0.29, 1)
+theme_override_fonts/font = ExtResource("4_title")
+theme_override_font_sizes/font_size = 26
+text = "0"
+
+[node name="Cost" type="PanelContainer" parent="Center/Monitor/Screen/App/Body/Page/Box/Totals"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("total")
+
+[node name="Box" type="VBoxContainer" parent="Center/Monitor/Screen/App/Body/Page/Box/Totals/Cost"]
+layout_mode = 2
+theme_override_constants/separation = -2
+
+[node name="Caption" type="Label" parent="Center/Monitor/Screen/App/Body/Page/Box/Totals/Cost/Box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.196, 0.227, 0.271, 1)
+theme_override_fonts/font = ExtResource("2_body")
+theme_override_font_sizes/font_size = 15
+text = "Cost of instruments"
+
+[node name="CostValue" type="Label" parent="Center/Monitor/Screen/App/Body/Page/Box/Totals/Cost/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.024, 0.122, 0.29, 1)
+theme_override_fonts/font = ExtResource("4_title")
+theme_override_font_sizes/font_size = 26
+text = "0"
+
+[node name="Left" type="PanelContainer" parent="Center/Monitor/Screen/App/Body/Page/Box/Totals"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("total")
+
+[node name="Box" type="VBoxContainer" parent="Center/Monitor/Screen/App/Body/Page/Box/Totals/Left"]
+layout_mode = 2
+theme_override_constants/separation = -2
+
+[node name="Caption" type="Label" parent="Center/Monitor/Screen/App/Body/Page/Box/Totals/Left/Box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.196, 0.227, 0.271, 1)
+theme_override_fonts/font = ExtResource("2_body")
+theme_override_font_sizes/font_size = 15
+text = "Budget left"
+
+[node name="LeftValue" type="Label" parent="Center/Monitor/Screen/App/Body/Page/Box/Totals/Left/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.024, 0.122, 0.29, 1)
+theme_override_fonts/font = ExtResource("4_title")
+theme_override_font_sizes/font_size = 26
+text = "0"
+
+[node name="Footer" type="PanelContainer" parent="Center/Monitor/Screen/App"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("footer")
+
+[node name="Row" type="HBoxContainer" parent="Center/Monitor/Screen/App/Footer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="StatusLabel" type="Label" parent="Center/Monitor/Screen/App/Footer/Row"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.196, 0.227, 0.271, 1)
+theme_override_fonts/font = ExtResource("5_mono")
+theme_override_font_sizes/font_size = 17
+text = ""
+
+[node name="ConfirmButton" type="Button" parent="Center/Monitor/Screen/App/Footer/Row"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_bold")
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("approve")
+theme_override_styles/hover = SubResource("approve_hover")
+theme_override_styles/pressed = SubResource("approve")
+theme_override_styles/focus = SubResource("approve_focus")
+theme_override_styles/disabled = SubResource("approve_done")
+text = "Next: equipment  ›"
+

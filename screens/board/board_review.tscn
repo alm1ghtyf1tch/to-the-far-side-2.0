@@ -1,0 +1,259 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://screens/board/board_review.gd" id="1_script"]
+[ext_resource type="FontFile" path="res://assets/fonts/IBMPlexSans-Regular.woff2" id="2_body"]
+[ext_resource type="FontFile" path="res://assets/fonts/IBMPlexSans-SemiBold.woff2" id="3_bold"]
+[ext_resource type="FontFile" path="res://assets/fonts/Saira-Display.ttf" id="4_title"]
+[ext_resource type="FontFile" path="res://assets/fonts/IBMPlexMono-Regular.woff2" id="5_mono"]
+
+[sub_resource type="Gradient" id="desk_gradient"]
+colors = PackedColorArray(0.024, 0.122, 0.29, 1, 0.129, 0.129, 0.129, 1)
+
+[sub_resource type="GradientTexture2D" id="desk"]
+gradient = SubResource("desk_gradient")
+fill = 1
+fill_from = Vector2(0.5, 0.45)
+fill_to = Vector2(1.1, 1.1)
+
+[sub_resource type="StyleBoxFlat" id="bezel"]
+content_margin_left = 22.0
+content_margin_top = 22.0
+content_margin_right = 22.0
+content_margin_bottom = 22.0
+bg_color = Color(0.129, 0.129, 0.129, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.196, 0.227, 0.271, 1)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+shadow_color = Color(0, 0, 0, 0.6)
+shadow_size = 30
+
+[sub_resource type="StyleBoxFlat" id="screen"]
+bg_color = Color(0.882, 0.953, 0.973, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="titlebar"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0.043, 0.239, 0.569, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+
+[sub_resource type="StyleBoxFlat" id="page"]
+content_margin_left = 64.0
+content_margin_top = 44.0
+content_margin_right = 64.0
+content_margin_bottom = 44.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.682, 0.69, 0.71, 1)
+
+[sub_resource type="StyleBoxFlat" id="footer"]
+content_margin_left = 20.0
+content_margin_top = 12.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="approve"]
+content_margin_left = 30.0
+content_margin_top = 10.0
+content_margin_right = 30.0
+content_margin_bottom = 10.0
+bg_color = Color(0.043, 0.239, 0.569, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="approve_hover"]
+content_margin_left = 30.0
+content_margin_top = 10.0
+content_margin_right = 30.0
+content_margin_bottom = 10.0
+bg_color = Color(0.063, 0.357, 0.847, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="approve_done"]
+content_margin_left = 30.0
+content_margin_top = 10.0
+content_margin_right = 30.0
+content_margin_bottom = 10.0
+bg_color = Color(0.016, 0.42, 0.6, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="approve_focus"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.008, 0.749, 0.906, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[node name="BoardReview" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Desk" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("desk")
+expand_mode = 1
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Monitor" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(1560, 940)
+layout_mode = 2
+theme_override_styles/panel = SubResource("bezel")
+
+[node name="Screen" type="PanelContainer" parent="Center/Monitor"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("screen")
+
+[node name="App" type="VBoxContainer" parent="Center/Monitor/Screen"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TitleBar" type="PanelContainer" parent="Center/Monitor/Screen/App"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("titlebar")
+
+[node name="Row" type="HBoxContainer" parent="Center/Monitor/Screen/App/TitleBar"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="AppName" type="Label" parent="Center/Monitor/Screen/App/TitleBar/Row"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_title")
+theme_override_font_sizes/font_size = 20
+text = "Agency Records"
+
+[node name="Document" type="Label" parent="Center/Monitor/Screen/App/TitleBar/Row"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.608, 0.855, 0.945, 1)
+theme_override_fonts/font = ExtResource("5_mono")
+theme_override_font_sizes/font_size = 17
+text = "Board Decision.pdf"
+
+[node name="DateLabel" type="Label" parent="Center/Monitor/Screen/App/TitleBar/Row"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_mono")
+theme_override_font_sizes/font_size = 17
+text = "14 NOV 2026"
+
+[node name="Body" type="MarginContainer" parent="Center/Monitor/Screen/App"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 24
+
+[node name="Scroll" type="ScrollContainer" parent="Center/Monitor/Screen/App/Body"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="Page" type="PanelContainer" parent="Center/Monitor/Screen/App/Body/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("page")
+
+[node name="Report" type="RichTextLabel" parent="Center/Monitor/Screen/App/Body/Scroll/Page"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0.129, 0.129, 0.129, 1)
+theme_override_fonts/normal_font = ExtResource("2_body")
+theme_override_fonts/bold_font = ExtResource("3_bold")
+theme_override_font_sizes/normal_font_size = 19
+theme_override_font_sizes/bold_font_size = 19
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="Footer" type="PanelContainer" parent="Center/Monitor/Screen/App"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("footer")
+
+[node name="Row" type="HBoxContainer" parent="Center/Monitor/Screen/App/Footer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="StatusLabel" type="Label" parent="Center/Monitor/Screen/App/Footer/Row"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.196, 0.227, 0.271, 1)
+theme_override_fonts/font = ExtResource("5_mono")
+theme_override_font_sizes/font_size = 17
+text = ""
+
+[node name="AckButton" type="Button" parent="Center/Monitor/Screen/App/Footer/Row"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_bold")
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("approve")
+theme_override_styles/hover = SubResource("approve_hover")
+theme_override_styles/pressed = SubResource("approve")
+theme_override_styles/focus = SubResource("approve_focus")
+theme_override_styles/disabled = SubResource("approve_done")
+text = "Acknowledge"
+

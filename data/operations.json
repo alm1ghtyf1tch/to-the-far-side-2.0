@@ -1,0 +1,237 @@
+{
+  "rules": {
+    "default_level": 1,
+    "ordinary_events": [
+      "A supplier delivered a batch of valves late.",
+      "Welds on a propellant tank failed inspection and were redone.",
+      "A storm damaged a test stand.",
+      "The flight software needed another round of testing.",
+      "A cracked fitting was found during assembly and its whole batch was replaced."
+    ],
+    "scrub_causes": [
+      "a hydrogen leak at the fuelling arm",
+      "a sensor that read wrong",
+      "a valve that did not close",
+      "high winds above the pad"
+    ],
+    "scrub_cost_pct": 0.15
+  },
+  "items": [
+    {
+      "id": "training",
+      "title": "Crew training",
+      "why": "Hours in simulators before the flight. A trained crew recognises a problem in seconds and knows what to do about it.",
+      "levels": [
+        {
+          "name": "Basic",
+          "what": "Classroom work and a few simulator runs.",
+          "cost_pct": 0.5
+        },
+        {
+          "name": "Standard",
+          "what": "Full-mission simulators and geology field trips.",
+          "cost_pct": 1.2
+        },
+        {
+          "name": "Intensive",
+          "what": "Hundreds of failures rehearsed together with mission control.",
+          "cost_pct": 2.5
+        }
+      ],
+      "read_more": {
+        "kicker": "Real practice: simulation training",
+        "facts": [
+          [
+            "The Artemis II crew",
+            "was named three years before it flew"
+          ],
+          [
+            "A simulator can",
+            "break things on purpose while the crew flies"
+          ]
+        ],
+        "text": [
+          "Days before Apollo 11, a training run ended in an abort that was not needed: nobody in the control room recognised a computer alarm. The controllers went away and learned every alarm code.",
+          "During the real landing the computer raised alarms of the same kind. This time the answer came in seconds: keep going. Training had turned a reason to abort into a note in the log."
+        ],
+        "source": "Source: NASA Johnson Space Center Oral History Project."
+      }
+    },
+    {
+      "id": "control",
+      "title": "Mission control and tracking",
+      "why": "The people and antennas that follow the flight. They measure where the spacecraft really is and tell the crew how to correct its path.",
+      "levels": [
+        {
+          "name": "Minimal",
+          "what": "One control room. Antennas are borrowed when they are free.",
+          "cost_pct": 0.6
+        },
+        {
+          "name": "Standard",
+          "what": "A full control room and three tracking stations around the world.",
+          "cost_pct": 1.5
+        },
+        {
+          "name": "Reinforced",
+          "what": "A backup control room and spare antennas at every station.",
+          "cost_pct": 2.8
+        }
+      ],
+      "read_more": {
+        "kicker": "Real practice: Mission Control and the Deep Space Network",
+        "facts": [
+          [
+            "Deep Space Network sites",
+            "California, Spain and Australia"
+          ],
+          [
+            "Why three",
+            "as Earth turns, one of them always faces the spacecraft"
+          ],
+          [
+            "First steps on the Moon",
+            "reached the world through antennas in Australia"
+          ]
+        ],
+        "text": [
+          "A spacecraft cannot see where it is. Stations on Earth time its radio signal, and from that Flight Dynamics works out its path and the small burns that keep it on course.",
+          "The stations stand a third of the way around the world from each other. Lose one, and for hours a day nobody can hear the crew."
+        ],
+        "source": "Source: NASA, Deep Space Network overview."
+      }
+    },
+    {
+      "id": "launch",
+      "title": "Launch team and countdown",
+      "why": "Fuelling a rocket and counting down is days of work for hundreds of people. A practised team finds leaks and faults before launch day, not on it.",
+      "levels": [
+        {
+          "name": "Small team",
+          "what": "Enough people to launch if nothing goes wrong.",
+          "cost_pct": 0.4
+        },
+        {
+          "name": "Full team",
+          "what": "A complete launch control team.",
+          "cost_pct": 1.0
+        },
+        {
+          "name": "Team with rehearsal",
+          "what": "A complete team that first fuels the rocket in a full practice countdown.",
+          "cost_pct": 1.8
+        }
+      ],
+      "read_more": {
+        "kicker": "Real practice: the wet dress rehearsal",
+        "facts": [
+          [
+            "A wet dress rehearsal",
+            "fuels the rocket and counts down, then stops before ignition"
+          ],
+          [
+            "Artemis I",
+            "needed several attempts before its tanks could be filled"
+          ],
+          [
+            "The usual trouble",
+            "leaks of liquid hydrogen"
+          ]
+        ],
+        "text": [
+          "Hydrogen is the smallest molecule there is, and it escapes through seals that hold everything else. The first Artemis rocket was rolled out, tested, rolled back and repaired more than once before it flew.",
+          "A launch that is called off is a scrub. Each one costs days and money: the propellant is drained, the team stands down and the count starts again."
+        ],
+        "source": "Source: NASA, Artemis I mission summary."
+      }
+    },
+    {
+      "id": "recovery",
+      "title": "Recovery forces",
+      "why": "Ships, helicopters and divers that wait where the capsule comes down. The flight is not over until the crew and the samples are aboard.",
+      "levels": [
+        {
+          "name": "One ship",
+          "what": "A single ship at the planned landing point.",
+          "cost_pct": 0.3
+        },
+        {
+          "name": "Ship and helicopters",
+          "what": "A ship with helicopters and divers.",
+          "cost_pct": 0.8
+        },
+        {
+          "name": "Two zones",
+          "what": "A second group covers the backup landing zone.",
+          "cost_pct": 1.6
+        }
+      ],
+      "read_more": {
+        "kicker": "Real practice: splashdown recovery",
+        "facts": [
+          [
+            "Apollo 11",
+            "was recovered by an aircraft carrier in the Pacific"
+          ],
+          [
+            "Artemis II",
+            "splashed down off San Diego on 10 April 2026"
+          ],
+          [
+            "It was met by",
+            "a Navy ship, with divers and helicopters"
+          ]
+        ],
+        "text": [
+          "A capsule returning from the Moon lands in the ocean under parachutes. Divers reach it first, steady it in the waves and help the crew out.",
+          "If the capsule comes down far from the planned spot, the ships have to find it and sail to it. The longer that takes, the longer the crew waits in a small, hot cabin on the swell."
+        ],
+        "source": "Source: NASA, Artemis II recovery operations overview."
+      }
+    },
+    {
+      "id": "computer",
+      "title": "Flight computer",
+      "why": "The computer steers the engines, keeps the ship pointed and guides the landing. The question is what happens when it stops.",
+      "levels": [
+        {
+          "name": "Single",
+          "what": "One computer. If it fails, the crew flies by hand.",
+          "cost_pct": 0.4
+        },
+        {
+          "name": "With a backup",
+          "what": "A second, simpler system takes over if the first one fails.",
+          "cost_pct": 1.0
+        },
+        {
+          "name": "Voting set",
+          "what": "Several computers do the same sums and outvote one that goes wrong.",
+          "cost_pct": 2.0
+        }
+      ],
+      "read_more": {
+        "kicker": "Real hardware: flight computers and their backups",
+        "facts": [
+          [
+            "Apollo guidance computer",
+            "about 4 kilobytes of memory it could rewrite"
+          ],
+          [
+            "Apollo lunar module",
+            "carried a separate backup guidance system"
+          ],
+          [
+            "Space Shuttle",
+            "four computers that voted, and a fifth with different software"
+          ]
+        ],
+        "text": [
+          "The Apollo guidance computer had less power than a pocket calculator of a few years later, yet it flew to the Moon. Its software was written to drop less important jobs when it ran out of time, and that is what saved the first landing.",
+          "Later spacecraft added more computers. Several machines work on the same problem and compare answers, so one fault does not reach the engines."
+        ],
+        "source": "Source: NASA, Computers in Spaceflight: The NASA Experience."
+      }
+    }
+  ]
+}
