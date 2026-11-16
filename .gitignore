@@ -1,7 +1,13 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
-build/
+
+# Build output: only the zipped Windows build is published
+build/*
+!build/.gdignore
+!build/windows/
+build/windows/*
+!build/windows/ToTheFarSide-Windows.zip
 
 # macOS
 .DS_Store
