@@ -11,3 +11,11 @@ build/windows/*
 
 # macOS
 .DS_Store
+
+# Local credentials and diagnostics; build products stay under ignored build/.
+.env
+.env.*
+*.p12
+*.pfx
+*.key
+*.log

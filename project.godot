@@ -39,4 +39,6 @@ theme/custom="res://ui/theme.tres"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method.macos="mobile"
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0.02, 0.03, 0.045, 1)
