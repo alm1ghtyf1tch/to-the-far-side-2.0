@@ -17,6 +17,7 @@ const FADE_TIME := 0.25
 
 var _fade: ColorRect
 var _busy := false
+var _presentation_host: Control
 
 
 func _ready() -> void:
@@ -34,7 +35,12 @@ func go_to(path: String, fade_time := FADE_TIME) -> void:
 	_busy = true
 	_fade.mouse_filter = Control.MOUSE_FILTER_STOP
 	await _fade_to(1.0, fade_time)
-	var error := get_tree().change_scene_to_file(path)
+	var error: Error
+	if is_instance_valid(_presentation_host):
+		error = _presentation_host.open_screen(path)
+	else:
+		# Direct editor scene runs retain their original routing behavior.
+		error = get_tree().change_scene_to_file(path)
 	if error != OK:
 		push_error("SceneRouter: не удалось открыть сцену %s (код %d)" % [path, error])
 	await get_tree().process_frame
@@ -48,7 +54,12 @@ func is_busy() -> bool:
 	return _busy
 
 
+func set_presentation_host(host: Control) -> void:
+	_presentation_host = host
+
+
 func _fade_to(alpha: float, time := FADE_TIME) -> void:
 	var tween := create_tween()
+	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(_fade, "color:a", alpha, time)
 	await tween.finished

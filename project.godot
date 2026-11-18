@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="To the Far Side"
-run/main_scene="res://screens/main_menu/main_menu.tscn"
+run/main_scene="res://systems/rendering/presentation_shell.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

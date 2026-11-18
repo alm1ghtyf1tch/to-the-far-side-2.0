@@ -3,6 +3,7 @@ class_name FloorHotspot
 extends Control
 
 signal clicked(hotspot: FloorHotspot)
+signal hover_changed(hotspot: FloorHotspot, hovered: bool)
 
 @export var floor_number := 1
 @export var department := "Science"
@@ -37,8 +38,8 @@ func _ready() -> void:
 	mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	focus_mode = Control.FOCUS_ALL
 	mouse_exited.connect(_set_hovered.bind(false))
-	focus_entered.connect(queue_redraw)
-	focus_exited.connect(queue_redraw)
+	focus_entered.connect(_notify_hover)
+	focus_exited.connect(_notify_hover)
 	resized.connect(_update_shape)
 	_update_shape()
 
@@ -46,7 +47,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
-	if is_goal and not is_selected:
+	if is_goal and not is_selected and not GameSettings.reduced_motion():
 		_time += delta
 		queue_redraw()
 
@@ -75,20 +76,20 @@ func _draw() -> void:
 	if Engine.is_editor_hint():
 		border = 0.8
 	elif is_selected:
-		fill = 0.10
+		fill = 0.06
 		border = 1.0
 	elif _hovered or has_focus():
-		fill = 0.14
+		fill = 0.035
 		border = 0.9
 	if is_goal and not is_selected:
-		var pulse := 0.5 + 0.5 * sin(_time * 3.2)
-		border = maxf(border, 0.35 + 0.65 * pulse)
+		var pulse := 0.65 if GameSettings.reduced_motion() else 0.5 + 0.5 * sin(_time * 2.0)
+		border = maxf(border, 0.2 + 0.3 * pulse)
 	if fill > 0.0:
 		draw_colored_polygon(_shape, Color(ACCENT, fill))
 	if border > 0.0:
 		var outline := _shape.duplicate()
 		outline.append(_shape[0])
-		draw_polyline(outline, Color(ACCENT, border), 4.0, true)
+		draw_polyline(outline, Color(ACCENT, border), 2.0, true)
 
 
 func _update_shape() -> void:
@@ -108,4 +109,10 @@ func _set_hovered(value: bool) -> void:
 	if _hovered == value:
 		return
 	_hovered = value
+	_notify_hover()
+
+
+func _notify_hover() -> void:
 	queue_redraw()
+	if not Engine.is_editor_hint():
+		hover_changed.emit(self, _hovered or has_focus())

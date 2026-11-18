@@ -3,6 +3,7 @@ shader_type canvas_item;
 uniform sampler2D surface : repeat_enable, filter_linear_mipmap_anisotropic;
 uniform float rise = 1.0;
 uniform float exposure = 1.0;
+uniform float motion : hint_range(0.0, 1.0) = 1.0;
 
 const float ASPECT = 1.7778;
 const float ALTITUDE = 0.12;
@@ -65,7 +66,7 @@ vec3 star_layer(vec3 dir, float cells, float share, float size, float shift) {
 	float dist = length(away) / cells;
 	float bright = 0.3 + 0.7 * hash21(id + 3.3);
 	bright *= bright;
-	float flicker = 0.93 + 0.07 * sin(TIME * (0.8 + 2.4 * hash21(id + 9.1)) + pick * 90.0);
+	float flicker = 0.93 + 0.07 * sin(TIME * motion * (0.8 + 2.4 * hash21(id + 9.1)) + pick * 90.0);
 	float warm = hash21(id + 5.7);
 	vec3 tint = mix(vec3(0.78, 0.86, 1.0), vec3(1.0, 0.93, 0.82), warm);
 	return tint * bright * flicker * smoothstep(size, 0.0, dist);
@@ -79,10 +80,10 @@ vec3 earth_colour(vec2 at, float r2) {
 	float day = smoothstep(-0.1, 0.22, light);
 	float tilt = 0.41;
 	vec3 m = vec3(n.x * cos(tilt) - n.y * sin(tilt), n.x * sin(tilt) + n.y * cos(tilt), n.z);
-	float spin = TIME * 0.012 + 1.3;
+	float spin = TIME * motion * 0.012 + 1.3;
 	m = vec3(m.x * cos(spin) + m.z * sin(spin), m.y, -m.x * sin(spin) + m.z * cos(spin));
 	float land = fbm3(m * vec3(1.9, 2.3, 1.9) + 4.0);
-	float cloud = fbm3(m * vec3(3.2, 6.5, 3.2) + vec3(TIME * 0.006, 9.0, 2.0));
+	float cloud = fbm3(m * vec3(3.2, 6.5, 3.2) + vec3(TIME * motion * 0.006, 9.0, 2.0));
 	vec3 sea = mix(vec3(0.03, 0.12, 0.36), vec3(0.06, 0.27, 0.58), z);
 	vec3 soil = mix(vec3(0.13, 0.33, 0.15), vec3(0.50, 0.42, 0.26), smoothstep(0.56, 0.68, land));
 	vec3 face = mix(sea, soil, smoothstep(0.50, 0.54, land));
@@ -104,7 +105,7 @@ void fragment() {
 	vec3 top = cross(right, fwd);
 	vec3 ray = normalize(fwd + right * p.x + top * p.y);
 
-	float turn = TIME * STAR_TURN;
+	float turn = TIME * motion * STAR_TURN;
 	vec3 far = vec3(ray.x * cos(turn) + ray.z * sin(turn), ray.y, -ray.x * sin(turn) + ray.z * cos(turn));
 	vec3 sky = star_layer(far, 72.0, 0.11, 0.0012, 0.0) * 0.75;
 	sky += star_layer(far, 31.0, 0.10, 0.0019, 40.0) * 1.15;
@@ -128,7 +129,7 @@ void fragment() {
 		vec3 n = eye + ray * (-b - sqrt(disc));
 		float lat = asin(clamp(n.y, -1.0, 1.0));
 		float lon = atan(n.x, n.z);
-		float u = lon / LON_SPAN - mod(TIME * FLOW, LON_SPAN) / LON_SPAN;
+		float u = lon / LON_SPAN - mod(TIME * motion * FLOW, LON_SPAN) / LON_SPAN;
 		float span = LAT_MAX - LAT_MIN;
 		float v_day = clamp(1.0 - (lat - LAT_MIN) / span, 0.002, 0.998);
 		float v_night = clamp(1.0 - (0.05 - lat * 0.55 - LAT_MIN) / span, 0.002, 0.998);

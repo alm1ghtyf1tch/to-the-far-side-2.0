@@ -18,11 +18,10 @@ extends Control
 @onready var _date_label: Label = %DateLabel
 @onready var _day_label: Label = %DayLabel
 @onready var _roadmap: RichTextLabel = %Roadmap
-
-const BACKDROP := "drawn"
-const DRAWN_BACKDROP := "res://assets/textures/hq_building_drawn.jpg"
-const DRAWN_WALLS := Vector2(190.0, 1180.0)
-const DRAWN_FLOORS := {"BoardFloor": Vector2(138.0, 372.0), "EngineeringFloor": Vector2(400.0, 614.0), "ScienceFloor": Vector2(642.0, 856.0)}
+@onready var _world_viewport: SubViewport = %HQViewport
+@onready var _world_image: TextureRect = %HQImage
+@onready var _diorama: HeadquartersDiorama = %Diorama
+@onready var _department_label: Label = %DepartmentLabel
 
 const ROADMAP: Array[String] = ["Board meeting", "Flight Dynamics", "Review", "Science plan", "Review", "Design", "Review", "Operations", "Review", "Flight", "Report"]
 const ROADMAP_WINDOW := 7
@@ -34,28 +33,52 @@ var _shown_day := -1
 
 
 func _ready() -> void:
-	_apply_backdrop()
+	theme = VisualTheme.shared()
+	_world_image.texture = _world_viewport.get_texture()
+	_world_image.resized.connect(_resize_world)
+	get_viewport().size_changed.connect(_resize_world)
+	_diorama.framing_changed.connect(_sync_hotspots)
+	_resize_world.call_deferred()
+	(%HomeButton as Button).pressed.connect(_go_home)
 	for hotspot: FloorHotspot in [_board, _engineering, _science]:
 		hotspot.clicked.connect(_on_floor_clicked)
+		hotspot.hover_changed.connect(_on_floor_hovered)
 	_hint_label.text = ""
 	_show_stage()
 	_update_date()
-	_panel_content.modulate.a = 0.0
-	create_tween().tween_property(_panel_content, "modulate:a", 1.0, 0.6).set_delay(0.3)
+	UiMotion.reveal(_panel_content, 0.4, 0.1)
 
 
-func _apply_backdrop() -> void:
-	if BACKDROP != "drawn" or not ResourceLoader.exists(DRAWN_BACKDROP):
-		return
-	var building := get_node_or_null("Aspect/Frame/Building") as TextureRect
-	if building == null:
-		return
-	building.texture = load(DRAWN_BACKDROP)
+func _resize_world() -> void:
+	var logical := get_viewport().get_visible_rect().size
+	var native := Vector2(get_viewport().get_texture().get_size())
+	var dimensions := Vector2i((_world_image.size * native / logical.max(Vector2.ONE)).ceil())
+	_world_viewport.size = dimensions.clamp(Vector2i(320, 240), Vector2i(1600, 1200))
+	_sync_hotspots()
+
+
+func _sync_hotspots() -> void:
 	for hotspot: FloorHotspot in [_board, _engineering, _science]:
-		var span: Vector2 = DRAWN_FLOORS.get(str(hotspot.name), Vector2.ZERO)
-		if span != Vector2.ZERO:
-			hotspot.corners = PackedVector2Array([
-				Vector2(DRAWN_WALLS.x, span.x), Vector2(DRAWN_WALLS.y, span.x), Vector2(DRAWN_WALLS.y, span.y), Vector2(DRAWN_WALLS.x, span.y)])
+		hotspot.image_size = Vector2(_world_viewport.size)
+		hotspot.corners = _diorama.room_polygon(_floor_index(hotspot))
+
+
+func _floor_index(hotspot: FloorHotspot) -> int:
+	return hotspot.floor_number - 1
+
+
+func _on_floor_hovered(hotspot: FloorHotspot, hovered: bool) -> void:
+	if hovered:
+		_diorama.hover_room(_floor_index(hotspot))
+		_department_label.text = "%02d  /  %s%s" % [hotspot.floor_number, hotspot.department.to_upper(), "  ·  CURRENT TASK" if hotspot == _goal else ""]
+	elif _diorama._hovered == _floor_index(hotspot):
+		_diorama.hover_room(-1)
+		_department_label.text = "HEADQUARTERS  /  CHOOSE A DEPARTMENT"
+
+
+func _go_home() -> void:
+	Campaign.clock_running = false
+	SceneRouter.go_to(SceneRouter.MAIN_MENU)
 
 
 func _process(delta: float) -> void:
@@ -219,15 +242,20 @@ func _set_goal(hotspot: FloorHotspot, scene: String, hints: Dictionary) -> void:
 	for floor: FloorHotspot in [_board, _engineering, _science]:
 		floor.is_goal = floor == hotspot
 		floor.is_selected = false
+	_diorama.set_goal(_floor_index(hotspot))
+	_diorama.set_programme(Campaign.stage, Campaign.site, Vehicle.design)
 
 
 func _on_floor_clicked(hotspot: FloorHotspot) -> void:
+	if SceneRouter.is_busy():
+		return
 	if hotspot != _goal:
 		_show_hint(str(_hints.get(hotspot, "")))
 		return
 	_goal.is_goal = false
 	_goal.is_selected = true
 	_hint_label.text = ""
+	_diorama.enter_room(_floor_index(hotspot), 0.8)
 	if Campaign.stage > 1:
 		Campaign.clock_running = false
 	SceneRouter.go_to(_goal_scene, 0.8)

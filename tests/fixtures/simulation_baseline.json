@@ -1,0 +1,2166 @@
+{
+	"automatic": {
+		"accuracy": 0.97,
+		"budget": 7.569999999999983,
+		"build": {
+			"cost": 1.0,
+			"delay": 36,
+			"events": [
+				{
+					"cost": 0.6000000000000001,
+					"days": 13,
+					"kind": "ordinary",
+					"slot": "",
+					"text": "The flight software needed another round of testing."
+				},
+				{
+					"cost": 0.4,
+					"days": 23,
+					"kind": "ordinary",
+					"slot": "",
+					"text": "A storm damaged a test stand."
+				}
+			],
+			"found_fraction": 0.55,
+			"idle_cost": 0.11,
+			"kept": [
+				{
+					"cost_pct": 0.3,
+					"era": "Apollo",
+					"id": "samples",
+					"mass_kg": 35.0,
+					"name": "Sample tools and boxes",
+					"power_w": 0.0,
+					"read_more": {
+						"facts": [
+							[
+								"Used on",
+								"every Apollo landing"
+							],
+							[
+								"Brought back in total",
+								"382 kg of rock and soil"
+							]
+						],
+						"kicker": "Real equipment: sample tools",
+						"source": "Source: NASA, Legacy of the Apollo 11 Moon Landing.",
+						"text": [
+							"Hammers, scoops, tongs and core tubes, plus sealed boxes that keep the samples in vacuum on the way home.",
+							"Samples are the one experiment that keeps giving. Laboratories still study Apollo rocks today, with instruments that did not exist when the rocks were collected."
+						]
+					},
+					"science": 25.0,
+					"what": "Bring rocks and soil back to Earth."
+				},
+				{
+					"cost_pct": 2.5,
+					"era": "Apollo",
+					"id": "rover",
+					"mass_kg": 210.0,
+					"name": "Lunar rover",
+					"power_w": 0.0,
+					"read_more": {
+						"facts": [
+							[
+								"Mass",
+								"210 kg, carries up to 490 kg"
+							],
+							[
+								"Used on",
+								"Apollo 15, 16 and 17"
+							],
+							[
+								"Apollo 17 total distance",
+								"35.9 km"
+							],
+							[
+								"Farthest from the lander",
+								"7.6 km"
+							]
+						],
+						"kicker": "Real equipment: Lunar Roving Vehicle",
+						"source": "Source: NASA NSSDCA, The Apollo Lunar Roving Vehicle.",
+						"text": [
+							"A folding electric car carried on the side of the lander. On foot, crews stayed close to the lander. With the rover they worked kilometres away from it.",
+							"It was developed in only 17 months, and worked on the Moon without major problems on all three missions."
+						]
+					},
+					"science": 22.0,
+					"what": "Lets the crew work kilometres away from the lander."
+				},
+				{
+					"cost_pct": 0.7,
+					"era": "Artemis",
+					"id": "lems",
+					"mass_kg": 30.0,
+					"name": "Autonomous seismic station",
+					"power_w": 0.0,
+					"read_more": {
+						"facts": [
+							[
+								"Chosen by NASA",
+								"in 2024, for the first Artemis landing"
+							],
+							[
+								"Works",
+								"on its own power, for months to years"
+							],
+							[
+								"Studies",
+								"the crust and mantle under the south pole"
+							]
+						],
+						"kicker": "Real equipment: Lunar Environment Monitoring Station (LEMS)",
+						"source": "Source: NASA, Artemis III science instruments announcement (2024).",
+						"text": [
+							"The Apollo seismometers were switched off in 1977, and nobody has listened to the inside of the Moon from its surface since. This small station is meant to start again, in a region no instrument has ever visited.",
+							"It needs no cable to the lander and no astronaut to tend it. The crew sets it down, and it keeps recording long after they have left."
+						]
+					},
+					"science": 18.0,
+					"what": "Keeps listening for moonquakes for months after the crew has gone home."
+				},
+				{
+					"cost_pct": 0.4,
+					"era": "Artemis",
+					"id": "leaf",
+					"mass_kg": 12.0,
+					"name": "Plant growth experiment",
+					"power_w": 10.0,
+					"read_more": {
+						"facts": [
+							[
+								"Chosen by NASA",
+								"in 2024, for the first Artemis landing"
+							],
+							[
+								"Watches",
+								"how plants grow and cope with stress on the Moon"
+							],
+							[
+								"Why it matters",
+								"crews that stay will need to grow food"
+							]
+						],
+						"kicker": "Real equipment: Lunar Effects on Agricultural Flora (LEAF)",
+						"source": "Source: NASA, Artemis III science instruments announcement (2024).",
+						"text": [
+							"Plants have grown on the space station for years, in weightlessness. Nobody yet knows how they behave in one sixth of Earth's gravity, under the radiation of the open lunar surface.",
+							"The chamber protects its seedlings from the vacuum and the glare while cameras and sensors record how they grow. Some are brought home so their cells can be studied."
+						]
+					},
+					"science": 9.0,
+					"what": "A sealed chamber of seedlings: can crops grow in lunar gravity and radiation?"
+				}
+			],
+			"latent": {
+
+			},
+			"launch_day": 2346,
+			"launch_from": "port_ksc",
+			"left_behind": [],
+			"moved": false,
+			"power_short": false,
+			"reserve_after": 7.719999999999984,
+			"reserve_before": 8.829999999999984,
+			"tests": "All-up test flight"
+		},
+		"confidence": 100.0,
+		"days": 2372.5,
+		"flight": {
+			"budget_left": 7.569999999999983,
+			"causes": [
+				{
+					"decision": "Stage 8  ·  Reserve kept: 8.8%",
+					"effect": "Delays and repairs during the build cost 1.1%. The reserve paid for them.",
+					"good": true
+				},
+				{
+					"decision": "Stage 2  ·  Flight Dynamics funded at 9% (the team asked for 9%)",
+					"effect": "The path was known to within ±1.4%. The spacecraft needed only 2 m/s of corrections on the way to the Moon.",
+					"good": true
+				},
+				{
+					"decision": "Stage 4  ·  Landing site: Taurus–Littrow (risk: high)",
+					"effect": "The hardest site on the list, and the landing worked.",
+					"good": true
+				},
+				{
+					"decision": "Stage 6  ·  Communications: dish antenna and laser link",
+					"effect": "The laser link sent home everything the instruments recorded.",
+					"good": true
+				}
+			],
+			"crew": 4,
+			"headline": "Mission accomplished",
+			"launch_day": 2352,
+			"mission_days": 20.5,
+			"objectives": [
+				{
+					"met": true,
+					"text": "Land a crew on the Moon"
+				},
+				{
+					"met": true,
+					"text": "Bring the crew home safely"
+				},
+				{
+					"met": true,
+					"text": "Launch by 20 Jul 2033"
+				},
+				{
+					"met": true,
+					"text": "Stay within the budget"
+				},
+				{
+					"met": true,
+					"text": "Return the planned science"
+				}
+			],
+			"on_time": true,
+			"outcome": "landed",
+			"phases": [
+				{
+					"day": 0.0,
+					"gate": 1,
+					"id": "countdown",
+					"lines": [
+						{
+							"kind": "bad",
+							"text": "Launch attempt 1 stopped at T−18 minutes: a hydrogen leak at the fuelling arm. Next attempt in 6 days.",
+							"view": ""
+						},
+						{
+							"kind": "good",
+							"text": "Lift-off from Kennedy Space Center on 23 Apr 2033, 88 days before the deadline.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "Countdown",
+					"view": "pad"
+				},
+				{
+					"day": 0.0,
+					"fail": "",
+					"id": "ascent",
+					"lines": [
+						{
+							"kind": "info",
+							"text": "The boosters burned out and fell away on time.",
+							"view": "drop1"
+						},
+						{
+							"kind": "info",
+							"text": "The escape tower was dropped, unused.",
+							"view": ""
+						},
+						{
+							"kind": "info",
+							"text": "Core Stage burned out and fell away. The stack is in space.",
+							"view": "drop2"
+						}
+					],
+					"status": "ok",
+					"title": "Ascent",
+					"view": "ascent"
+				},
+				{
+					"day": 0.1,
+					"id": "orbit",
+					"lines": [
+						{
+							"kind": "info",
+							"text": "Parking orbit. The crew and mission control check every system before leaving Earth.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "Earth orbit",
+					"view": "map"
+				},
+				{
+					"day": 0.15,
+					"gauge": {
+						"have": 12.887045668334206,
+						"label": "Rocket speed",
+						"need": 12.366858818393945
+					},
+					"id": "tli",
+					"lines": [
+						{
+							"kind": "good",
+							"text": "The third stage restarted and burned for about six minutes. Speed needed: 12.37 km/s. The rocket delivered it.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "Burn for the Moon",
+					"view": "map"
+				},
+				{
+					"day": 0.3,
+					"id": "coast",
+					"lines": [
+						{
+							"kind": "good",
+							"text": "1 course correction on the way out, 2 m/s in total.",
+							"view": ""
+						},
+						{
+							"kind": "info",
+							"text": "Three quiet days. The Earth shrinks in the window.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "Coast to the Moon",
+					"view": "map"
+				},
+				{
+					"day": 3.2,
+					"gauge": {
+						"have": 1.1687117989585072,
+						"label": "Spacecraft engine",
+						"need": 0.9048168052554132
+					},
+					"id": "loi",
+					"lines": [
+						{
+							"kind": "good",
+							"text": "Braking burn behind the Moon, out of contact with Earth. 30 minutes of silence, then a voice: the burn was good.",
+							"view": ""
+						},
+						{
+							"kind": "good",
+							"text": "The spacecraft settled into a high, slow orbit and docked with the lander that was sent ahead.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "Lunar orbit",
+					"view": "map"
+				},
+				{
+					"day": 6.0,
+					"id": "landing",
+					"lines": [
+						{
+							"kind": "good",
+							"text": "Touchdown, 0.3 km from the planned point. Engine off.",
+							"view": ""
+						}
+					],
+					"manual": true,
+					"setup": {
+						"accuracy": 0.97,
+						"computer": 1,
+						"lander": "lander_hls",
+						"risk": 3,
+						"seed": 1457128990,
+						"training": 1
+					},
+					"status": "ok",
+					"title": "Landing",
+					"view": "surface"
+				},
+				{
+					"day": 6.2,
+					"id": "surface",
+					"lines": [
+						{
+							"kind": "good",
+							"text": "6 moonwalks, about 48 hours outside in all.",
+							"view": ""
+						},
+						{
+							"kind": "info",
+							"text": "Science on the surface: 127 of 114 planned points so far.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "On the Moon",
+					"view": "surface"
+				},
+				{
+					"day": 17.7,
+					"id": "return",
+					"lines": [
+						{
+							"kind": "good",
+							"text": "Lift-off from the Moon. The crew is together again in orbit.",
+							"view": ""
+						},
+						{
+							"kind": "good",
+							"text": "The engine fired behind the Moon one last time. The spacecraft is on its way home.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "Coast home",
+					"view": "map"
+				},
+				{
+					"day": 20.4,
+					"id": "entry",
+					"lines": [
+						{
+							"kind": "info",
+							"text": "The capsule met the air at 11 km/s.",
+							"view": ""
+						},
+						{
+							"kind": "good",
+							"text": "Three parachutes. Splashdown 6 km from the planned point.",
+							"view": ""
+						},
+						{
+							"kind": "good",
+							"text": "The crew is aboard the recovery ship within the hour after splashdown.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "Re-entry and splashdown",
+					"view": "sea"
+				}
+			],
+			"science_planned": 114,
+			"science_returned": 127,
+			"science_rows": [
+				{
+					"name": "The site itself: Taurus–Littrow",
+					"note": "explored by rover",
+					"points": 50
+				},
+				{
+					"name": "Sample tools and boxes",
+					"note": "brought home",
+					"points": 25
+				},
+				{
+					"name": "Lunar rover",
+					"note": "set up and working",
+					"points": 22
+				},
+				{
+					"name": "Autonomous seismic station",
+					"note": "set up and working",
+					"points": 20
+				},
+				{
+					"name": "Plant growth experiment",
+					"note": "set up and working",
+					"points": 10
+				}
+			],
+			"scrub_cost": 0.15,
+			"scrub_days": 6,
+			"scrubs": 1,
+			"ship_have": 1.1687117989585072,
+			"ship_need": 0.9048168052554132,
+			"side_boosters": true,
+			"spaceport": "port_ksc",
+			"stage_names": [
+				"boosters",
+				"core stage"
+			],
+			"surface_crew": 2,
+			"weather_scrubs": 0,
+			"within_budget": true
+		},
+		"margin": 1.4000000000000001,
+		"round": 4,
+		"stage": 11,
+		"vehicle": {
+			"abort": "tower_steered",
+			"budget_after": 14.329999999999984,
+			"build_days": 1800,
+			"cargo_capacity": 900.0,
+			"cargo_need": 287.0,
+			"complete": true,
+			"cost": 69.77000000000001,
+			"crew": 4,
+			"crew_days": 82.0,
+			"eva_hours": 8.0,
+			"high_orbit": true,
+			"lander_built": true,
+			"life_built": true,
+			"liftoff_mass": 2599.373,
+			"link": "laser",
+			"mission_days": 20.5,
+			"overland": false,
+			"parts_cost": 63.50000000000001,
+			"power_built": true,
+			"power_have": 6.0,
+			"power_need": 4.06,
+			"program_days": 2090,
+			"propellant": 2284.6,
+			"propellant_usd": 16876800.0,
+			"ready_day": 2310,
+			"reliability": 0.8365301723199133,
+			"reserve_pct": 1.4000000000000001,
+			"rocket_built": true,
+			"rocket_dv": 12.887045668334206,
+			"rocket_need": 12.3941,
+			"ship_built": true,
+			"ship_dv": 1.1687117989585072,
+			"ship_need": 0.9126000000000001,
+			"site_dv": 0.0,
+			"spacecraft_mass": 27.373000000000005,
+			"spaceport": "port_ksc",
+			"spare_days": 130,
+			"stage1_burn": 98.621188640625,
+			"stage_dv": [
+				1.6618699199471498,
+				8.616029767653611,
+				2.609145980733445
+			],
+			"stay_days": 6.5,
+			"suits_built": true,
+			"supplies": 0.9830000000000001,
+			"surface_crew": 2,
+			"thrust_to_weight": 1.255338068653237,
+			"workforce_cost": 6.27
+		}
+	},
+	"manual_overrides": {
+		"accuracy": 0.97,
+		"budget": 7.569999999999983,
+		"build": {
+			"cost": 1.0,
+			"delay": 36,
+			"events": [
+				{
+					"cost": 0.6000000000000001,
+					"days": 13,
+					"kind": "ordinary",
+					"slot": "",
+					"text": "The flight software needed another round of testing."
+				},
+				{
+					"cost": 0.4,
+					"days": 23,
+					"kind": "ordinary",
+					"slot": "",
+					"text": "A storm damaged a test stand."
+				}
+			],
+			"found_fraction": 0.55,
+			"idle_cost": 0.11,
+			"kept": [
+				{
+					"cost_pct": 0.3,
+					"era": "Apollo",
+					"id": "samples",
+					"mass_kg": 35.0,
+					"name": "Sample tools and boxes",
+					"power_w": 0.0,
+					"read_more": {
+						"facts": [
+							[
+								"Used on",
+								"every Apollo landing"
+							],
+							[
+								"Brought back in total",
+								"382 kg of rock and soil"
+							]
+						],
+						"kicker": "Real equipment: sample tools",
+						"source": "Source: NASA, Legacy of the Apollo 11 Moon Landing.",
+						"text": [
+							"Hammers, scoops, tongs and core tubes, plus sealed boxes that keep the samples in vacuum on the way home.",
+							"Samples are the one experiment that keeps giving. Laboratories still study Apollo rocks today, with instruments that did not exist when the rocks were collected."
+						]
+					},
+					"science": 25.0,
+					"what": "Bring rocks and soil back to Earth."
+				},
+				{
+					"cost_pct": 2.5,
+					"era": "Apollo",
+					"id": "rover",
+					"mass_kg": 210.0,
+					"name": "Lunar rover",
+					"power_w": 0.0,
+					"read_more": {
+						"facts": [
+							[
+								"Mass",
+								"210 kg, carries up to 490 kg"
+							],
+							[
+								"Used on",
+								"Apollo 15, 16 and 17"
+							],
+							[
+								"Apollo 17 total distance",
+								"35.9 km"
+							],
+							[
+								"Farthest from the lander",
+								"7.6 km"
+							]
+						],
+						"kicker": "Real equipment: Lunar Roving Vehicle",
+						"source": "Source: NASA NSSDCA, The Apollo Lunar Roving Vehicle.",
+						"text": [
+							"A folding electric car carried on the side of the lander. On foot, crews stayed close to the lander. With the rover they worked kilometres away from it.",
+							"It was developed in only 17 months, and worked on the Moon without major problems on all three missions."
+						]
+					},
+					"science": 22.0,
+					"what": "Lets the crew work kilometres away from the lander."
+				},
+				{
+					"cost_pct": 0.7,
+					"era": "Artemis",
+					"id": "lems",
+					"mass_kg": 30.0,
+					"name": "Autonomous seismic station",
+					"power_w": 0.0,
+					"read_more": {
+						"facts": [
+							[
+								"Chosen by NASA",
+								"in 2024, for the first Artemis landing"
+							],
+							[
+								"Works",
+								"on its own power, for months to years"
+							],
+							[
+								"Studies",
+								"the crust and mantle under the south pole"
+							]
+						],
+						"kicker": "Real equipment: Lunar Environment Monitoring Station (LEMS)",
+						"source": "Source: NASA, Artemis III science instruments announcement (2024).",
+						"text": [
+							"The Apollo seismometers were switched off in 1977, and nobody has listened to the inside of the Moon from its surface since. This small station is meant to start again, in a region no instrument has ever visited.",
+							"It needs no cable to the lander and no astronaut to tend it. The crew sets it down, and it keeps recording long after they have left."
+						]
+					},
+					"science": 18.0,
+					"what": "Keeps listening for moonquakes for months after the crew has gone home."
+				},
+				{
+					"cost_pct": 0.4,
+					"era": "Artemis",
+					"id": "leaf",
+					"mass_kg": 12.0,
+					"name": "Plant growth experiment",
+					"power_w": 10.0,
+					"read_more": {
+						"facts": [
+							[
+								"Chosen by NASA",
+								"in 2024, for the first Artemis landing"
+							],
+							[
+								"Watches",
+								"how plants grow and cope with stress on the Moon"
+							],
+							[
+								"Why it matters",
+								"crews that stay will need to grow food"
+							]
+						],
+						"kicker": "Real equipment: Lunar Effects on Agricultural Flora (LEAF)",
+						"source": "Source: NASA, Artemis III science instruments announcement (2024).",
+						"text": [
+							"Plants have grown on the space station for years, in weightlessness. Nobody yet knows how they behave in one sixth of Earth's gravity, under the radiation of the open lunar surface.",
+							"The chamber protects its seedlings from the vacuum and the glare while cameras and sensors record how they grow. Some are brought home so their cells can be studied."
+						]
+					},
+					"science": 9.0,
+					"what": "A sealed chamber of seedlings: can crops grow in lunar gravity and radiation?"
+				}
+			],
+			"latent": {
+
+			},
+			"launch_day": 2346,
+			"launch_from": "port_ksc",
+			"left_behind": [],
+			"moved": false,
+			"power_short": false,
+			"reserve_after": 7.719999999999984,
+			"reserve_before": 8.829999999999984,
+			"tests": "All-up test flight"
+		},
+		"confidence": 100.0,
+		"days": 2366.0,
+		"flight": {
+			"budget_left": 7.569999999999983,
+			"causes": [
+				{
+					"decision": "Stage 8  ·  Reserve kept: 8.8%",
+					"effect": "Delays and repairs during the build cost 1.1%. The reserve paid for them.",
+					"good": true
+				},
+				{
+					"decision": "Stage 10  ·  You dropped the stages by hand",
+					"effect": "Your timing cost 15 m/s of rocket speed compared with the automatic sequence.",
+					"good": false
+				},
+				{
+					"decision": "Stage 2  ·  Flight Dynamics funded at 9% (the team asked for 9%)",
+					"effect": "The path was known to within ±1.4%. The spacecraft needed only 2 m/s of corrections on the way to the Moon.",
+					"good": true
+				},
+				{
+					"decision": "Stage 10  ·  You flew the landing by hand",
+					"effect": "The descent went outside safe limits and the landing was abandoned.",
+					"good": false
+				},
+				{
+					"decision": "Stage 4  ·  Landing site: Taurus–Littrow (risk: high)",
+					"effect": "This site leaves little clear ground to choose from.",
+					"good": false
+				}
+			],
+			"crew": 4,
+			"headline": "The crew reached the Moon but did not land",
+			"launch_day": 2352,
+			"mission_days": 14.0,
+			"objectives": [
+				{
+					"met": false,
+					"text": "Land a crew on the Moon"
+				},
+				{
+					"met": true,
+					"text": "Bring the crew home safely"
+				},
+				{
+					"met": true,
+					"text": "Launch by 20 Jul 2033"
+				},
+				{
+					"met": true,
+					"text": "Stay within the budget"
+				},
+				{
+					"met": false,
+					"text": "Return the planned science"
+				}
+			],
+			"on_time": true,
+			"outcome": "orbit",
+			"phases": [
+				{
+					"day": 0.0,
+					"gate": 1,
+					"id": "countdown",
+					"lines": [
+						{
+							"kind": "bad",
+							"text": "Launch attempt 1 stopped at T−18 minutes: a hydrogen leak at the fuelling arm. Next attempt in 6 days.",
+							"view": ""
+						},
+						{
+							"kind": "good",
+							"text": "Lift-off from Kennedy Space Center on 23 Apr 2033, 88 days before the deadline.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "Countdown",
+					"view": "pad"
+				},
+				{
+					"day": 0.0,
+					"fail": "",
+					"id": "ascent",
+					"lines": [
+						{
+							"kind": "bad",
+							"text": "You dropped the boosters 0.8 s early. Unburned propellant fell away with it: −7 m/s.",
+							"view": ""
+						},
+						{
+							"kind": "bad",
+							"text": "You dropped the core stage 1.0 s late. An empty stage rode along as dead weight: −8 m/s.",
+							"view": ""
+						},
+						{
+							"kind": "info",
+							"text": "The stack is in space.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "Ascent",
+					"view": "ascent"
+				},
+				{
+					"day": 0.1,
+					"id": "orbit",
+					"lines": [
+						{
+							"kind": "info",
+							"text": "Parking orbit. The crew and mission control check every system before leaving Earth.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "Earth orbit",
+					"view": "map"
+				},
+				{
+					"day": 0.15,
+					"gauge": {
+						"have": 12.87162900166754,
+						"label": "Rocket speed",
+						"need": 12.366858818393945
+					},
+					"id": "tli",
+					"lines": [
+						{
+							"kind": "good",
+							"text": "The third stage restarted and burned for about six minutes. Speed needed: 12.37 km/s. The rocket delivered it.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "Burn for the Moon",
+					"view": "map"
+				},
+				{
+					"day": 0.3,
+					"id": "coast",
+					"lines": [
+						{
+							"kind": "good",
+							"text": "1 course correction on the way out, 2 m/s in total.",
+							"view": ""
+						},
+						{
+							"kind": "info",
+							"text": "Three quiet days. The Earth shrinks in the window.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "Coast to the Moon",
+					"view": "map"
+				},
+				{
+					"day": 3.2,
+					"gauge": {
+						"have": 1.1687117989585072,
+						"label": "Spacecraft engine",
+						"need": 0.9048168052554132
+					},
+					"id": "loi",
+					"lines": [
+						{
+							"kind": "good",
+							"text": "Braking burn behind the Moon, out of contact with Earth. 30 minutes of silence, then a voice: the burn was good.",
+							"view": ""
+						},
+						{
+							"kind": "good",
+							"text": "The spacecraft settled into a high, slow orbit and docked with the lander that was sent ahead.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "Lunar orbit",
+					"view": "map"
+				},
+				{
+					"day": 6.0,
+					"id": "landing",
+					"lines": [
+						{
+							"kind": "info",
+							"text": "The commander took the controls for the last hundred metres.",
+							"view": ""
+						},
+						{
+							"kind": "bad",
+							"text": "The descent went outside safe limits. The computer called the abort and fired the ascent engine.",
+							"view": ""
+						},
+						{
+							"kind": "bad",
+							"text": "The crew is back in orbit.",
+							"view": ""
+						}
+					],
+					"manual": true,
+					"setup": {
+						"accuracy": 0.97,
+						"computer": 1,
+						"lander": "lander_hls",
+						"risk": 3,
+						"seed": 1457128990,
+						"training": 1
+					},
+					"status": "problem",
+					"title": "Landing",
+					"view": "surface"
+				},
+				{
+					"day": 11.2,
+					"id": "return",
+					"lines": [
+						{
+							"kind": "good",
+							"text": "The engine fired behind the Moon one last time. The spacecraft is on its way home.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "Coast home",
+					"view": "map"
+				},
+				{
+					"day": 13.9,
+					"id": "entry",
+					"lines": [
+						{
+							"kind": "info",
+							"text": "The capsule met the air at 11 km/s.",
+							"view": ""
+						},
+						{
+							"kind": "good",
+							"text": "Three parachutes. Splashdown 6 km from the planned point.",
+							"view": ""
+						},
+						{
+							"kind": "good",
+							"text": "The crew is aboard the recovery ship within the hour after splashdown.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "Re-entry and splashdown",
+					"view": "sea"
+				}
+			],
+			"science_planned": 114,
+			"science_returned": 8,
+			"science_rows": [
+				{
+					"name": "Observations from lunar orbit",
+					"note": "photographs and measurements, no landing",
+					"points": 8
+				}
+			],
+			"scrub_cost": 0.15,
+			"scrub_days": 6,
+			"scrubs": 1,
+			"ship_have": 1.1687117989585072,
+			"ship_need": 0.9048168052554132,
+			"side_boosters": true,
+			"spaceport": "port_ksc",
+			"stage_names": [
+				"boosters",
+				"core stage"
+			],
+			"surface_crew": 0,
+			"weather_scrubs": 0,
+			"within_budget": true
+		},
+		"margin": 1.4000000000000001,
+		"round": 4,
+		"stage": 11,
+		"vehicle": {
+			"abort": "tower_steered",
+			"budget_after": 14.329999999999984,
+			"build_days": 1800,
+			"cargo_capacity": 900.0,
+			"cargo_need": 287.0,
+			"complete": true,
+			"cost": 69.77000000000001,
+			"crew": 4,
+			"crew_days": 82.0,
+			"eva_hours": 8.0,
+			"high_orbit": true,
+			"lander_built": true,
+			"life_built": true,
+			"liftoff_mass": 2599.373,
+			"link": "laser",
+			"mission_days": 20.5,
+			"overland": false,
+			"parts_cost": 63.50000000000001,
+			"power_built": true,
+			"power_have": 6.0,
+			"power_need": 4.06,
+			"program_days": 2090,
+			"propellant": 2284.6,
+			"propellant_usd": 16876800.0,
+			"ready_day": 2310,
+			"reliability": 0.8365301723199133,
+			"reserve_pct": 1.4000000000000001,
+			"rocket_built": true,
+			"rocket_dv": 12.887045668334206,
+			"rocket_need": 12.3941,
+			"ship_built": true,
+			"ship_dv": 1.1687117989585072,
+			"ship_need": 0.9126000000000001,
+			"site_dv": 0.0,
+			"spacecraft_mass": 27.373000000000005,
+			"spaceport": "port_ksc",
+			"spare_days": 130,
+			"stage1_burn": 98.621188640625,
+			"stage_dv": [
+				1.6618699199471498,
+				8.616029767653611,
+				2.609145980733445
+			],
+			"stay_days": 6.5,
+			"suits_built": true,
+			"supplies": 0.9830000000000001,
+			"surface_crew": 2,
+			"thrust_to_weight": 1.255338068653237,
+			"workforce_cost": 6.27
+		}
+	},
+	"poor_configuration": {
+		"accuracy": 0.97,
+		"budget": 10.719999999999985,
+		"build": {
+			"cost": 0.8,
+			"delay": 53,
+			"events": [
+				{
+					"cost": 0.5,
+					"days": 23,
+					"kind": "ordinary",
+					"slot": "",
+					"text": "Welds on a propellant tank failed inspection and were redone."
+				},
+				{
+					"cost": 0.30000000000000004,
+					"days": 30,
+					"kind": "ordinary",
+					"slot": "",
+					"text": "The flight software needed another round of testing."
+				}
+			],
+			"found_fraction": 0.55,
+			"idle_cost": 0.16,
+			"kept": [
+				{
+					"cost_pct": 0.3,
+					"era": "Apollo",
+					"id": "samples",
+					"mass_kg": 35.0,
+					"name": "Sample tools and boxes",
+					"power_w": 0.0,
+					"read_more": {
+						"facts": [
+							[
+								"Used on",
+								"every Apollo landing"
+							],
+							[
+								"Brought back in total",
+								"382 kg of rock and soil"
+							]
+						],
+						"kicker": "Real equipment: sample tools",
+						"source": "Source: NASA, Legacy of the Apollo 11 Moon Landing.",
+						"text": [
+							"Hammers, scoops, tongs and core tubes, plus sealed boxes that keep the samples in vacuum on the way home.",
+							"Samples are the one experiment that keeps giving. Laboratories still study Apollo rocks today, with instruments that did not exist when the rocks were collected."
+						]
+					},
+					"science": 25.0,
+					"what": "Bring rocks and soil back to Earth."
+				},
+				{
+					"cost_pct": 2.5,
+					"era": "Apollo",
+					"id": "rover",
+					"mass_kg": 210.0,
+					"name": "Lunar rover",
+					"power_w": 0.0,
+					"read_more": {
+						"facts": [
+							[
+								"Mass",
+								"210 kg, carries up to 490 kg"
+							],
+							[
+								"Used on",
+								"Apollo 15, 16 and 17"
+							],
+							[
+								"Apollo 17 total distance",
+								"35.9 km"
+							],
+							[
+								"Farthest from the lander",
+								"7.6 km"
+							]
+						],
+						"kicker": "Real equipment: Lunar Roving Vehicle",
+						"source": "Source: NASA NSSDCA, The Apollo Lunar Roving Vehicle.",
+						"text": [
+							"A folding electric car carried on the side of the lander. On foot, crews stayed close to the lander. With the rover they worked kilometres away from it.",
+							"It was developed in only 17 months, and worked on the Moon without major problems on all three missions."
+						]
+					},
+					"science": 22.0,
+					"what": "Lets the crew work kilometres away from the lander."
+				},
+				{
+					"cost_pct": 0.7,
+					"era": "Artemis",
+					"id": "lems",
+					"mass_kg": 30.0,
+					"name": "Autonomous seismic station",
+					"power_w": 0.0,
+					"read_more": {
+						"facts": [
+							[
+								"Chosen by NASA",
+								"in 2024, for the first Artemis landing"
+							],
+							[
+								"Works",
+								"on its own power, for months to years"
+							],
+							[
+								"Studies",
+								"the crust and mantle under the south pole"
+							]
+						],
+						"kicker": "Real equipment: Lunar Environment Monitoring Station (LEMS)",
+						"source": "Source: NASA, Artemis III science instruments announcement (2024).",
+						"text": [
+							"The Apollo seismometers were switched off in 1977, and nobody has listened to the inside of the Moon from its surface since. This small station is meant to start again, in a region no instrument has ever visited.",
+							"It needs no cable to the lander and no astronaut to tend it. The crew sets it down, and it keeps recording long after they have left."
+						]
+					},
+					"science": 18.0,
+					"what": "Keeps listening for moonquakes for months after the crew has gone home."
+				},
+				{
+					"cost_pct": 0.4,
+					"era": "Artemis",
+					"id": "leaf",
+					"mass_kg": 12.0,
+					"name": "Plant growth experiment",
+					"power_w": 10.0,
+					"read_more": {
+						"facts": [
+							[
+								"Chosen by NASA",
+								"in 2024, for the first Artemis landing"
+							],
+							[
+								"Watches",
+								"how plants grow and cope with stress on the Moon"
+							],
+							[
+								"Why it matters",
+								"crews that stay will need to grow food"
+							]
+						],
+						"kicker": "Real equipment: Lunar Effects on Agricultural Flora (LEAF)",
+						"source": "Source: NASA, Artemis III science instruments announcement (2024).",
+						"text": [
+							"Plants have grown on the space station for years, in weightlessness. Nobody yet knows how they behave in one sixth of Earth's gravity, under the radiation of the open lunar surface.",
+							"The chamber protects its seedlings from the vacuum and the glare while cameras and sensors record how they grow. Some are brought home so their cells can be studied."
+						]
+					},
+					"science": 9.0,
+					"what": "A sealed chamber of seedlings: can crops grow in lunar gravity and radiation?"
+				}
+			],
+			"latent": {
+
+			},
+			"launch_day": 2363,
+			"launch_from": "port_ksc",
+			"left_behind": [],
+			"moved": false,
+			"power_short": false,
+			"reserve_after": 11.169999999999984,
+			"reserve_before": 12.129999999999985,
+			"tests": "All-up test flight"
+		},
+		"confidence": 95.0,
+		"days": 2372.0,
+		"flight": {
+			"budget_left": 10.719999999999985,
+			"causes": [
+				{
+					"decision": "Stage 8  ·  Reserve kept: 12.1%",
+					"effect": "Delays and repairs during the build cost 1%. The reserve paid for them.",
+					"good": true
+				},
+				{
+					"decision": "Stage 6  ·  Launch site: Kennedy Space Center",
+					"effect": "Weather at Kennedy Space Center stopped one launch attempt. Waiting for clear skies cost 1 day.",
+					"good": false
+				},
+				{
+					"decision": "Stage 8  ·  Launch team: small team",
+					"effect": "2 launch attempts were stopped by technical faults. They cost 8 days and 0.3% of the budget.",
+					"good": false
+				},
+				{
+					"decision": "Stage 6  ·  First stage: kerosene booster, four engines",
+					"effect": "Thrust-to-weight at lift-off was 0.93. Below 1, a rocket cannot leave the ground.",
+					"good": false
+				}
+			],
+			"crew": 4,
+			"headline": "The rocket never left the pad",
+			"launch_day": 2372,
+			"mission_days": 0.0,
+			"objectives": [
+				{
+					"met": false,
+					"text": "Land a crew on the Moon"
+				},
+				{
+					"met": true,
+					"text": "Bring the crew home safely"
+				},
+				{
+					"met": false,
+					"text": "Launch by 20 Jul 2033"
+				},
+				{
+					"met": true,
+					"text": "Stay within the budget"
+				},
+				{
+					"met": false,
+					"text": "Return the planned science"
+				}
+			],
+			"on_time": true,
+			"outcome": "no_launch",
+			"phases": [
+				{
+					"day": 0.0,
+					"gate": 3,
+					"id": "countdown",
+					"lines": [
+						{
+							"kind": "bad",
+							"text": "Launch attempt 1 stopped at T−31 minutes: a valve that did not close. Next attempt in 4 days.",
+							"view": ""
+						},
+						{
+							"kind": "bad",
+							"text": "Launch attempt 2 stopped at T−21 minutes: high winds above the pad. Next attempt in 4 days.",
+							"view": ""
+						},
+						{
+							"kind": "bad",
+							"text": "Launch attempt 3 called off at T−37 minutes: lightning within reach of the pad. Next attempt in 1 day.",
+							"view": ""
+						},
+						{
+							"kind": "bad",
+							"text": "Ignition. The engines reached full thrust and the rocket did not move: it weighs more than its engines can lift. The computer shut them down.",
+							"view": ""
+						}
+					],
+					"status": "problem",
+					"title": "Countdown",
+					"view": "pad"
+				}
+			],
+			"science_planned": 114,
+			"science_returned": 0,
+			"science_rows": [],
+			"scrub_cost": 0.44999999999999996,
+			"scrub_days": 9,
+			"scrubs": 3,
+			"ship_have": 1.1687117989585072,
+			"ship_need": 0.9033569142401219,
+			"side_boosters": false,
+			"spaceport": "port_ksc",
+			"stage_names": [
+				"first stage",
+				"second stage"
+			],
+			"surface_crew": 0,
+			"weather_scrubs": 1,
+			"within_budget": true
+		},
+		"margin": 1.4000000000000001,
+		"round": 3,
+		"stage": 11,
+		"vehicle": {
+			"abort": "tower_steered",
+			"budget_after": -58.94000000000001,
+			"build_days": 1800,
+			"cargo_capacity": 900.0,
+			"cargo_need": 287.0,
+			"complete": true,
+			"cost": 73.27,
+			"crew": 4,
+			"crew_days": 82.0,
+			"eva_hours": 8.0,
+			"high_orbit": true,
+			"lander_built": true,
+			"life_built": true,
+			"liftoff_mass": 2956.373,
+			"link": "laser",
+			"mission_days": 20.5,
+			"overland": false,
+			"parts_cost": 67.0,
+			"power_built": true,
+			"power_have": 6.0,
+			"power_need": 4.06,
+			"program_days": 2090,
+			"propellant": 2722.6,
+			"propellant_usd": 3092800.0,
+			"ready_day": 2310,
+			"reliability": 0.8365301723199133,
+			"reserve_pct": 1.4000000000000001,
+			"rocket_built": true,
+			"rocket_dv": 13.616863145226084,
+			"rocket_need": 12.3941,
+			"ship_built": true,
+			"ship_dv": 1.1687117989585072,
+			"ship_need": 0.9126000000000001,
+			"site_dv": 0.0,
+			"spacecraft_mass": 27.373000000000005,
+			"spaceport": "port_ksc",
+			"spare_days": 130,
+			"stage1_burn": 175.32553228782288,
+			"stage_dv": [
+				2.391687396839029,
+				8.616029767653611,
+				2.609145980733445
+			],
+			"stay_days": 6.5,
+			"suits_built": true,
+			"supplies": 0.9830000000000001,
+			"surface_crew": 2,
+			"thrust_to_weight": 0.9347369013213779,
+			"workforce_cost": 6.27
+		}
+	},
+	"preflight": {
+		"accuracy": 0.97,
+		"budget": 7.719999999999984,
+		"build": {
+			"cost": 1.0,
+			"delay": 36,
+			"events": [
+				{
+					"cost": 0.6000000000000001,
+					"days": 13,
+					"kind": "ordinary",
+					"slot": "",
+					"text": "The flight software needed another round of testing."
+				},
+				{
+					"cost": 0.4,
+					"days": 23,
+					"kind": "ordinary",
+					"slot": "",
+					"text": "A storm damaged a test stand."
+				}
+			],
+			"found_fraction": 0.55,
+			"idle_cost": 0.11,
+			"kept": [
+				{
+					"cost_pct": 0.3,
+					"era": "Apollo",
+					"id": "samples",
+					"mass_kg": 35.0,
+					"name": "Sample tools and boxes",
+					"power_w": 0.0,
+					"read_more": {
+						"facts": [
+							[
+								"Used on",
+								"every Apollo landing"
+							],
+							[
+								"Brought back in total",
+								"382 kg of rock and soil"
+							]
+						],
+						"kicker": "Real equipment: sample tools",
+						"source": "Source: NASA, Legacy of the Apollo 11 Moon Landing.",
+						"text": [
+							"Hammers, scoops, tongs and core tubes, plus sealed boxes that keep the samples in vacuum on the way home.",
+							"Samples are the one experiment that keeps giving. Laboratories still study Apollo rocks today, with instruments that did not exist when the rocks were collected."
+						]
+					},
+					"science": 25.0,
+					"what": "Bring rocks and soil back to Earth."
+				},
+				{
+					"cost_pct": 2.5,
+					"era": "Apollo",
+					"id": "rover",
+					"mass_kg": 210.0,
+					"name": "Lunar rover",
+					"power_w": 0.0,
+					"read_more": {
+						"facts": [
+							[
+								"Mass",
+								"210 kg, carries up to 490 kg"
+							],
+							[
+								"Used on",
+								"Apollo 15, 16 and 17"
+							],
+							[
+								"Apollo 17 total distance",
+								"35.9 km"
+							],
+							[
+								"Farthest from the lander",
+								"7.6 km"
+							]
+						],
+						"kicker": "Real equipment: Lunar Roving Vehicle",
+						"source": "Source: NASA NSSDCA, The Apollo Lunar Roving Vehicle.",
+						"text": [
+							"A folding electric car carried on the side of the lander. On foot, crews stayed close to the lander. With the rover they worked kilometres away from it.",
+							"It was developed in only 17 months, and worked on the Moon without major problems on all three missions."
+						]
+					},
+					"science": 22.0,
+					"what": "Lets the crew work kilometres away from the lander."
+				},
+				{
+					"cost_pct": 0.7,
+					"era": "Artemis",
+					"id": "lems",
+					"mass_kg": 30.0,
+					"name": "Autonomous seismic station",
+					"power_w": 0.0,
+					"read_more": {
+						"facts": [
+							[
+								"Chosen by NASA",
+								"in 2024, for the first Artemis landing"
+							],
+							[
+								"Works",
+								"on its own power, for months to years"
+							],
+							[
+								"Studies",
+								"the crust and mantle under the south pole"
+							]
+						],
+						"kicker": "Real equipment: Lunar Environment Monitoring Station (LEMS)",
+						"source": "Source: NASA, Artemis III science instruments announcement (2024).",
+						"text": [
+							"The Apollo seismometers were switched off in 1977, and nobody has listened to the inside of the Moon from its surface since. This small station is meant to start again, in a region no instrument has ever visited.",
+							"It needs no cable to the lander and no astronaut to tend it. The crew sets it down, and it keeps recording long after they have left."
+						]
+					},
+					"science": 18.0,
+					"what": "Keeps listening for moonquakes for months after the crew has gone home."
+				},
+				{
+					"cost_pct": 0.4,
+					"era": "Artemis",
+					"id": "leaf",
+					"mass_kg": 12.0,
+					"name": "Plant growth experiment",
+					"power_w": 10.0,
+					"read_more": {
+						"facts": [
+							[
+								"Chosen by NASA",
+								"in 2024, for the first Artemis landing"
+							],
+							[
+								"Watches",
+								"how plants grow and cope with stress on the Moon"
+							],
+							[
+								"Why it matters",
+								"crews that stay will need to grow food"
+							]
+						],
+						"kicker": "Real equipment: Lunar Effects on Agricultural Flora (LEAF)",
+						"source": "Source: NASA, Artemis III science instruments announcement (2024).",
+						"text": [
+							"Plants have grown on the space station for years, in weightlessness. Nobody yet knows how they behave in one sixth of Earth's gravity, under the radiation of the open lunar surface.",
+							"The chamber protects its seedlings from the vacuum and the glare while cameras and sensors record how they grow. Some are brought home so their cells can be studied."
+						]
+					},
+					"science": 9.0,
+					"what": "A sealed chamber of seedlings: can crops grow in lunar gravity and radiation?"
+				}
+			],
+			"latent": {
+
+			},
+			"launch_day": 2346,
+			"launch_from": "port_ksc",
+			"left_behind": [],
+			"moved": false,
+			"power_short": false,
+			"reserve_after": 7.719999999999984,
+			"reserve_before": 8.829999999999984,
+			"tests": "All-up test flight"
+		},
+		"confidence": 100.0,
+		"days": 2343.0,
+		"flight": {
+
+		},
+		"margin": 1.4000000000000001,
+		"round": 2,
+		"stage": 10,
+		"vehicle": {
+			"abort": "tower_steered",
+			"budget_after": 14.329999999999984,
+			"build_days": 1800,
+			"cargo_capacity": 900.0,
+			"cargo_need": 287.0,
+			"complete": true,
+			"cost": 69.77000000000001,
+			"crew": 4,
+			"crew_days": 82.0,
+			"eva_hours": 8.0,
+			"high_orbit": true,
+			"lander_built": true,
+			"life_built": true,
+			"liftoff_mass": 2599.373,
+			"link": "laser",
+			"mission_days": 20.5,
+			"overland": false,
+			"parts_cost": 63.50000000000001,
+			"power_built": true,
+			"power_have": 6.0,
+			"power_need": 4.06,
+			"program_days": 2090,
+			"propellant": 2284.6,
+			"propellant_usd": 16876800.0,
+			"ready_day": 2310,
+			"reliability": 0.8365301723199133,
+			"reserve_pct": 1.4000000000000001,
+			"rocket_built": true,
+			"rocket_dv": 12.887045668334206,
+			"rocket_need": 12.3941,
+			"ship_built": true,
+			"ship_dv": 1.1687117989585072,
+			"ship_need": 0.9126000000000001,
+			"site_dv": 0.0,
+			"spacecraft_mass": 27.373000000000005,
+			"spaceport": "port_ksc",
+			"spare_days": 130,
+			"stage1_burn": 98.621188640625,
+			"stage_dv": [
+				1.6618699199471498,
+				8.616029767653611,
+				2.609145980733445
+			],
+			"stay_days": 6.5,
+			"suits_built": true,
+			"supplies": 0.9830000000000001,
+			"surface_crew": 2,
+			"thrust_to_weight": 1.255338068653237,
+			"workforce_cost": 6.27
+		}
+	},
+	"replayed": {
+		"accuracy": 0.97,
+		"budget": 7.569999999999983,
+		"build": {
+			"cost": 1.0,
+			"delay": 36,
+			"events": [
+				{
+					"cost": 0.6000000000000001,
+					"days": 13,
+					"kind": "ordinary",
+					"slot": "",
+					"text": "The flight software needed another round of testing."
+				},
+				{
+					"cost": 0.4,
+					"days": 23,
+					"kind": "ordinary",
+					"slot": "",
+					"text": "A storm damaged a test stand."
+				}
+			],
+			"found_fraction": 0.55,
+			"idle_cost": 0.11,
+			"kept": [
+				{
+					"cost_pct": 0.3,
+					"era": "Apollo",
+					"id": "samples",
+					"mass_kg": 35.0,
+					"name": "Sample tools and boxes",
+					"power_w": 0.0,
+					"read_more": {
+						"facts": [
+							[
+								"Used on",
+								"every Apollo landing"
+							],
+							[
+								"Brought back in total",
+								"382 kg of rock and soil"
+							]
+						],
+						"kicker": "Real equipment: sample tools",
+						"source": "Source: NASA, Legacy of the Apollo 11 Moon Landing.",
+						"text": [
+							"Hammers, scoops, tongs and core tubes, plus sealed boxes that keep the samples in vacuum on the way home.",
+							"Samples are the one experiment that keeps giving. Laboratories still study Apollo rocks today, with instruments that did not exist when the rocks were collected."
+						]
+					},
+					"science": 25.0,
+					"what": "Bring rocks and soil back to Earth."
+				},
+				{
+					"cost_pct": 2.5,
+					"era": "Apollo",
+					"id": "rover",
+					"mass_kg": 210.0,
+					"name": "Lunar rover",
+					"power_w": 0.0,
+					"read_more": {
+						"facts": [
+							[
+								"Mass",
+								"210 kg, carries up to 490 kg"
+							],
+							[
+								"Used on",
+								"Apollo 15, 16 and 17"
+							],
+							[
+								"Apollo 17 total distance",
+								"35.9 km"
+							],
+							[
+								"Farthest from the lander",
+								"7.6 km"
+							]
+						],
+						"kicker": "Real equipment: Lunar Roving Vehicle",
+						"source": "Source: NASA NSSDCA, The Apollo Lunar Roving Vehicle.",
+						"text": [
+							"A folding electric car carried on the side of the lander. On foot, crews stayed close to the lander. With the rover they worked kilometres away from it.",
+							"It was developed in only 17 months, and worked on the Moon without major problems on all three missions."
+						]
+					},
+					"science": 22.0,
+					"what": "Lets the crew work kilometres away from the lander."
+				},
+				{
+					"cost_pct": 0.7,
+					"era": "Artemis",
+					"id": "lems",
+					"mass_kg": 30.0,
+					"name": "Autonomous seismic station",
+					"power_w": 0.0,
+					"read_more": {
+						"facts": [
+							[
+								"Chosen by NASA",
+								"in 2024, for the first Artemis landing"
+							],
+							[
+								"Works",
+								"on its own power, for months to years"
+							],
+							[
+								"Studies",
+								"the crust and mantle under the south pole"
+							]
+						],
+						"kicker": "Real equipment: Lunar Environment Monitoring Station (LEMS)",
+						"source": "Source: NASA, Artemis III science instruments announcement (2024).",
+						"text": [
+							"The Apollo seismometers were switched off in 1977, and nobody has listened to the inside of the Moon from its surface since. This small station is meant to start again, in a region no instrument has ever visited.",
+							"It needs no cable to the lander and no astronaut to tend it. The crew sets it down, and it keeps recording long after they have left."
+						]
+					},
+					"science": 18.0,
+					"what": "Keeps listening for moonquakes for months after the crew has gone home."
+				},
+				{
+					"cost_pct": 0.4,
+					"era": "Artemis",
+					"id": "leaf",
+					"mass_kg": 12.0,
+					"name": "Plant growth experiment",
+					"power_w": 10.0,
+					"read_more": {
+						"facts": [
+							[
+								"Chosen by NASA",
+								"in 2024, for the first Artemis landing"
+							],
+							[
+								"Watches",
+								"how plants grow and cope with stress on the Moon"
+							],
+							[
+								"Why it matters",
+								"crews that stay will need to grow food"
+							]
+						],
+						"kicker": "Real equipment: Lunar Effects on Agricultural Flora (LEAF)",
+						"source": "Source: NASA, Artemis III science instruments announcement (2024).",
+						"text": [
+							"Plants have grown on the space station for years, in weightlessness. Nobody yet knows how they behave in one sixth of Earth's gravity, under the radiation of the open lunar surface.",
+							"The chamber protects its seedlings from the vacuum and the glare while cameras and sensors record how they grow. Some are brought home so their cells can be studied."
+						]
+					},
+					"science": 9.0,
+					"what": "A sealed chamber of seedlings: can crops grow in lunar gravity and radiation?"
+				}
+			],
+			"latent": {
+
+			},
+			"launch_day": 2346,
+			"launch_from": "port_ksc",
+			"left_behind": [],
+			"moved": false,
+			"power_short": false,
+			"reserve_after": 7.719999999999984,
+			"reserve_before": 8.829999999999984,
+			"tests": "All-up test flight"
+		},
+		"confidence": 100.0,
+		"days": 2372.5,
+		"flight": {
+			"budget_left": 7.569999999999983,
+			"causes": [
+				{
+					"decision": "Stage 8  ·  Reserve kept: 8.8%",
+					"effect": "Delays and repairs during the build cost 1.1%. The reserve paid for them.",
+					"good": true
+				},
+				{
+					"decision": "Stage 2  ·  Flight Dynamics funded at 9% (the team asked for 9%)",
+					"effect": "The path was known to within ±1.4%. The spacecraft needed only 2 m/s of corrections on the way to the Moon.",
+					"good": true
+				},
+				{
+					"decision": "Stage 4  ·  Landing site: Taurus–Littrow (risk: high)",
+					"effect": "The hardest site on the list, and the landing worked.",
+					"good": true
+				},
+				{
+					"decision": "Stage 6  ·  Communications: dish antenna and laser link",
+					"effect": "The laser link sent home everything the instruments recorded.",
+					"good": true
+				}
+			],
+			"crew": 4,
+			"headline": "Mission accomplished",
+			"launch_day": 2352,
+			"mission_days": 20.5,
+			"objectives": [
+				{
+					"met": true,
+					"text": "Land a crew on the Moon"
+				},
+				{
+					"met": true,
+					"text": "Bring the crew home safely"
+				},
+				{
+					"met": true,
+					"text": "Launch by 20 Jul 2033"
+				},
+				{
+					"met": true,
+					"text": "Stay within the budget"
+				},
+				{
+					"met": true,
+					"text": "Return the planned science"
+				}
+			],
+			"on_time": true,
+			"outcome": "landed",
+			"phases": [
+				{
+					"day": 0.0,
+					"gate": 1,
+					"id": "countdown",
+					"lines": [
+						{
+							"kind": "bad",
+							"text": "Launch attempt 1 stopped at T−18 minutes: a hydrogen leak at the fuelling arm. Next attempt in 6 days.",
+							"view": ""
+						},
+						{
+							"kind": "good",
+							"text": "Lift-off from Kennedy Space Center on 23 Apr 2033, 88 days before the deadline.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "Countdown",
+					"view": "pad"
+				},
+				{
+					"day": 0.0,
+					"fail": "",
+					"id": "ascent",
+					"lines": [
+						{
+							"kind": "info",
+							"text": "The boosters burned out and fell away on time.",
+							"view": "drop1"
+						},
+						{
+							"kind": "info",
+							"text": "The escape tower was dropped, unused.",
+							"view": ""
+						},
+						{
+							"kind": "info",
+							"text": "Core Stage burned out and fell away. The stack is in space.",
+							"view": "drop2"
+						}
+					],
+					"status": "ok",
+					"title": "Ascent",
+					"view": "ascent"
+				},
+				{
+					"day": 0.1,
+					"id": "orbit",
+					"lines": [
+						{
+							"kind": "info",
+							"text": "Parking orbit. The crew and mission control check every system before leaving Earth.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "Earth orbit",
+					"view": "map"
+				},
+				{
+					"day": 0.15,
+					"gauge": {
+						"have": 12.887045668334206,
+						"label": "Rocket speed",
+						"need": 12.366858818393945
+					},
+					"id": "tli",
+					"lines": [
+						{
+							"kind": "good",
+							"text": "The third stage restarted and burned for about six minutes. Speed needed: 12.37 km/s. The rocket delivered it.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "Burn for the Moon",
+					"view": "map"
+				},
+				{
+					"day": 0.3,
+					"id": "coast",
+					"lines": [
+						{
+							"kind": "good",
+							"text": "1 course correction on the way out, 2 m/s in total.",
+							"view": ""
+						},
+						{
+							"kind": "info",
+							"text": "Three quiet days. The Earth shrinks in the window.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "Coast to the Moon",
+					"view": "map"
+				},
+				{
+					"day": 3.2,
+					"gauge": {
+						"have": 1.1687117989585072,
+						"label": "Spacecraft engine",
+						"need": 0.9048168052554132
+					},
+					"id": "loi",
+					"lines": [
+						{
+							"kind": "good",
+							"text": "Braking burn behind the Moon, out of contact with Earth. 30 minutes of silence, then a voice: the burn was good.",
+							"view": ""
+						},
+						{
+							"kind": "good",
+							"text": "The spacecraft settled into a high, slow orbit and docked with the lander that was sent ahead.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "Lunar orbit",
+					"view": "map"
+				},
+				{
+					"day": 6.0,
+					"id": "landing",
+					"lines": [
+						{
+							"kind": "good",
+							"text": "Touchdown, 0.3 km from the planned point. Engine off.",
+							"view": ""
+						}
+					],
+					"manual": true,
+					"setup": {
+						"accuracy": 0.97,
+						"computer": 1,
+						"lander": "lander_hls",
+						"risk": 3,
+						"seed": 1457128990,
+						"training": 1
+					},
+					"status": "ok",
+					"title": "Landing",
+					"view": "surface"
+				},
+				{
+					"day": 6.2,
+					"id": "surface",
+					"lines": [
+						{
+							"kind": "good",
+							"text": "6 moonwalks, about 48 hours outside in all.",
+							"view": ""
+						},
+						{
+							"kind": "info",
+							"text": "Science on the surface: 127 of 114 planned points so far.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "On the Moon",
+					"view": "surface"
+				},
+				{
+					"day": 17.7,
+					"id": "return",
+					"lines": [
+						{
+							"kind": "good",
+							"text": "Lift-off from the Moon. The crew is together again in orbit.",
+							"view": ""
+						},
+						{
+							"kind": "good",
+							"text": "The engine fired behind the Moon one last time. The spacecraft is on its way home.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "Coast home",
+					"view": "map"
+				},
+				{
+					"day": 20.4,
+					"id": "entry",
+					"lines": [
+						{
+							"kind": "info",
+							"text": "The capsule met the air at 11 km/s.",
+							"view": ""
+						},
+						{
+							"kind": "good",
+							"text": "Three parachutes. Splashdown 6 km from the planned point.",
+							"view": ""
+						},
+						{
+							"kind": "good",
+							"text": "The crew is aboard the recovery ship within the hour after splashdown.",
+							"view": ""
+						}
+					],
+					"status": "ok",
+					"title": "Re-entry and splashdown",
+					"view": "sea"
+				}
+			],
+			"science_planned": 114,
+			"science_returned": 127,
+			"science_rows": [
+				{
+					"name": "The site itself: Taurus–Littrow",
+					"note": "explored by rover",
+					"points": 50
+				},
+				{
+					"name": "Sample tools and boxes",
+					"note": "brought home",
+					"points": 25
+				},
+				{
+					"name": "Lunar rover",
+					"note": "set up and working",
+					"points": 22
+				},
+				{
+					"name": "Autonomous seismic station",
+					"note": "set up and working",
+					"points": 20
+				},
+				{
+					"name": "Plant growth experiment",
+					"note": "set up and working",
+					"points": 10
+				}
+			],
+			"scrub_cost": 0.15,
+			"scrub_days": 6,
+			"scrubs": 1,
+			"ship_have": 1.1687117989585072,
+			"ship_need": 0.9048168052554132,
+			"side_boosters": true,
+			"spaceport": "port_ksc",
+			"stage_names": [
+				"boosters",
+				"core stage"
+			],
+			"surface_crew": 2,
+			"weather_scrubs": 0,
+			"within_budget": true
+		},
+		"margin": 1.4000000000000001,
+		"round": 4,
+		"stage": 11,
+		"vehicle": {
+			"abort": "tower_steered",
+			"budget_after": 14.329999999999984,
+			"build_days": 1800,
+			"cargo_capacity": 900.0,
+			"cargo_need": 287.0,
+			"complete": true,
+			"cost": 69.77000000000001,
+			"crew": 4,
+			"crew_days": 82.0,
+			"eva_hours": 8.0,
+			"high_orbit": true,
+			"lander_built": true,
+			"life_built": true,
+			"liftoff_mass": 2599.373,
+			"link": "laser",
+			"mission_days": 20.5,
+			"overland": false,
+			"parts_cost": 63.50000000000001,
+			"power_built": true,
+			"power_have": 6.0,
+			"power_need": 4.06,
+			"program_days": 2090,
+			"propellant": 2284.6,
+			"propellant_usd": 16876800.0,
+			"ready_day": 2310,
+			"reliability": 0.8365301723199133,
+			"reserve_pct": 1.4000000000000001,
+			"rocket_built": true,
+			"rocket_dv": 12.887045668334206,
+			"rocket_need": 12.3941,
+			"ship_built": true,
+			"ship_dv": 1.1687117989585072,
+			"ship_need": 0.9126000000000001,
+			"site_dv": 0.0,
+			"spacecraft_mass": 27.373000000000005,
+			"spaceport": "port_ksc",
+			"spare_days": 130,
+			"stage1_burn": 98.621188640625,
+			"stage_dv": [
+				1.6618699199471498,
+				8.616029767653611,
+				2.609145980733445
+			],
+			"stay_days": 6.5,
+			"suits_built": true,
+			"supplies": 0.9830000000000001,
+			"surface_crew": 2,
+			"thrust_to_weight": 1.255338068653237,
+			"workforce_cost": 6.27
+		}
+	},
+	"site_totals": [
+		{
+			"id": "a11",
+			"totals": {
+				"cost": 6.800000000000001,
+				"mass": 416.0,
+				"power": 116.0,
+				"science": 144
+			}
+		},
+		{
+			"id": "a12",
+			"totals": {
+				"cost": 6.800000000000001,
+				"mass": 416.0,
+				"power": 116.0,
+				"science": 148
+			}
+		},
+		{
+			"id": "a14",
+			"totals": {
+				"cost": 6.800000000000001,
+				"mass": 416.0,
+				"power": 116.0,
+				"science": 156
+			}
+		},
+		{
+			"id": "a15",
+			"totals": {
+				"cost": 6.800000000000001,
+				"mass": 416.0,
+				"power": 116.0,
+				"science": 168
+			}
+		},
+		{
+			"id": "a16",
+			"totals": {
+				"cost": 6.800000000000001,
+				"mass": 416.0,
+				"power": 116.0,
+				"science": 164
+			}
+		},
+		{
+			"id": "a17",
+			"totals": {
+				"cost": 6.800000000000001,
+				"mass": 416.0,
+				"power": 116.0,
+				"science": 174
+			}
+		}
+	],
+	"staging_gains": [
+		-0.030000000000000002,
+		0.02,
+		-0.02
+	]
+}

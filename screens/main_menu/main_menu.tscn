@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" path="res://assets/textures/menu_far_side.png" id="4_surface"]
 [ext_resource type="Shader" path="res://screens/main_menu/title_light.gdshader" id="5_title"]
 [ext_resource type="FontFile" path="res://assets/fonts/IBMPlexSans-Regular.woff2" id="6_plex"]
+[ext_resource type="Script" path="res://ui/components/tactile_button.gd" id="7_button"]
+[ext_resource type="Shader" path="res://screens/main_menu/menu_shade.gdshader" id="8_shade"]
 
 [sub_resource type="StyleBoxEmpty" id="empty"]
 content_margin_left = 0.0
@@ -21,23 +23,14 @@ expand_margin_left = 24.0
 shader = ExtResource("2_sky")
 shader_parameter/surface = ExtResource("4_surface")
 shader_parameter/rise = 0.3
-shader_parameter/exposure = 1.0
+shader_parameter/exposure = 0.88
 
 [sub_resource type="ShaderMaterial" id="title_material"]
 shader = ExtResource("5_title")
-shader_parameter/width = 620.0
-shader_parameter/shade = Color(0.58, 0.6, 0.65, 1)
-shader_parameter/light = Color(0.97, 0.97, 0.95, 1)
+shader_parameter/width = 680.0
 
-[sub_resource type="StyleBoxFlat" id="track"]
-content_margin_top = 3.0
-content_margin_bottom = 3.0
-bg_color = Color(0.62, 0.7, 0.84, 0.25)
-
-[sub_resource type="StyleBoxFlat" id="track_fill"]
-content_margin_top = 3.0
-content_margin_bottom = 3.0
-bg_color = Color(0.62, 0.7, 0.84, 1)
+[sub_resource type="ShaderMaterial" id="shade_material"]
+shader = ExtResource("8_shade")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -55,7 +48,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.018, 0.035, 0.06, 1)
+mouse_filter = 2
 
 [node name="Aspect" type="AspectRatioContainer" parent="."]
 layout_mode = 1
@@ -64,282 +58,264 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-ratio = 1.7778
+ratio = 1.7777778
+mouse_filter = 2
 
 [node name="Frame" type="Control" parent="Aspect"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Sky" type="ColorRect" parent="Aspect/Frame"]
-unique_name_in_owner = true
-material = SubResource("sky_material")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+unique_name_in_owner = true
+material = SubResource("sky_material")
 mouse_filter = 2
-color = Color(0, 0, 0, 1)
+
+[node name="Shade" type="ColorRect" parent="Aspect/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+material = SubResource("shade_material")
+mouse_filter = 2
+
+[node name="Header" type="Label" parent="Aspect/Frame"]
+layout_mode = 1
+anchor_left = 0.075
+anchor_right = 0.925
+anchor_top = 0.07
+anchor_bottom = 0.11
+text = "PHARSYDE   /   LUNAR PROGRAMME"
+theme_type_variation = &"Eyebrow"
+mouse_filter = 2
+
+[node name="SystemStatus" type="Label" parent="Aspect/Frame"]
+layout_mode = 1
+anchor_left = 0.65
+anchor_right = 0.925
+anchor_top = 0.07
+anchor_bottom = 0.11
+text = "AGENCY SYSTEM   /   READY"
+horizontal_alignment = 2
+theme_type_variation = &"Eyebrow"
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.65, 0.73, 0.82, 1)
 
 [node name="Column" type="VBoxContainer" parent="Aspect/Frame"]
 unique_name_in_owner = true
 layout_mode = 1
-anchor_left = 0.0625
-anchor_top = 0.5
-anchor_right = 0.0625
-anchor_bottom = 0.5
-offset_top = -340.0
-offset_right = 900.0
-offset_bottom = 360.0
-grow_vertical = 2
+anchor_left = 0.075
+anchor_right = 0.49
+anchor_top = 0.19
+anchor_bottom = 0.82
 theme_override_constants/separation = 18
 
 [node name="Title" type="Label" parent="Aspect/Frame/Column"]
-material = SubResource("title_material")
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.55)
-theme_override_constants/shadow_offset_x = 0
-theme_override_constants/shadow_offset_y = 5
+text = "To the\nFar Side"
+theme_override_font_sizes/font_size = 132
+material = SubResource("title_material")
 theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 148
-theme_override_constants/line_spacing = -26
-text = "To the
-Far Side"
+theme_override_constants/line_spacing = -25
+theme_override_colors/font_color = Color(1,1,1,1)
 
 [node name="Tagline" type="Label" parent="Aspect/Frame/Column"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.68, 0.73, 0.82, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7)
-theme_override_constants/shadow_offset_x = 0
-theme_override_constants/shadow_offset_y = 2
-theme_override_fonts/font = ExtResource("6_plex")
-theme_override_font_sizes/font_size = 25
 text = "Plan, build and fly a crewed mission to the Moon"
+theme_override_font_sizes/font_size = 25
+autowrap_mode = 3
+theme_override_colors/font_color = Color(0.73,0.81,0.9,1)
 
 [node name="Spacer" type="Control" parent="Aspect/Frame/Column"]
-custom_minimum_size = Vector2(0, 22)
 layout_mode = 2
+custom_minimum_size = Vector2(0, 16)
+mouse_filter = 2
 
 [node name="MenuBox" type="VBoxContainer" parent="Aspect/Frame/Column"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/separation = 6
+theme_override_constants/separation = 10
 
 [node name="PlayButton" type="Button" parent="Aspect/Frame/Column/MenuBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(460, 64)
 layout_mode = 2
+custom_minimum_size = Vector2(500, 66)
 size_flags_horizontal = 0
-theme_override_colors/font_color = Color(0.8, 0.83, 0.88, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.949, 0.714, 0.196, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.949, 0.714, 0.196, 1)
+script = ExtResource("7_button")
+text = "Play"
+alignment = 0
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 38
 theme_override_styles/normal = SubResource("empty")
 theme_override_styles/hover = SubResource("pointed")
 theme_override_styles/pressed = SubResource("pointed")
 theme_override_styles/focus = SubResource("pointed")
-theme_override_styles/disabled = SubResource("empty")
-text = "Play"
-alignment = 0
-
 
 [node name="SettingsButton" type="Button" parent="Aspect/Frame/Column/MenuBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(460, 64)
 layout_mode = 2
+custom_minimum_size = Vector2(500, 66)
 size_flags_horizontal = 0
-theme_override_colors/font_color = Color(0.8, 0.83, 0.88, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.949, 0.714, 0.196, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.949, 0.714, 0.196, 1)
+script = ExtResource("7_button")
+text = "Settings"
+alignment = 0
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 38
 theme_override_styles/normal = SubResource("empty")
 theme_override_styles/hover = SubResource("pointed")
 theme_override_styles/pressed = SubResource("pointed")
 theme_override_styles/focus = SubResource("pointed")
-theme_override_styles/disabled = SubResource("empty")
-text = "Settings"
-alignment = 0
-
 
 [node name="QuitButton" type="Button" parent="Aspect/Frame/Column/MenuBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(460, 64)
 layout_mode = 2
+custom_minimum_size = Vector2(500, 66)
 size_flags_horizontal = 0
-theme_override_colors/font_color = Color(0.8, 0.83, 0.88, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.949, 0.714, 0.196, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.949, 0.714, 0.196, 1)
+script = ExtResource("7_button")
+text = "Quit"
+alignment = 0
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 38
 theme_override_styles/normal = SubResource("empty")
 theme_override_styles/hover = SubResource("pointed")
 theme_override_styles/pressed = SubResource("pointed")
 theme_override_styles/focus = SubResource("pointed")
-theme_override_styles/disabled = SubResource("empty")
-text = "Quit"
-alignment = 0
 
-
-[node name="SettingsBox" type="VBoxContainer" parent="Aspect/Frame/Column"]
+[node name="SettingsBox" type="PanelContainer" parent="Aspect/Frame"]
 unique_name_in_owner = true
 visible = false
-layout_mode = 2
-theme_override_constants/separation = 10
+layout_mode = 1
+anchor_left = 0.075
+anchor_right = 0.475
+anchor_top = 0.15
+anchor_bottom = 0.86
 
-[node name="ResolutionCaption" type="Label" parent="Aspect/Frame/Column/SettingsBox"]
+[node name="Box" type="VBoxContainer" parent="Aspect/Frame/SettingsBox"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.62, 0.7, 0.84, 1)
-theme_override_fonts/font = ExtResource("3_font")
+theme_override_constants/separation = 15
+
+[node name="SettingsEyebrow" type="Label" parent="Aspect/Frame/SettingsBox/Box"]
+layout_mode = 2
+text = "WINDOW / AUDIO"
+theme_override_font_sizes/font_size = 16
+theme_type_variation = &"Eyebrow"
+
+[node name="SettingsTitle" type="Label" parent="Aspect/Frame/SettingsBox/Box"]
+layout_mode = 2
+text = "Settings"
+theme_override_font_sizes/font_size = 42
+theme_type_variation = &"PanelTitle"
+
+[node name="ModeCaption" type="Label" parent="Aspect/Frame/SettingsBox/Box"]
+layout_mode = 2
+text = "Display mode"
 theme_override_font_sizes/font_size = 22
-text = "Resolution"
 
-[node name="ResolutionRow" type="HBoxContainer" parent="Aspect/Frame/Column/SettingsBox"]
+[node name="ModeSelect" type="OptionButton" parent="Aspect/Frame/SettingsBox/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 56)
+
+[node name="ResolutionCaption" type="Label" parent="Aspect/Frame/SettingsBox/Box"]
+layout_mode = 2
+text = "Window resolution"
+theme_override_font_sizes/font_size = 22
+
+[node name="ResolutionRow" type="HBoxContainer" parent="Aspect/Frame/SettingsBox/Box"]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="ResolutionPrev" type="Button" parent="Aspect/Frame/Column/SettingsBox/ResolutionRow"]
+[node name="ResolutionPrev" type="Button" parent="Aspect/Frame/SettingsBox/Box/ResolutionRow"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(48, 64)
 layout_mode = 2
-size_flags_horizontal = 0
-theme_override_colors/font_color = Color(0.62, 0.7, 0.84, 1)
-theme_override_colors/font_hover_color = Color(0.93, 0.94, 0.96, 1)
-theme_override_colors/font_focus_color = Color(0.93, 0.94, 0.96, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("empty")
-theme_override_styles/hover = SubResource("empty")
-theme_override_styles/pressed = SubResource("empty")
-theme_override_styles/focus = SubResource("empty")
-theme_override_styles/disabled = SubResource("empty")
+custom_minimum_size = Vector2(0, 62)
+script = ExtResource("7_button")
 text = "<"
-alignment = 0
 
-
-[node name="ResolutionValue" type="Label" parent="Aspect/Frame/Column/SettingsBox/ResolutionRow"]
+[node name="ResolutionValue" type="Label" parent="Aspect/Frame/SettingsBox/Box/ResolutionRow"]
+layout_mode = 2
+text = "1600 ? 900"
+theme_override_font_sizes/font_size = 28
 unique_name_in_owner = true
-custom_minimum_size = Vector2(380, 0)
+size_flags_horizontal = 3
 horizontal_alignment = 1
-layout_mode = 2
-theme_override_colors/font_color = Color(0.93, 0.94, 0.96, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 30
-text = "1280 × 720"
+vertical_alignment = 1
 
-[node name="ResolutionNext" type="Button" parent="Aspect/Frame/Column/SettingsBox/ResolutionRow"]
+[node name="ResolutionNext" type="Button" parent="Aspect/Frame/SettingsBox/Box/ResolutionRow"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(48, 64)
 layout_mode = 2
-size_flags_horizontal = 0
-theme_override_colors/font_color = Color(0.62, 0.7, 0.84, 1)
-theme_override_colors/font_hover_color = Color(0.93, 0.94, 0.96, 1)
-theme_override_colors/font_focus_color = Color(0.93, 0.94, 0.96, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("empty")
-theme_override_styles/hover = SubResource("empty")
-theme_override_styles/pressed = SubResource("empty")
-theme_override_styles/focus = SubResource("empty")
-theme_override_styles/disabled = SubResource("empty")
+custom_minimum_size = Vector2(0, 62)
+script = ExtResource("7_button")
 text = ">"
-alignment = 0
 
-
-[node name="Gap" type="Control" parent="Aspect/Frame/Column/SettingsBox"]
-custom_minimum_size = Vector2(0, 14)
+[node name="FullscreenNote" type="Label" parent="Aspect/Frame/SettingsBox/Box"]
 layout_mode = 2
+text = "Fullscreen uses the desktop resolution. Your window size is kept when returning to windowed mode."
+theme_override_font_sizes/font_size = 18
+autowrap_mode = 3
+theme_override_colors/font_color = Color(0.65,0.73,0.82,1)
 
-[node name="VolumeCaption" type="Label" parent="Aspect/Frame/Column/SettingsBox"]
+[node name="VolumeCaption" type="Label" parent="Aspect/Frame/SettingsBox/Box"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.62, 0.7, 0.84, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 22
 text = "Music volume"
+theme_override_font_sizes/font_size = 22
 
-[node name="VolumeRow" type="HBoxContainer" parent="Aspect/Frame/Column/SettingsBox"]
+[node name="VolumeRow" type="HBoxContainer" parent="Aspect/Frame/SettingsBox/Box"]
 layout_mode = 2
-theme_override_constants/separation = 24
+theme_override_constants/separation = 20
 
-[node name="VolumeSlider" type="HSlider" parent="Aspect/Frame/Column/SettingsBox/VolumeRow"]
+[node name="VolumeSlider" type="HSlider" parent="Aspect/Frame/SettingsBox/Box/VolumeRow"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(380, 40)
 layout_mode = 2
-size_flags_vertical = 4
-theme_override_styles/slider = SubResource("track")
-theme_override_styles/grabber_area = SubResource("track_fill")
-theme_override_styles/grabber_area_highlight = SubResource("track_fill")
+custom_minimum_size = Vector2(0, 40)
+size_flags_horizontal = 3
 max_value = 100.0
 step = 5.0
 value = 80.0
 
-[node name="VolumeValue" type="Label" parent="Aspect/Frame/Column/SettingsBox/VolumeRow"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(90, 0)
+[node name="VolumeValue" type="Label" parent="Aspect/Frame/SettingsBox/Box/VolumeRow"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.93, 0.94, 0.96, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 30
 text = "80"
-
-[node name="Gap2" type="Control" parent="Aspect/Frame/Column/SettingsBox"]
-custom_minimum_size = Vector2(0, 14)
-layout_mode = 2
-
-[node name="ButtonsRow" type="HBoxContainer" parent="Aspect/Frame/Column/SettingsBox"]
-layout_mode = 2
-theme_override_constants/separation = 64
-
-[node name="BackButton" type="Button" parent="Aspect/Frame/Column/SettingsBox/ButtonsRow"]
+theme_override_font_sizes/font_size = 25
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 64)
+custom_minimum_size = Vector2(60, 0)
+vertical_alignment = 1
+theme_type_variation = &"Telemetry"
+
+[node name="DisplayNote" type="Label" parent="Aspect/Frame/SettingsBox/Box"]
 layout_mode = 2
-size_flags_horizontal = 0
-theme_override_colors/font_color = Color(0.62, 0.7, 0.84, 1)
-theme_override_colors/font_hover_color = Color(0.93, 0.94, 0.96, 1)
-theme_override_colors/font_focus_color = Color(0.93, 0.94, 0.96, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("empty")
-theme_override_styles/hover = SubResource("empty")
-theme_override_styles/pressed = SubResource("empty")
-theme_override_styles/focus = SubResource("empty")
-theme_override_styles/disabled = SubResource("empty")
+text = ""
+theme_override_font_sizes/font_size = 17
+unique_name_in_owner = true
+theme_type_variation = &"Telemetry"
+theme_override_colors/font_color = Color(0.65,0.73,0.82,1)
+
+[node name="Filler" type="Control" parent="Aspect/Frame/SettingsBox/Box"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="ButtonsRow" type="HBoxContainer" parent="Aspect/Frame/SettingsBox/Box"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="BackButton" type="Button" parent="Aspect/Frame/SettingsBox/Box/ButtonsRow"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 62)
+script = ExtResource("7_button")
 text = "Back"
-alignment = 0
 
-[node name="SaveButton" type="Button" parent="Aspect/Frame/Column/SettingsBox/ButtonsRow"]
+[node name="SaveButton" type="Button" parent="Aspect/Frame/SettingsBox/Box/ButtonsRow"]
 unique_name_in_owner = true
-visible = false
-custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
-size_flags_horizontal = 0
-theme_override_colors/font_color = Color(0.62, 0.7, 0.84, 1)
-theme_override_colors/font_hover_color = Color(0.93, 0.94, 0.96, 1)
-theme_override_colors/font_focus_color = Color(0.93, 0.94, 0.96, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("empty")
-theme_override_styles/hover = SubResource("empty")
-theme_override_styles/pressed = SubResource("empty")
-theme_override_styles/focus = SubResource("empty")
-theme_override_styles/disabled = SubResource("empty")
-text = "Save"
-alignment = 0
-
+custom_minimum_size = Vector2(0, 62)
+script = ExtResource("7_button")
+text = "Save settings"
