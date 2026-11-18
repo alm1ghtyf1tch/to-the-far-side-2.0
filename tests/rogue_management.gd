@@ -1,0 +1,31 @@
+extends SceneTree
+
+func _initialize() -> void:
+	create_timer(30).timeout.connect(func() -> void: quit(1))
+	RogueRun.save_path = "res://.godot/rogue-management-test.json"
+	assert(RogueRun.start("Management", "innovation", "management"))
+	assert(RogueRun.select_contract(0))
+	var event: Dictionary = RogueRun.state["pending_event"].duplicate(true)
+	assert(not event.is_empty())
+	assert(RogueRun.save() and RogueRun.suspend() and RogueRun.resume())
+	assert(RogueRun.state["pending_event"] == JSON.parse_string(JSON.stringify(event)))
+	assert(RogueRun.choose_event(event["choices"].size() - 1))
+	var id := str(RogueCatalog.baseline(RogueRun.state["contract"])["stage2"])
+	var before := float(RogueCatalog.part("stage2", id)["risk"])
+	assert(RogueRun.qualify("stage2"))
+	assert(is_equal_approx(float(Vehicle.chosen({"stage2": id}, "stage2")["risk"]), before * 0.65))
+	assert(not RogueRun.qualify("stage2"))
+	assert(RogueRun.research_action())
+	assert(RogueRun.buy_material("electronics"))
+	assert(int(RogueRun.state["actions"]) == 0)
+	var balance := float(RogueRun.state["money"])
+	assert(not RogueRun.buy_material("electronics") and RogueRun.state["money"] == balance)
+	RogueRun.state["money"] = 10.0
+	assert(RogueRun.bridge_grant() and not RogueRun.bridge_grant())
+	assert(float(RogueRun.state["debt"]) == 20)
+	assert(RogueRun.toggle_mod("radio_backup") and RogueRun.toggle_mod("life_reserve"))
+	var life := Vehicle.chosen({"life": "life_canisters"}, "life")
+	assert(is_equal_approx(float(life["fixed"]), float(RogueCatalog.part("life", "life_canisters")["fixed"]) + 0.3))
+	RogueRun.suspend()
+	print("PASS: persistent state-sensitive event, constrained actions, real catalogue qualification, mass/power modifications, recovery debt and blocked resource actions")
+	quit()

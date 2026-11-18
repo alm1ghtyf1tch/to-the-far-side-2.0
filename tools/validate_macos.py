@@ -38,6 +38,11 @@ def validate(path):
             assert signed, 'Missing embedded code signature'
         assert {0x01000007, 0x0100000C} <= cpus, 'Intel/ARM64 slice missing'
         assert any(n.startswith(base + 'Resources/') and n.endswith('.pck') for n in entries), 'Game pack missing'
+        pack = archive.read(next(n for n in entries if n.startswith(base + 'Resources/') and n.endswith('.pck')))
+        assert b'data/vehicle.json' in pack and b'data/campaign.json' in pack, 'Scientific data missing from game pack'
+        # Phase 5.5 builds additionally contain the run's curated data table.
+        if b'rogue_run' in pack:
+            assert b'data/roguelite/rules.json' in pack, 'Rogue data table missing from game pack'
         print(f'PASS: {pathlib.Path(path).name}: complete app, bundle metadata, x86_64 + ARM64, executable permissions, embedded signatures and game pack')
         print('Archive validation only; macOS launch and Gatekeeper approval require a Mac.')
 

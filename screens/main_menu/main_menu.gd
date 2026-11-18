@@ -123,8 +123,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _on_play_pressed() -> void:
-	Campaign.reset()
-	SceneRouter.go_to(SceneRouter.HQ)
+	SceneRouter.go_to(SceneRouter.PROGRAMMES)
 
 
 func _on_quit_pressed() -> void:

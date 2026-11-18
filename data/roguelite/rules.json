@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "reference_analysis":{"funding":9.0,"accuracy":0.96,"reserve_pct":3.0},
+  "doctrines": [
+    {"id":"science","name":"Science First","money":85,"tests":2,"knowledge":3,"work_bonus":1,"description":"An initial research grant and one extra science work period; less cash for hardware."},
+    {"id":"innovation","name":"Engineering Innovation","money":92,"tests":3,"knowledge":0,"work_bonus":0,"description":"More qualification capacity and experimental offers; a smaller material reserve.","material_adjustment":-3},
+    {"id":"conservative","name":"Conservative Programme","money":85,"tests":3,"knowledge":0,"work_bonus":0,"description":"One starter propulsion design is already qualified; less procurement flexibility."},
+    {"id":"rapid","name":"Rapid Development","money":100,"tests":1,"knowledge":0,"work_bonus":0,"description":"More initial cash, fewer test slots, and 60 days already committed to the first deadline.","initial_days":60}
+  ],
+  "baselines": {
+    "classic":{"stage1":"s1_five","stage2":"s2_hydrogen","stage3":"s3_hydrogen","lander":"lander_standard","service":"service_large","capsule":"capsule_three","escape":"escape_tower","life":"life_canisters","suits":"suits_first","power":"power_cells","comms":"comms_dish","spaceport":"port_ksc","ground":"ground_existing","tests":"tests_allup"},
+    "high_orbit":{"stage1":"s1_solid","stage2":"s2_core","stage3":"s3_icps","lander":"lander_hls","service":"service_esm","capsule":"capsule_three","escape":"escape_tower","life":"life_canisters","suits":"suits_flex","power":"power_solar","comms":"comms_dish","spaceport":"port_ksc","ground":"ground_existing","tests":"tests_allup"}
+  },
+  "contracts":[
+    {"id":"mare","title":"Mare sample survey","sites":["a11","a12"],"architecture":"classic","objective":"geology","description":"Return samples with visual geological context from a volcanic plain."},
+    {"id":"interior","title":"Lunar interior network","sites":["a12","a14","a15"],"architecture":"high_orbit","objective":"interior","description":"Prioritize complementary seismic and heat-flow observations."},
+    {"id":"environment","title":"Surface environment station","sites":["a11","a16"],"architecture":"high_orbit","objective":"wind","description":"Study solar-wind exposure with local magnetic-field context."},
+    {"id":"highlands","title":"Highland reconnaissance","sites":["a16","a17"],"architecture":"high_orbit","objective":"geology","description":"Compare highland samples with their photographed geological setting."}
+  ],
+  "objectives":[
+    {"id":"geology","name":"Samples in geological context","instruments":["samples","tv"],"work":2,"knowledge":6,"description":"Combine sample collection with surface imagery to compare materials in their geological setting."},
+    {"id":"interior","name":"Seismic and thermal study","instruments":["seismometer","heat_flow"],"work":3,"knowledge":8,"description":"Combine seismic observations with heat-flow measurements to broaden an interior investigation."},
+    {"id":"wind","name":"Solar-wind environment","instruments":["solar_wind","magnetometer"],"work":2,"knowledge":5,"description":"Prioritize solar-wind exposure measurements and local magnetic context."},
+    {"id":"radiation","name":"Radiation exposure survey","instruments":["radiation"],"work":1,"knowledge":3,"description":"Allocate a focused research session to the carried radiation instrument."}
+  ],
+  "recipes":{
+    "stage1":{"structures":4,"propulsion":4},"stage2":{"structures":3,"propulsion":3},"stage3":{"structures":2,"propulsion":2},
+    "lander":{"structures":2,"electronics":2},"service":{"propulsion":2,"electronics":1},"capsule":{"structures":1,"electronics":1},
+    "escape":{"propulsion":1},"life":{"electronics":1},"suits":{"structures":1},"power":{"electronics":2},"comms":{"electronics":1},
+    "spaceport":{},"ground":{"structures":1},"tests":{}
+  },
+  "events":[
+    {"id":"delay","title":"Contractor queue","description":"A supplier offers an expedited integration slot, or a slower delivery with spare structural stock.","choices":[{"name":"Expedite: 4 cr / 5 days","money":-4,"days":5},{"name":"Wait: 35 days / +3 structures","days":35,"materials":{"structures":3}}]},
+    {"id":"grant","title":"Research grant opportunity","description":"A grant funds an additional radiation research commitment. Declining keeps the programme simpler.","choices":[{"name":"Accept: +6 cr / radiation commitment / 20 days","money":6,"days":20,"research":"radiation"},{"name":"Keep the current portfolio: 5 days","days":5}]},
+    {"id":"quality","title":"Manufacturing quality review","description":"A propulsion design can receive extra qualification before procurement.","choices":[{"name":"Qualify baseline first stage: 3 cr / one test / 25 days","money":-3,"tests":-1,"days":25,"qualify":"stage1"},{"name":"Retain normal test programme: 5 days","days":5}]},
+    {"id":"supplier","title":"Electronics allocation","description":"A contractor offers a limited electronics batch before its next production window.","choices":[{"name":"Buy allocation: 5 cr / +8 electronics / 15 days","money":-5,"days":15,"materials":{"electronics":8}},{"name":"Decline: 5 days","days":5}]}
+  ],
+  "experimental":["service_cryo","s3_twin","life_closed","comms_laser"],
+  "starter_slots":["capsule","escape","life","suits","comms","spaceport","ground","tests"]
+}

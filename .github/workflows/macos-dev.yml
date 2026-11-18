@@ -30,6 +30,8 @@ jobs:
         run: |
           Godot_v4.7.2-stable_linux.x86_64 --headless --editor --path . --quit
           Godot_v4.7.2-stable_linux.x86_64 --headless --path . --script tests/simulation_regression.gd
+          Godot_v4.7.2-stable_linux.x86_64 --headless --path . --script tests/rogue_save_regression.gd
+          Godot_v4.7.2-stable_linux.x86_64 --headless --path . --script tests/rogue_runs.gd
       - name: Export signed development ZIP
         run: |
           mkdir -p build/macos

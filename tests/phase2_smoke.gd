@@ -157,6 +157,8 @@ func _menu_checks() -> void:
 	menu._close_settings()
 	_check(not menu._settings_box.visible and menu._column.visible, "Back restores main navigation")
 	await _click(menu.get_node("%PlayButton").get_global_rect().get_center(), _shell._curvature)
+	await _wait_for_route(SceneRouter.PROGRAMMES)
+	_shell.active_screen.story()
 	await _wait_for_route(SceneRouter.HQ)
 	_check(Campaign.stage == 1 and Campaign.budget_left == 100.0, "Play preserves the existing campaign reset")
 

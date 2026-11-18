@@ -1,0 +1,5 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="PackedScene" path="res://screens/science_plan/science_plan.tscn" id="1"]
+[ext_resource type="Script" path="res://screens/roguelite/science.gd" id="2"]
+[node name="RogueScience" instance=ExtResource("1")]
+script=ExtResource("2")

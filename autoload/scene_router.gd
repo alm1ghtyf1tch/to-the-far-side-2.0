@@ -12,6 +12,11 @@ const ENGINEERING := "res://screens/engineering/vehicle_assembly.tscn"
 const OPERATIONS := "res://screens/operations/operations_plan.tscn"
 const MISSION_CONTROL := "res://screens/flight/mission_control.tscn"
 const MISSION_REPORT := "res://screens/flight/mission_report.tscn"
+const PROGRAMMES := "res://screens/roguelite/modes.tscn"
+const ROGUE_HQ := "res://screens/roguelite/agency_hq.tscn"
+const ROGUE_SCIENCE := "res://screens/roguelite/science.tscn"
+const ROGUE_ASSEMBLY := "res://screens/roguelite/assembly.tscn"
+const ROGUE_CONTROL := "res://screens/roguelite/control.tscn"
 
 const FADE_TIME := 0.25
 
